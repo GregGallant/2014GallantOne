@@ -8,6 +8,7 @@ return array(
 
     'router' => array(
         'routes' => array(
+            // Main Portfolio page
             'portfolio' => array(
                 'type' => 'segment',
                 'options' => array(
@@ -19,6 +20,20 @@ return array(
                     'defaults' => array(
                         'controller' => 'Portfolio\Controller\Portfolio',
                         'action' => 'index',
+                    ),
+                ),
+            ),
+            // LightBox portLayout Route
+            'light' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/light[/:id]',
+                    'constraints' => array(
+                        'id' => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Portfolio\Controller\Portfolio',
+                        'action' => 'light',
                     ),
                 ),
             ),

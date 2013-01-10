@@ -41,6 +41,16 @@ return array(
                     )
                 ),
             ),
+            'light' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/light',
+                    'defaults' => array(
+                        'controller' => 'Portfolio\Controller\Portfolio',
+                        'action' => 'light'
+                    )
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -108,5 +118,6 @@ return array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
+
     ),
 );

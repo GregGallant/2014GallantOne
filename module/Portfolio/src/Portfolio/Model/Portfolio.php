@@ -6,6 +6,9 @@ use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterInterface;
 use Zend\InputFilter\Factory as InputFactory;
 
+/**
+ * The Portfolio dbase Model
+ */
 class Portfolio
 {
     public $id;

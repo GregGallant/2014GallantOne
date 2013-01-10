@@ -17,6 +17,19 @@ class PortfolioController extends AbstractActionController
         ));
     }
 
+
+    public function lightAction()
+    {
+        $id = (int) $this->params()->fromRoute('id', 0);
+
+        $view = new ViewModel(array( 'client' => $this->getPortfolioTable()->getPortfolio($id), ));
+
+        // Lightbox Layout
+        $this->layout('layout/portLayout.phtml');
+
+        return $view;
+    }
+
     public function webAction()
     {
 
