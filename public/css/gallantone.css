@@ -1,0 +1,159 @@
+
+::selection{ background-color: #E13300; color: white; }
+::moz-selection{ background-color: #E13300; color: white; }
+::webkit-selection{ background-color: #E13300; color: white; }
+
+
+body {
+    background-color: #0c0b0c;
+    background-image:url('../gfx/background.jpg');
+    margin: 0px 0px 0px 0px;
+    font: 13px/20px normal Helvetica, Arial, sans-serif;
+    color:#f0f0f0;
+
+}
+
+
+a {
+    color: #003399;
+    background-color: transparent;
+    font-weight: normal;
+}
+
+
+code {
+    font-family: Consolas, Monaco, Courier New, Courier, monospace;
+    font-size: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #D0D0D0;
+    color: #002166;
+    display: block;
+    margin: 14px 0 14px 0;
+    padding: 12px 10px 12px 10px;
+}
+
+.motherboard {
+    width:1900px;
+    overflow:hidden;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.leftFade {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:436px;
+    height:100%;
+    display:inline-block;
+}
+
+.rightFade {
+    position:fixed;
+    top:0px;
+    left:1456px;
+    right:0;
+    width:442px;
+    display:inline-block;
+}
+
+.rightArticleBar {
+    position:absolute;
+    top:0px;
+    left:1170px;
+    right:0px;
+    width:285px;
+    height:100%;
+    float:right;
+    display:inline-block;
+    background-image:url('../images/rightArticleBar.jpg');
+}
+
+.centerContent {
+    position:absolute;
+    top:0px;
+    left:436px;
+    right:auto;
+    width:733px;
+    display:inline-block;
+    float:left;
+    height:100%;
+}
+
+
+.headerLogo {
+    margin:0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    width:733px;
+    height:62px;
+}
+
+.menuBar {
+    margin:0px 0px 0px 0px;
+    background-image:url('../images/menuBar.jpg');
+    width:733px;
+    height:35px;
+}
+
+.photoHead {
+    margin:0px 0px 0px 0px;
+    background-image:url('../images/photoHead.jpg');
+    width:733px;
+    height:197px;
+}
+
+p.footer{
+    text-align: right;
+    font-size: 11px;
+    border-top: 1px solid #D0D0D0;
+    line-height: 32px;
+    padding: 0 10px 0 10px;
+    margin: 20px 0 0 0;
+}
+
+#container{
+    margin: 10px;
+    border: 1px solid #D0D0D0;
+    -webkit-box-shadow: 0 0 8px #D0D0D0;
+}
+
+.form_s1 {
+
+	width:600px;
+	padding:5px;	
+}
+
+.form_s1 label, .form_s1 input {
+	display:inline;
+	float:left;
+	vertical-align:middle;
+	width:120px;
+	margin-bottom:10px;
+}
+
+.form_s1 label {
+	text-align:right;
+	padding-right:10px;
+}
+
+.mainPlateHead {
+    top:0px;
+    z-index:2;
+    background-image:url('../images/plateBackground.jpg');
+    margin-bottom:auto;
+    height:100%;
+}
+
+.mainPlate {
+    top:0px;
+    height:117px;
+    z-index:3;
+    background-image:url('../images/mainPlate.jpg');
+}
+
+.portScreen
+{
+    width:730px;
+    border:1px solid #999999;
+    background-image:url('../images/plateBackground.jpg');
+}

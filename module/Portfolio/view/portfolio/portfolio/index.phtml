@@ -1,0 +1,25 @@
+<div>
+    <h2>Portfolio JQuery Suite</h2>
+
+    <div>
+
+        <table class="table">
+            <tr>
+                <th>Client</th>
+                <th>type_id</th>
+                <th>Image</th>
+            </tr>
+            <?php foreach ($clients as $client) : ?>
+                <tr>
+                    <td><?php echo $this->escapeHtml($client->name);?></td>
+                    <td><?php echo $this->escapeHtml($client->client_type_id);?></td>
+                    <td><?php echo $this->escapeHtml($client->image);?></td>
+                </tr>
+            <?php endforeach; ?>
+
+        </table>
+
+
+    </div>
+
+</div>

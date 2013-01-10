@@ -1,0 +1,35 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('GallantOne.com ')?>
+
+        <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/images/favicon.ico'))
+                        ->prependStylesheet($this->basePath() . '/css/gallantone.css') ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                                      ->prependFile($this->basePath() . '/js/jquery.min.js') ?>
+
+    </head>
+    <body>
+    <div class="motherboard">
+        <div class="leftFade"><img src="/images/leftFadeEdge.jpg"/></div>
+        <div class="centerContent">
+            <div class="headerLogo"><a href="<?php echo $this->url('home')?>"><img src="/images/logoHeader.jpg"/></a></div>
+            <div class="menuBar">meh</div>
+            <?php echo $this->content; ?>
+        </div>
+    <div class="rightArticleBar"> <br/> <a href="<?php echo $this->url('album') ?>">The Album Module</a> </div>
+    <div class="rightFade"><img src="/images/rightFadeEdge.jpg"/></div>
+    </div>
+    <a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Skeleton Application') ?></a>
+    <div class="nav-collapse collapse">
+        <ul class="nav">
+            <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+    </body>
+</html>
