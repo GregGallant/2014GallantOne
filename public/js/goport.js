@@ -34,7 +34,7 @@ $(document).ready(function() {
             'transitionIn'  : 'openEffect',
             'showLoading' : 'true',
             'transitionOut' : 'none',
-            'openEffect' : 'elastic',
+            'openEffect' : 'fade',
             'openSpeed' : 500,
             'width'     : '800px',
             'height'        : '600px',
