@@ -5,22 +5,14 @@
     <div class="portfolioContent" id="portfolioContent" style="display:none">
         <h2>Web Software Portfolio JQuery Suite</h2>
 
-        <table class="table">
-            <tr>
-
+        <div>
 
             <?php foreach ($clients as $client) : ?>
-                <td>
-                    <div>
+                    <div style="display:inline-block">
                         <img width="80" height="50" src="http://www.gallantone.com/gfx/clients/<?php echo $this->escapeHtml($client->image);?>"/>
                     </div>
-                </td>
             <?php endforeach; ?>
-            </tr>
-            </table>
-            <table class="portScreen">
-            <tr>
-                <td>
+            <div class="portScreen">
                     <div style="width:300px; top:25px; float:left; display:inline-block">
                         <div style="margin-left:5px; margin-top:20px;">
                             <div style="font-size:14pt;"><?php echo $client->name?></div>
@@ -31,9 +23,8 @@
                     <div style="float:right; display:inline-block">
                         <img src="http://www.gallantone.com/gfx/clients/<?php echo $this->escapeHtml($client->image);?>"/>
                     </div>
-                </td>
-            </tr>
-        </table>
+            </div>
+        </div>
         <div style="width:730px; height:25px; padding-top:7px; padding-bottom:7px; border:1px solid #999999">
             Controls
         </div>

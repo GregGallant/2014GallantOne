@@ -154,6 +154,7 @@ p.footer{
 .portScreen
 {
     width:730px;
+    height:350px;
     border:1px solid #999999;
     background-image:url('../images/plateBackground.jpg');
 }
