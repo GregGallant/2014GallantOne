@@ -41,9 +41,29 @@ class PortfolioController extends AbstractActionController
             ));
         }
 
-        return new ViewModel(array(
-            'clients' => $this->getPortfolioTable()->getPortfolioByType($id),
+        $clientsByType = $this->getPortfolioTable()->getPortfolioByType($id);
+
+        /* Total Row Count by portfolio type for the jQuery */
+        $totalRows = $this->getPortfolioTable()->getPortfolioCountByType($id);
+
+        /* Handle the view */
+        $view = new ViewModel(array(
+            'clients' => $clientsByType,
+            'totalContent' => $totalRows,
         ));
+
+
+        /* The Portfolio Screen and it's view  if we were to ever do this*/
+        /*
+        $portScreenView = new ViewModel(array(
+            'screenClients' => $this->getPortfolioTable()->fetchAll()
+        ));
+        $portScreenView->setTemplate('portfolio/portfolio/portScreen.phtml');
+
+        $view->addChild($portScreenView, 'portScreen');
+
+        */
+        return $view;
     }
 
     public function getPortfolioTable()

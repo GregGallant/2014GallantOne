@@ -1,0 +1,13 @@
+    <?php foreach ($screenClients as $sclient) : ?>
+    <div class="portScreenContent<?php echo $sclient->id ?>">
+        <div style="margin-left:5px; margin-top:20px;">
+            <div style="font-size:14pt;"><?php echo $sclient->name?></div>
+            <div style="font-size:12pt;"><?php echo $sclient->details?></div>
+            <div style="font-size:12pt; text-align:right"><a class="learnMore" id="learnMore" href="#">Learn More</a></div>
+        </div>
+    </div>
+    <div style="float:right; display:inline-block">
+        <img src="http://www.gallantone.com/gfx/clients/<?php echo $this->escapeHtml($sclient->image);?>"/>
+    </div>
+    <?php endforeach; ?>
+

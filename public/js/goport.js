@@ -10,6 +10,17 @@ $(document).ready(function() {
         $(".portfolioContent").fadeIn(2000);
     });
 
+    /* Port Screen Content handler */
+    var tc = $('#totalScreenContent').val();
+    for (var i=0; i < tc; i++ ) {
+        var aScreen = document.getElementById('portScreenContent'+i);
+        var aScreenJQ = '#' + aScreen.id;
+        if (i != 0) {
+            $(aScreenJQ).hide();
+        }
+    }
+
+    //$('.portScreenContent').hide();
 
     /* The Learn More button */
 

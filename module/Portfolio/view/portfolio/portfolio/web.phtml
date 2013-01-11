@@ -5,40 +5,46 @@
     <div class="portfolioContent" id="portfolioContent" style="display:none">
         <h2>Web Software Portfolio JQuery Suite</h2>
 
-        <div>
-
-            <?php foreach ($clients as $client) : ?>
-                    <div style="display:inline-block">
-                        <img width="80" height="50" src="http://www.gallantone.com/gfx/clients/<?php echo $this->escapeHtml($client->image);?>"/>
-                    </div>
-            <?php endforeach; ?>
+        <div class="fatherBoard">
             <div class="portScreen">
-                    <div style="width:300px; top:25px; float:left; display:inline-block">
+             <?php $ccount = 0; ?>
+            <?php foreach ($clients as $client) : ?>
+                <div style="display:inline-block">
+                        <!-- <img width="80" height="50" src="http://www.gallantone.com/gfx/clients/<?php //echo $this->escapeHtml($client->image);?>"/> -->
+                </div>
+
+                <!-- The Screen -->
+                <div class="portScreenContent" id="portScreenContent<?php echo $ccount ?>">
+
+                    <table width="730px;">
+                    <tr>
+                    <td>
+                    <div style="width:300px; top:25px; display:inline-block">
                         <div style="margin-left:5px; margin-top:20px;">
-                            <div style="font-size:14pt;"><?php echo $client->name?></div>
-                            <div style="font-size:12pt;"><?php echo $client->details?></div>
-                            <div style="font-size:12pt; text-align:right"><a class="learnMore" id="learnMore" href="#">Learn More</a></div>
+                            <div style="font-size:12pt;"><?php echo $client->name?></div>
+                            <div style="font-size:11pt;"><?php echo $client->details?></div>
+                            <div style="font-size:11pt; text-align:right"><a class="learnMore" id="learnMore" href="#">Learn More</a></div>
                         </div>
                     </div>
-                    <div style="float:right; display:inline-block">
+                    </td><td>
+                    <div style="width:400px; height:294px;  display:inline-block">
                         <img src="http://www.gallantone.com/gfx/clients/<?php echo $this->escapeHtml($client->image);?>"/>
                     </div>
+                    </td>
+                    </tr>
+                    </table>
+                </div>
+            <?php $ccount++; ?>
+            <?php endforeach; ?>
+
             </div>
         </div>
-        <div style="width:730px; height:25px; padding-top:7px; padding-bottom:7px; border:1px solid #999999">
+        <!-- The Controls -->
+        <div style="clear:both; width:730px; height:25px; padding-top:7px; padding-bottom:7px; border:1px solid #999999">
             Controls
         </div>
 
 
     </div>
-<!--
-// show loading image
-$('#loader_img').show();
-
-// main image loaded ?
-$('#main_img').load(function(){
-  // hide/remove the loading image
-  $('#loader_img').hide();
-});
--->
 </div>
+<input type="hidden" id="totalScreenContent" value="<?php echo $this->totalContent ?>">

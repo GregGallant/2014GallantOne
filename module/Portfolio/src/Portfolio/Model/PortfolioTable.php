@@ -39,6 +39,13 @@ class PortfolioTable
         return $this->tableGateway->select(array('client_type_id' => $client_type_id));
     }
 
+    public function getPortfolioCountByType($client_type_id)
+    {
+        $client_type_id = (int) $client_type_id;
+        $rowset = $this->tableGateway->select(array('client_type_id' => $client_type_id));
+
+        return count($rowset);
+    }
 
 
 }
