@@ -12,7 +12,9 @@
                 <tr>
                     <td><?php echo $this->escapeHtml($client->name);?></td>
                     <td><?php echo $this->escapeHtml($client->client_type_id);?></td>
-                    <td><?php echo $this->escapeHtml($client->image);?></td>
+                    <div style="float:right; display:inline-block">
+                        <img src="http://www.gallantone.com/gfx/clients/<?php echo $this->escapeHtml($client->image);?>"/>
+                    </div>
                 </tr>
 
         </table>

@@ -6,7 +6,7 @@
 
 body {
     background-color: #0c0b0c;
-    background-image:url('../gfx/background.jpg');
+    background-image:url('../images/background.jpg');
     margin: 0px 0px 0px 0px;
     font: 13px/20px normal Helvetica, Arial, sans-serif;
     color:#f0f0f0;
@@ -156,4 +156,13 @@ p.footer{
     width:730px;
     border:1px solid #999999;
     background-image:url('../images/plateBackground.jpg');
+}
+
+.preLoader
+{
+    position:relative;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    top:200px;
 }
