@@ -27,24 +27,45 @@
         <div class="centerContent">
             <div class="headerLogo"><a href="<?php echo $this->url('home')?>"><img border="0" src="/images/logoHeader.jpg"/></a></div>
             <div class="menuBar">
-                <div style="font-family:Arial,sans-serif; font-size:10pt; padding-left:7px;  padding-top:2px;">
+                <div style="text-align:right; font-family:Arial,sans-serif; font-size:10pt; padding-left:7px;  padding-top:5px;">
+                    <!--
                     <div class="menuPlacement"><a href="/portfolio/web/1"><img border="0" src="/images/menu_portfolio.gif"/></a></div>
                     <div class="menuPlacement"><img border="0" src="/images/menu_resume.gif"/></div>
                     <div class="menuPlacement"><a href="http://www.linkedin.com/in/greggallant" target="_linkedin"><img border="0" src="/images/menu_linkedin.gif"/></a></div>
+                    -->
+                    <div class="menuPlacement"><a class="menuPlacement" href="/portfolio/web/1">portfolio</a></div>
+                    <div class="linePlacement">|</div>
+                    <div class="menuPlacement">resume</div>
+                    <div class="linePlacement">|</div>
+                    <div class="menuPlacementLast"><a class="menuPlacement" href="http://www.linkedin.com/in/greggallant" target="_linkedin">Linked-in</a></div>
                 </div>
             </div>
             <?php echo $this->content; ?>
         </div>
-    <div class="rightArticleBar">
-        <img style="z-index:3" src="/images/rightArticleBar.jpg"/>
-            <div style="position:absolute; z-index:5; left:10px; top:500px; color:#ffffff;">
-                <a href="<?php echo $this->url('album') ?>">The Album Module</a>
-                <br/>
-                <a href="<?php echo $this->url('portfolio') ?>">The Portfolio Module</a>
-                <br/>
-                <a href="<?php echo $this->url('portfolio/') ?>/web/1">The JQuery Suite Module</a>
-            </div>
-    </div>
+        <div class="rightArticleBar">
+            <img style="z-index:3" src="/images/rightArticleBar.jpg"/>
+                <div style="position:absolute; z-index:5; left:10px; top:50px; color:#ffffff;">
+                    <div class="panelText1">
+                        <div style="position:relative; left:-25px;"><img style="border:1px inset #393939;" src="/images/textline_up.jpg"/></div>
+                        <strong>Greg A. Gallant</strong> is a professional
+                        technologist and software engineer and web designer
+                        with over 14 years of experience working in New York City.
+                            <br/>
+                            <br/>
+                        Specializations and experience include the building of several small technology companies using a multitude of programming languages including <a target="springsource" href="http://springsource.org">Java Spring MVC 3</a>, <a target="php" href="http://www.php.net">PHP</a> <a href="http://framework.zend.com">Zend 2 Framework</a> and <a href="http://ellislab.com/codeigniter">CodeIgniter</a>, <a href="http://www.python.org">Python</a>, Javascript, and <a href="http://jquery.com">JQuery</a>. This includes database programming using <a href="http://www.mysql.com">MySQL</a>, <a href="http://www.oracle.com">Oracle</a>, and <a href="http://www.postgresql.org">PostGreSQL</a>.
+                        <div style="position:relative; left:-25px;"><img style="border:1px inset #393939;" src="/images/textline_down.jpg"/></div>
+                        <br/>
+                    </div>
+                    <div style="position:relative; top:500px;">
+
+                    <a href="<?php echo $this->url('album') ?>">The Album Module</a>
+                    <br/>
+                    <a href="<?php echo $this->url('portfolio') ?>">The Portfolio Module</a>
+                    <br/>
+                    <a href="<?php echo $this->url('portfolio/') ?>/web/1">The JQuery Suite Module</a>
+                    </div>
+                </div>
+        </div>
     <div class="rightFade"><img src="/images/rightFadeEdge.jpg"/></div>
     </div>
     </body>
