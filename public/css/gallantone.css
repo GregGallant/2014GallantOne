@@ -102,6 +102,18 @@ code {
     height:35px;
 }
 
+.menuHeaders {
+    font-family:Arial,sans-serif;
+    font-size:10pt;
+    padding-left:7px;
+    padding-top:1px;
+}
+
+.menuPlacement {
+    padding-right:80px;
+    display:inline-block;
+}
+
 .photoHead {
     margin:0px 0px 0px 0px;
     background-image:url('../images/photoHead.jpg');
@@ -160,7 +172,7 @@ p.footer{
 
 .portScreen
 {
-    width:732px;
+    width:731px;
     height:600px;
     background-image:url('../images/portScreen.jpg');
 }
@@ -180,6 +192,7 @@ p.footer{
     display:inline-block;
     color:#333333;
     padding:20px 20px 20px 20px;
+    font-family: Century Gothic, sans-serif;
 }
 
 .button {
