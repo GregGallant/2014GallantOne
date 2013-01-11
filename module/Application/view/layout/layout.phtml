@@ -25,18 +25,19 @@
     <div class="motherboard">
         <div class="leftFade"><img src="/images/leftFadeEdge.jpg"/></div>
         <div class="centerContent">
-            <div class="headerLogo"><a href="<?php echo $this->url('home')?>"><img src="/images/logoHeader.jpg"/></a></div>
+            <div class="headerLogo"><a href="<?php echo $this->url('home')?>"><img border="0" src="/images/logoHeader.jpg"/></a></div>
             <div class="menuBar">meh</div>
             <?php echo $this->content; ?>
         </div>
-    <div class="rightArticleBar"> <br/>
-        <div style="position:relative; left:10px; top:500px; color:#ffffff;">
-            <a href="<?php echo $this->url('album') ?>">The Album Module</a>
-            <br/>
-            <a href="<?php echo $this->url('portfolio') ?>">The Portfolio Module</a>
-            <br/>
-            <a href="<?php echo $this->url('portfolio/') ?>/web/1">The JQuery Suite Module</a>
-        </div>
+    <div class="rightArticleBar">
+        <img style="z-index:3" src="/images/rightArticleBar.jpg"/>
+            <div style="position:absolute; z-index:5; left:10px; top:500px; color:#ffffff;">
+                <a href="<?php echo $this->url('album') ?>">The Album Module</a>
+                <br/>
+                <a href="<?php echo $this->url('portfolio') ?>">The Portfolio Module</a>
+                <br/>
+                <a href="<?php echo $this->url('portfolio/') ?>/web/1">The JQuery Suite Module</a>
+            </div>
     </div>
     <div class="rightFade"><img src="/images/rightFadeEdge.jpg"/></div>
     </div>

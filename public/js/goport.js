@@ -36,14 +36,18 @@ $(document).ready(function() {
             'transitionOut' : 'none',
             'openEffect' : 'fade',
             'openSpeed' : 500,
-            'width'     : '800px',
-            'height'        : '600px',
-            'maxWidth'     : '800px',
-            'maxHeight'        : '600px',
+            'width'     : 800,
+            'height'        : 600,
+            'maxWidth'     : 800,
+            'maxHeight'        : 600,
+            'minWidth' : 800,
+            'minHeight' : 600,
             'autoWidth'     : false,
             'autoHeight'        : false,
             'autoResize' : false,
-            'showCloseButton'   : true,
+            'autoScale' : false,
+            'showCloseButton'   : false,
+            'scrolling' : false,
             'type'                         :'iframe'
         });
 
