@@ -363,3 +363,19 @@ p.frontText {
     margin:0px 0px 0px 0px;
     font-weight:normal;
 }
+
+a.learnMore:link {
+    color:#3c6f3c; text-decoration:none;
+}
+
+a.learnMore:hover {
+    color:#3c6f3c; text-decoration:none;
+}
+
+a.learnMore:active {
+    color:#3c6f3c; text-decoration:none;
+}
+
+a.learnMore:visited {
+    color:#3c6f3c; text-decoration:none;
+}

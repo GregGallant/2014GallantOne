@@ -1,0 +1,9 @@
+<!-- portcontrol.phtml Image Controls -->
+<?php $ccount = 0 ?>
+<?php foreach ($clients as $client) : ?>
+    <div style="padding-top:40px; padding-left:80px; display:inline-block;">
+        <a name="imageControl" id="imageControl<?php echo $ccount ?>" class="imageControl" href="#">
+            <img border="0" width="80" height="50" src="http://www.gallantone.com/gfx/clients/<?php echo $client->getImage();?>"/></a>
+    </div>
+<?php $ccount++ ?>
+<?php endforeach ?>

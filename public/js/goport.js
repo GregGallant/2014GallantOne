@@ -29,7 +29,8 @@ $(document).ready(function() {
             var icText = "imageControl";
             var screenNumber = currentControl.replace(icText,'');
             var ccJQ = "#portScreenContent"+screenNumber;
-            $(ccJQ).show();
+            $(ccJQ).fadeIn(1000);
+            //$(ccJQ).show();
         }
     });
 
@@ -38,9 +39,15 @@ $(document).ready(function() {
 
     /* The Learn More button */
 
-    $('.learnMore').click(function() {
+    $('a[name=learnMore]').click(function() {
 
-        $.fancybox({'href' :'/light/1',
+        var currentScreen = this.id;
+        if (currentScreen.indexOf("learnMore") != -1) {
+            var lmText = "learnMore";
+            var cnum = currentScreen.replace(lmText,'');
+        }
+
+        $.fancybox({'href' :'/light/'+cnum,
             //'title' : 'so far so good',
             'padding'       : 0,
             'modal'     : true,

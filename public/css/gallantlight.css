@@ -1,3 +1,8 @@
+a:link {color:#0c3f0c; text-decoration:none;}
+a:visited {color:#003F00; text-decoration:none;}
+a:hover {color:#0Fc00F; text-decoration:underline;}
+a:active {color:#00300F;}
+
 body {
     background-image:url('../images/goFancyFrame.jpg');
     margin: 0px 0px 0px 0px;
