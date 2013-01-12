@@ -36,7 +36,20 @@ class PortfolioTable
         //TODO: if null results, get from client_type_id 1
 
         $client_type_id = (int) $client_type_id;
+
         return $this->tableGateway->select(array('client_type_id' => $client_type_id));
+    }
+
+
+    public function goResultSet($service, $client_type_id) {
+
+        $sm = $service;
+
+        $sql = "SELECT * FROM portfolio WHERE client_type_id = " . $client_type_id;
+        $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+        $stmt = $dbAdapter->createStatement($sql);
+        $resultSet = $stmt->execute();
+        return $resultSet;
     }
 
     public function getPortfolioCountByType($client_type_id)

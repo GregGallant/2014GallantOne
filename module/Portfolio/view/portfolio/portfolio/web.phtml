@@ -19,7 +19,7 @@
                 <!-- The Screen -->
                 <div class="portScreenContent" id="portScreenContent<?php echo $ccount ?>">
 
-                    <table width="730px;">
+                    <table width="730px; height:370px;">
                     <tr>
                     <td>
                     <div style="width:250px; top:25px; display:inline-block">
@@ -37,12 +37,14 @@
                     </tr>
                     </table>
                 </div>
-                    <div style="padding-top:40px; padding-left:80px; display:inline-block;">
-                        <img width="80" height="50" src="http://www.gallantone.com/gfx/clients/<?php echo $this->escapeHtml($client->image);?>"/>
-                    </div>
             <?php $ccount++; ?>
             <?php endforeach; ?>
-
+                <!-- Image Controls -->
+                <?php echo  $this->portcontrol ?>
+                <?php //echo  $this->partial('portfolio/portfolio/portcontrol.phtml', array()); ?>
+            <div class="jsonImageControl">
+                &nbsp;
+            </div>
             </div>
         </div>
 

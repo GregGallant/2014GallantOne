@@ -3,6 +3,7 @@ namespace Portfolio;
 
 use Portfolio\Model\Portfolio;
 use Portfolio\Model\PortfolioTable;
+use Portfolio\Model\PortfolioEntity;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\ResultSet\ResultSet;
 
@@ -31,6 +32,10 @@ class Module
                     $tableGateway = $sm->get('PortfolioTableGateway');
                     $table = new PortfolioTable($tableGateway);
                     return $table;
+                },
+                'Portfolio\Model\PortfolioEntity' => function($sm) {
+                    $pEntity = new PortfolioEntity();
+                    return $pEntity;
                 },
                 'PortfolioTableGateway' => function ($sm) {
                     $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');

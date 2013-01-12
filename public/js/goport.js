@@ -20,6 +20,20 @@ $(document).ready(function() {
         }
     }
 
+    // iControl - Get something (portfolio image) that was clicked
+    $('a[name=imageControl]').click(function(){
+        hideAllScreens();
+        var currentControl = this.id;
+        // Check to ensure this was an imageControl
+        if (currentControl.indexOf("imageControl") != -1) {
+            var icText = "imageControl";
+            var screenNumber = currentControl.replace(icText,'');
+            var ccJQ = "#portScreenContent"+screenNumber;
+            $(ccJQ).show();
+        }
+    });
+
+
     //$('.portScreenContent').hide();
 
     /* The Learn More button */
@@ -53,5 +67,20 @@ $(document).ready(function() {
 
     });
 
+
 });
+
+/* Please make a closure */
+function hideAllScreens()
+{
+
+    /* Port Screen Content handler */
+    var tc = $('#totalScreenContent').val();
+    for (var i=0; i < tc; i++ ) {
+        var aScreen = document.getElementById('portScreenContent'+i);
+        var aScreenJQ = '#' + aScreen.id;
+        $(aScreenJQ).hide();
+    }
+}
+
 

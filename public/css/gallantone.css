@@ -208,6 +208,12 @@ a.menuPlacement:visited {
     font-family: Century Gothic, sans-serif;
 }
 
+.portScreenWrapper
+{
+    width:731px;
+    height:370px;
+}
+
 .button {
     display: inline-block;
     outline: none;
