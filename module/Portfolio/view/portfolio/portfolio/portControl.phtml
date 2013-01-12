@@ -3,7 +3,8 @@
 <?php foreach ($clients as $client) : ?>
     <div style="padding-top:40px; padding-left:80px; display:inline-block;">
         <a name="imageControl" id="imageControl<?php echo $ccount ?>" class="imageControl" href="#">
-            <img border="0" width="80" height="50" src="http://www.gallantone.com/gfx/clients/<?php echo $client->getImage();?>"/></a>
+            <?php if ($client->getId() == 18) { $this->tWidth = '80px'; $this->iHeight='50px'; } ?>
+            <img border="0" width="<?php echo $this->tWidth ?>" height="<?php echo $this->tHeight ?>" src="/images/clients/<?php echo $client->getImage();?>"/></a>
     </div>
 <?php $ccount++ ?>
 <?php endforeach ?>
