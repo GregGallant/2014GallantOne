@@ -37,6 +37,11 @@ class PortfolioController extends AbstractActionController
     public function webAction()
     {
 
+        $iWidth = "400px";
+        $iHeight = "294px";
+        $tWidth = "80px";
+        $tHeight = "50px";
+
         $id = (int) $this->params()->fromRoute('id', 0);
 
         if (!$id) {
@@ -50,13 +55,28 @@ class PortfolioController extends AbstractActionController
         /* Total Row Count by portfolio type for the jQuery */
         $totalRows = $this->getPortfolioTable()->getPortfolioCountByType($id);
 
+        // Let's pass some image sizing information - we'll do it the proper way in phase 2
+        if ($id == 3) {
+            $iWidth="224px";
+            $iHeight="294px";
+        } elseif ($id == 4) {
+            $iWidth="600px";
+            $iHeight="220px";
+        }
+
+
         /* Handle the view */
         $view = new ViewModel(array(
             'clients' => $clientsByType,
             'totalContent' => $totalRows,
+            'iWidth' => $iWidth,
+            'iHeight' => $iHeight,
         ));
 
 
+
+
+        /* Handling database query for a proper ResultSet */
         $sm = $this->getServiceLocator();
         $cResultSet = $this->getPortfolioTable()->goResultSet($sm, $id);
 
@@ -64,7 +84,21 @@ class PortfolioController extends AbstractActionController
         $portfolioEntity = new HydratingResultSet(new ReflectionHydrator, $this->getPortfolioEntity());
         $portfolioEntity->initialize($cResultSet);
 
-        $pcView = new ViewModel(array('clients'=>$portfolioEntity));
+        /* Handle thumbnail width and height */
+        if ($id == 3) {
+            $tWidth="40px";
+            $tHeight="50px";
+        } elseif ($id == 4) {
+            $tWidth="80px";
+            $tHeight="35px";
+        }
+
+        $pcView = new ViewModel(array(
+            'clients'=>$portfolioEntity,
+            'tWidth' => $tWidth,
+            'tHeight' => $tHeight,
+
+        ));
         $portControls = $pcView->setTemplate('portfolio/portfolio/portcontrol.phtml');
         $view->addChild($portControls, 'portcontrol');
 

@@ -308,6 +308,7 @@ a.button {
     color:#f0f0f0;
     z-index:10;
     width:236px;
+    line-height:13pt;
 }
 
 .webMenu {
