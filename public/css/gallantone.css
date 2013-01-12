@@ -345,6 +345,26 @@ a.button {
     float:left;
 }
 
+.infoPanel {
+    font-size:9pt;
+    font-family:trebuchet ms, arial,verdana,sans-serif;
+    letter-spacing:.1em;
+    color:#f0f0f0;
+    z-index:10;
+    width:206px;
+    display:inline-block;
+    float:right;
+    margin:100px 20px 20px 20px;
+}
+
+.resumePanel {
+    background-color:#336c33;
+    border:1px solid #ccffcc;
+    padding:8px;
+    margin-bottom:20px;
+}
+
+
 h2 {
     line-height:12pt;
     padding:20px 0px 20px 0px;
