@@ -20,7 +20,7 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'Portfolio\Controller\Portfolio',
-                        'action' => 'web',
+                        'action' => 'index',
                     ),
                 ),
             ),

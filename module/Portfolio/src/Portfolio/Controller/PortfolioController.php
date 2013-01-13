@@ -36,14 +36,6 @@ class PortfolioController extends AbstractActionController
         return $this->em;
     }
 
-    public function indexAction()
-    {
-        return new ViewModel(array(
-            'clients' => $this->getEntityManager()->getRepository('Portfolio\Entity\Portfolio')->findAll(),
-        ));
-    }
-
-
     /**
      * The LightBox Client Info
      * @return \Zend\View\Model\ViewModel
@@ -72,7 +64,7 @@ class PortfolioController extends AbstractActionController
      * The actual portfolio
      * @return \Zend\View\Model\ViewModel
      */
-    public function webAction()
+    public function indexAction()
     {
 
 
