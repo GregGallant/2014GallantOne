@@ -1,21 +1,76 @@
 <?php
-namespace Album\Model;
+namespace Album\Entity;
 
 use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterInterface;
 use Zend\InputFilter\Factory as InputFactory;
+use Doctrine\ORM\Mapping as ORM;
 
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="album")
+ * @property string $id
+ * @property string $artist
+ * @property string $title
+ */
 class Album
 {
-    public $id;
-    public $artist;
-    public $title;
 
-    public function exchangeArray($data)
+    protected $inputFilter;
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $artist;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $title;
+
+    public function getId()
     {
-        $this->id     = (isset($data['id'])) ? $data['id'] : null;
-        $this->artist = (isset($data['artist'])) ? $data['artist'] : null;
-        $this->title  = (isset($data['title'])) ? $data['title'] : null;
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getArtist()
+    {
+        return $this->artist;
+    }
+
+    public function setArtist($artist)
+    {
+        $this->artist = $artist;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    public function populate($data = array())
+    {
+        $this->id = $data['id'];
+        $this->artist = $data['artist'];
+        $this->title = $data['title'];
     }
 
     public function setInputFilter(InputFilterInterface $inputFilter)
@@ -86,4 +141,5 @@ class Album
     {
         return get_object_vars($this);
     }
+
 }

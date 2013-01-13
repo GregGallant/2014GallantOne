@@ -2,6 +2,8 @@
 return array(
     'modules' => array(
         'Application',
+        'DoctrineModule',
+        'DoctrineORMModule',
         'Album',
         'Portfolio',
     ),
