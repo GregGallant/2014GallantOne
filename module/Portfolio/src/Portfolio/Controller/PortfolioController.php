@@ -3,10 +3,12 @@ namespace Portfolio\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Portfolio\Model\Portfolio;
+use Portfolio\Entity\Portfolio;
 use Zend\Db\Adapter\Driver\ResultInterface;
 use Zend\Db\ResultSet\HydratingResultSet;
 use Zend\Stdlib\Hydrator\Reflection as ReflectionHydrator;
+use Doctrine\ORM\EntityManager;
+use Portfolio\PortfolioManager;
 
 class PortfolioController extends AbstractActionController
 {
@@ -14,19 +16,51 @@ class PortfolioController extends AbstractActionController
     protected $portfolioTable;
     protected $portfolioEntity;
 
+    /**
+     * @var Doctrine\ORM\EntityManager
+     */
+    protected $em;
+
+    public function setEntityManager(EntityManager $em)
+    {
+        $this->em = $em;
+    }
+
+    public function getEntityManager()
+    {
+        if (null === $this->em)
+        {
+            $this->em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+        }
+
+        return $this->em;
+    }
+
     public function indexAction()
     {
         return new ViewModel(array(
-            'clients' => $this->getPortfolioTable()->fetchAll(),
+            'clients' => $this->getEntityManager()->getRepository('Portfolio\Entity\Portfolio')->findAll(),
         ));
     }
 
 
+    /**
+     * The LightBox Client Info
+     * @return \Zend\View\Model\ViewModel
+     */
     public function lightAction()
     {
         $id = (int) $this->params()->fromRoute('id', 0);
 
-        $view = new ViewModel(array( 'client' => $this->getPortfolioTable()->getPortfolio($id), ));
+        $sm = $this->getServiceLocator();
+        $pManager = new PortfolioManager($sm, $this->em);
+        $view = new ViewModel(array( 'client' => $pManager->getPortfolio($id), ));
+
+        /*
+        $view = new ViewModel(array(
+            'client' =
+        ));
+        */
 
         // Lightbox Layout
         $this->layout('layout/portLayout.phtml');
@@ -34,15 +68,17 @@ class PortfolioController extends AbstractActionController
         return $view;
     }
 
+    /**
+     * The actual portfolio
+     * @return \Zend\View\Model\ViewModel
+     */
     public function webAction()
     {
 
-        $iWidth = "400px";
-        $iHeight = "294px";
-        $tWidth = "80px";
-        $tHeight = "50px";
 
         $sm = $this->getServiceLocator();
+
+        $pManager = new PortfolioManager($sm, $this->em);
 
         $id = (int) $this->params()->fromRoute('id', 0);
 
@@ -52,61 +88,48 @@ class PortfolioController extends AbstractActionController
             ));
         }
 
-        $clientsByType = $this->getPortfolioTable()->getPortfolioByType($sm, $id);
+        /* Get Dimensions of images and thumbnails on port screen */
+        $iDim = $pManager->getImageDimensions($id);
+        $tDim = $pManager->getThumbDimensions($id);
 
 
+        /* Get clients by type */
+
+        //$clientsByType = $this->getPortfolioTable()->getPortfolioByType($sm, $id);
+        $portfolioEntity = $pManager->getPortfolioByType($id);
         // Hydrate the result set
-        $portfolioEntity = new HydratingResultSet(new ReflectionHydrator, $this->getPortfolioEntity());
-        $portfolioEntity->initialize($clientsByType);
+        //$portfolioEntity = new HydratingResultSet(new ReflectionHydrator, $this->getPortfolioEntity());
+        //$portfolioEntity->initialize($clientsByType);
 
         /* Total Row Count by portfolio type for the jQuery */
-        $totalRows = $this->getPortfolioTable()->getPortfolioCountByType($id);
-
-        // Let's pass some image sizing information - we'll do it the proper way in phase 2
-        if ($id == 3) {
-            $iWidth="224px";
-            $iHeight="294px";
-        } elseif ($id == 4) {
-            $iWidth="600px";
-            $iHeight="220px";
-        }
+        $totalRows = $pManager->getPortfolioCountByType($id);
+        //$totalRows = 5;
 
         /* Handle the view */
         $view = new ViewModel(array(
             'clients' => $portfolioEntity,
             'totalContent' => $totalRows,
-            'iWidth' => $iWidth,
-            'iHeight' => $iHeight,
+            'iWidth' => $iDim['width'],
+            'iHeight' => $iDim['height'],
         ));
 
-
-
-
         /* Handling database query for a proper ResultSet */
+        /*
         $cResultSet = $this->getPortfolioTable()->getHydraPortfolioByType($sm, $id);
 
         // Hydrate the result set
         $portfolioEntity = new HydratingResultSet(new ReflectionHydrator, $this->getPortfolioEntity());
         $portfolioEntity->initialize($cResultSet);
-
-        /* Handle thumbnail width and height */
-        if ($id == 3) {
-            $tWidth="40px";
-            $tHeight="50px";
-        } elseif ($id == 4) {
-            $tWidth="80px";
-            $tHeight="35px";
-        }
+*/
 
         $pcView = new ViewModel(array(
             'clients'=>$portfolioEntity,
-            'tWidth' => $tWidth,
-            'tHeight' => $tHeight,
+            'tWidth' => $tDim['width'],
+            'tHeight' => $tDim['height'],
 
         ));
         $portControls = $pcView->setTemplate('portfolio/portfolio/portcontrol.phtml');
         $view->addChild($portControls, 'portcontrol');
-
         return $view;
     }
 

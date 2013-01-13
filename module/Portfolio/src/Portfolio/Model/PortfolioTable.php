@@ -3,15 +3,28 @@ namespace Portfolio\Model;
 
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Select;
+use Zend\Db\Adapter\Driver\ResultInterface;
+use Zend\Db\ResultSet\HydratingResultSet;
+use Zend\Stdlib\Hydrator\Reflection as ReflectionHydrator;
+use Doctrine\ORM\EntityManager;
 
 class PortfolioTable
 {
     protected $tableGateway;
     protected $clientTypeId;
+    protected $sm;
+    protected $em;
 
-    public function __construct(TableGateway $tableGateway)
+/*    public function __construct(TableGateway $tableGateway)
     {
         $this->tableGateway = $tableGateway;
+    }
+*/
+    public function __construct($sm)
+    {
+        $this->sm = $sm;
+        $this->em = $this->sm->get('Doctrine\ORM\EntityManager');
+
     }
 
     public function fetchAll()
@@ -20,11 +33,12 @@ class PortfolioTable
         return $resultSet;
     }
 
-    public function getPortfolio($id)
+    public function getPortfolioById($id)
     {
         $id = (int) $id;
-        $rowset = $this->tableGateway->select(array('id' => $id));
-        $row = $rowset->current();
+        //$rowset = $this->tableGateway->select(array('id' => $id));
+        $row = $this->em->find('Portfolio\Entity\Portfolio', $id);
+        //$row = $rowset->current();
         if(!$row) {
             throw new \Exception("Could not find row $id");
         }
@@ -33,31 +47,14 @@ class PortfolioTable
     }
 
     /* Get Portfolio Type */
-    public function getPortfolioByType($adapter, $client_type_id)
+    public function getPortfolioByClientType($client_type_id)
     {
 
-        $sm = $adapter;
-        $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-        //TODO: if null results, get from client_type_id 1
+        $sql = 'SELECT p FROM Portfolio\Entity\Portfolio p WHERE p.client_type_id = ' . $client_type_id . ' ORDER BY p.start_date DESC';
 
+        $query = $this->em->createQuery($sql);
+        $resultSet = $query->getResult();
 
-        $client_type_id = (int) $client_type_id;
-        $this->setClientTypeId($client_type_id);
-
-        //$rowset = $this->tableGateway->select(array('client_type_id' => $client_type_id));
-        /*
-        $portfolioTable = new TableGateway('portfolio', $dbAdapter);
-        $rowset = $portfolioTable->select(function(Select $select) {
-            $select->where('client_type_id', $this->getClientTypeId());
-            $select->order('start_date DESC');
-
-        });
-        */
-
-        $sql = "SELECT * FROM portfolio WHERE client_type_id = " . $client_type_id . " ORDER BY start_date DESC";
-        $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-        $stmt = $dbAdapter->createStatement($sql);
-        $resultSet = $stmt->execute();
         return $resultSet;
     }
 
@@ -80,10 +77,23 @@ class PortfolioTable
         return $resultSet;
     }
 
-    public function getPortfolioCountByType($client_type_id)
+    public function getPortfolioCountByClientType($client_type_id)
     {
         $client_type_id = (int) $client_type_id;
-        $rowset = $this->tableGateway->select(array('client_type_id' => $client_type_id));
+
+        $sql = 'SELECT p FROM Portfolio\Entity\Portfolio p WHERE p.client_type_id = ' . $client_type_id;
+
+        //$rowset = $em->find('Portfolio\Entity\Portfolio', $client_type_id);
+        //$rowset = $em->find('Portfolio\Entity\Portfolio', $client_type_id);
+
+        $query = $this->em->createQuery($sql);
+        $rowset = $query->getResult();
+       /*
+        $dbAdapter = $this->sm->get('Zend\Db\Adapter\Adapter');
+        $stmt = $dbAdapter->createStatement($sql);
+        $rowset = $stmt->execute();
+        */
+        //$rowset = $this->tableGateway->select(array('client_type_id' => $client_type_id));
 
         return count($rowset);
     }
