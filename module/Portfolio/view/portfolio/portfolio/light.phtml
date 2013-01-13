@@ -1,13 +1,17 @@
 <div>
-    <div>
-
-                    <?php echo $this->escapeHtml($client->name);?>
-                    <?php echo $this->escapeHtml($client->client_type_id);?>
-                    <div style="float:right; display:inline-block; top:0px;">
-                        <img src="http://www.gallantone.com/gfx/clients/<?php echo $this->escapeHtml($client->image);?>"/>
-                    </div>
-
-
+    <div class="lightScreenContent">
+                    <div style="font-weight:bold; font-size:12pt;"><?php echo $this->escapeHtml($client->name);?></div>
+                    <div style="font-style:italic; font-size:8pt;"><a target="toClient" href="<?php echo $this->escapeHtml($client->url);?>"><?php echo $this->escapeHtml($client->url) ?></a></div>
+                    <hr>
+                    <div style="font-size:9pt;">
+                        <strong>Technology:</strong>
+                        <?php echo $this->escapeHtml($client->tech);?></div>
+                    <hr>
+                    <div><?php //echo $this->escapeHtml($client->details);?></div>
+                    <div style="font-size:9pt;"><?php echo $client->thejob;?></div>
+    </div>
+    <div class="lightScreenImage">
+        <img width="300px" height="220px" src="/images/clients/<?php echo $this->escapeHtml($client->image);?>"/>
     </div>
 
 </div>

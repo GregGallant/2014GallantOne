@@ -15,21 +15,20 @@
                 </div>
              <?php $ccount = 0; ?>
             <?php foreach ($clients as $client) : ?>
-
                 <!-- The Screen -->
                 <div class="portScreenContent" id="portScreenContent<?php echo $ccount ?>">
 
                     <table width="730px; height:370px;">
                     <tr>
                     <td>
-                        <?php if ($client->client_type_id == 1) { echo $this->partial('portfolio/portfolio/learnmore.phtml', array('client'=>$client)); }
-                              elseif ($client->client_type_id !=4) { echo "<div style=\"display:inline-block; width:200px;\">".$client->name."</div>";  }
+                        <?php if ($client->getClientTypeId() == 1) { echo $this->partial('portfolio/portfolio/learnmore.phtml', array('client'=>$client)); }
+                              elseif ($client->getClientTypeId() !=4) { echo "<div style=\"display:inline-block; width:200px;\">".$client->getName()."</div>";  }
                         ?>
                     </td>
                     <td valign="middle">
                     <div style="padding-top:0px; width:400px; height:294px;  display:inline-block">
-                        <?php if ($client->id == 18) { $this->iWidth = '400px'; $this->iHeight='294px'; } ?>
-                        <img width="<?php echo $this->iWidth?>" height="<?php echo $this->iHeight ?>" style="border:1px outset #333333;" src="/images/clients/<?php echo $this->escapeHtml($client->image);?>"/>
+                        <?php if ($client->getId() == 18) { $this->iWidth = '400px'; $this->iHeight='294px'; } ?>
+                        <img width="<?php echo $this->iWidth?>" height="<?php echo $this->iHeight ?>" style="border:1px outset #333333;" src="/images/clients/<?php echo $this->escapeHtml($client->getImage());?>"/>
                     </div>
                     </td>
                     </tr>

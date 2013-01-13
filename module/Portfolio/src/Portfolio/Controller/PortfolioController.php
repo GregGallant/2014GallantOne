@@ -42,6 +42,8 @@ class PortfolioController extends AbstractActionController
         $tWidth = "80px";
         $tHeight = "50px";
 
+        $sm = $this->getServiceLocator();
+
         $id = (int) $this->params()->fromRoute('id', 0);
 
         if (!$id) {
@@ -50,7 +52,12 @@ class PortfolioController extends AbstractActionController
             ));
         }
 
-        $clientsByType = $this->getPortfolioTable()->getPortfolioByType($id);
+        $clientsByType = $this->getPortfolioTable()->getPortfolioByType($sm, $id);
+
+
+        // Hydrate the result set
+        $portfolioEntity = new HydratingResultSet(new ReflectionHydrator, $this->getPortfolioEntity());
+        $portfolioEntity->initialize($clientsByType);
 
         /* Total Row Count by portfolio type for the jQuery */
         $totalRows = $this->getPortfolioTable()->getPortfolioCountByType($id);
@@ -64,10 +71,9 @@ class PortfolioController extends AbstractActionController
             $iHeight="220px";
         }
 
-
         /* Handle the view */
         $view = new ViewModel(array(
-            'clients' => $clientsByType,
+            'clients' => $portfolioEntity,
             'totalContent' => $totalRows,
             'iWidth' => $iWidth,
             'iHeight' => $iHeight,
@@ -77,8 +83,7 @@ class PortfolioController extends AbstractActionController
 
 
         /* Handling database query for a proper ResultSet */
-        $sm = $this->getServiceLocator();
-        $cResultSet = $this->getPortfolioTable()->goResultSet($sm, $id);
+        $cResultSet = $this->getPortfolioTable()->getHydraPortfolioByType($sm, $id);
 
         // Hydrate the result set
         $portfolioEntity = new HydratingResultSet(new ReflectionHydrator, $this->getPortfolioEntity());
@@ -115,7 +120,8 @@ class PortfolioController extends AbstractActionController
             ));
         }
 
-        $clientsByType = $this->getPortfolioTable()->getPortfolioByType($id);
+        $sm = $this->getServiceLocator();
+        $clientsByType = $this->getPortfolioTable()->getPortfolioByType($id, $sm);
 
         /* Handle the view */
         $view = new ViewModel(array(
