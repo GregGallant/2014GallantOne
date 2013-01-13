@@ -38,20 +38,7 @@ return array(
                     ),
                 ),
             ),
-            // PortScreen Controls
-            'portcontrol' => array(
-                'type' => 'segment',
-                'options' => array(
-                    'route' => '/portcontrol[/:id]',
-                    'constraints' => array(
-                        'id' => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Portfolio\Controller\Portfolio',
-                        'action' => 'portcontrol',
-                    ),
-                ),
-            ),
+
         ),
     ),
 

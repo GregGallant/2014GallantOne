@@ -9,14 +9,12 @@ use Portfolio\Model\PortfolioTable;
 class PortfolioManager {
 
     protected $sm; // Service Locator
-    protected $em; // EntityManager
     protected $pDao;
 
 
-    public function __construct($sm, $em) {
-        $this->em = $em;
-        $this->sm = $sm;
-        $this->pDao = new PortfolioTable($this->sm);
+    public function __construct($sm)
+    {
+        $this->pDao = new PortfolioTable($sm);
     }
 
 
