@@ -1,9 +1,6 @@
 <?php
 namespace Portfolio;
 
-use Portfolio\Model;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Stdlib\Hydrator\Reflection as ReflectionHydrator;
 use Portfolio\Model\PortfolioTable;
 
 class PortfolioManager {
@@ -90,13 +87,6 @@ class PortfolioManager {
 
         return $thumbDim;
 
-    }
-
-
-    public function getPortfolioEntity() {
-        $sm = $this->getServiceLocator();
-        $this->portfolioEntity = $sm->get('Portfolio\Model\PortfolioEntity');
-        return $this->portfolioEntity;
     }
 
 }

@@ -3,9 +3,6 @@ namespace Portfolio\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Portfolio\Entity\Portfolio;
-use Zend\Db\Adapter\Driver\ResultInterface;
-use Doctrine\ORM\EntityManager;
 use Portfolio\PortfolioManager;
 
 class PortfolioController extends AbstractActionController

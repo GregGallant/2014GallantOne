@@ -1,11 +1,6 @@
 <?php
 namespace Portfolio\Model;
 
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Db\Sql\Select;
-use Zend\Db\Adapter\Driver\ResultInterface;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Stdlib\Hydrator\Reflection as ReflectionHydrator;
 use Doctrine\ORM\EntityManager;
 
 class PortfolioTable
