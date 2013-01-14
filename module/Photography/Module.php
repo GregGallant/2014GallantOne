@@ -1,8 +1,8 @@
 <?php
-namespace Portfolio;
+namespace Photography;
 
-use Portfolio\Entity\Portfolio;
-use Portfolio\Model\PortfolioTable;
+use Photography\Entity\Photography;
+use Photography\Model\PhotographyTable;
 use Zend\Db\ResultSet\ResultSet;
 
 class Module
@@ -26,8 +26,8 @@ class Module
     {
         return array(
             'factories' => array(
-                'Portfolio\Model\PortfolioEntity' => function($sm) {
-                    $pEntity = new PortfolioEntity();
+                'Photography\Entity\Photography' => function($sm) {
+                    $pEntity = new Photography();
                     return $pEntity;
                 },
             ),
