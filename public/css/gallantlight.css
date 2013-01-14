@@ -89,3 +89,18 @@ a.button {
     background: -moz-linear-gradient(top,  #7fda20,  #aad51a);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#74da20', endColorstr='#aad51a');
 }
+
+
+.portContentBox {
+    padding:30px 50px 30px 40px;
+    width:700px;
+    fixed-width:700px;
+    color:#333333;
+}
+
+.closeButtonPos {
+    clear:both;
+    position:relative;
+    left:300px;
+    font-size:14pt;
+}
