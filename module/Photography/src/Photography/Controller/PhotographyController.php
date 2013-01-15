@@ -21,6 +21,9 @@ class PhotographyController extends AbstractActionController
      */
     public function indexAction()
     {
+        // Initalize a new layout for GallantNYC.com
+        $this->layout('layout/layout.phtml');
+
 
         $view = new ViewModel(array());
         return $view;
