@@ -7,6 +7,7 @@ return array(
         'Album',
         'Portfolio',
         'Photography',
+        'Auth',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

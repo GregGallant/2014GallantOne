@@ -31,6 +31,16 @@ return array(
                     )
                 ),
             ),
+            'login' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/login',
+                    'defaults' => array(
+                        'controller' => 'Auth\Controller\Auth',
+                        'action' => 'login'
+                    )
+                ),
+            ),
             'portfolio' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
