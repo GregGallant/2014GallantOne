@@ -3,11 +3,14 @@
 $form = $this->form;
 
 $form->setAttribute('action', $this->url(
-    'login',
+
+    'register',
     array(
-        'action' => 'login',
+        'action' => 'register',
         'email' => $this->email,
         'password' => $this->password,
+        'first_name' => $this->first_name,
+        'last_name' => $this->last_name,
     )
 ));
 
@@ -15,7 +18,13 @@ $form->prepare();
 
 echo $this->form()->openTag($form);
 echo $this->formRow($form->get('email'));
+echo "<br/>";
 echo $this->formRow($form->get('password'));
+echo "<br/>";
+echo $this->formRow($form->get('first_name'));
+echo "<br/>";
+echo $this->formRow($form->get('last_name'));
+echo "<br/>";
 echo $this->formSubmit($form->get('submit'));
 echo $this->form()->closeTag();
 

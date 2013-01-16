@@ -5,7 +5,6 @@ use Portfolio\Model\PortfolioTable;
 
 class PortfolioManager {
 
-    protected $sm; // Service Locator
     protected $pDao;
 
 

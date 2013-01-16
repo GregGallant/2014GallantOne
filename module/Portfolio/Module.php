@@ -24,6 +24,7 @@ class Module
 
     public function getServiceConfig()
     {
+        /*
         return array(
             'factories' => array(
                 'Portfolio\Model\PortfolioEntity' => function($sm) {
@@ -32,6 +33,7 @@ class Module
                 },
             ),
         );
+            */
     }
 
     public function getConfig()

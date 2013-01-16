@@ -41,6 +41,16 @@ return array(
                     )
                 ),
             ),
+            'register' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/register',
+                    'defaults' => array(
+                        'controller' => 'Auth\Controller\Auth',
+                        'action' => 'register'
+                    )
+                ),
+            ),
             'portfolio' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(

@@ -18,11 +18,6 @@ class AlbumController extends AbstractActionController
     protected $em;
 
 
-    public function setEntityManager(EntityManager $em)
-    {
-        $this->em = $em;
-    }
-
     public function getEntityManager()
     {
         if (null === $this->em)

@@ -1,5 +1,5 @@
 <?php
-namespace Album;
+namespace Auth;
 
 return array(
     'controllers' => array(
@@ -21,12 +21,23 @@ return array(
                     ),
                 ),
             ),
+            'register' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/register',
+                    'constraints' => array( ),
+                    'defaults' => array(
+                        'controller' => 'Auth\Controller\Auth',
+                        'action' => 'register',
+                    ),
+                ),
+            ),
         ),
     ),
 
     'view_manager' => array(
         'template_path_stack' => array(
-            'album' => __DIR__ . '/../view',
+            'auth' => __DIR__ . '/../view',
         ),
     ),
 
