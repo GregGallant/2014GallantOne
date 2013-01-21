@@ -32,6 +32,17 @@ return array(
                     ),
                 ),
             ),
+            'success' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/success',
+                    'constraints' => array( ),
+                    'defaults' => array(
+                        'controller' => 'Auth\Controller\Auth',
+                        'action' => 'success',
+                    ),
+                ),
+            ),
         ),
     ),
 

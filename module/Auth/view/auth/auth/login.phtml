@@ -13,6 +13,12 @@ $form->setAttribute('action', $this->url(
 
 $form->prepare();
 
+if ($error != null)  {
+    echo $error;
+}
+
+var_dump($this->form->getMessages());
+
 echo $this->form()->openTag($form);
 echo $this->formRow($form->get('email'));
 echo $this->formRow($form->get('password'));

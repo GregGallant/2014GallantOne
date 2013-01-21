@@ -1,4 +1,5 @@
 <?php
+namespace Auth\Model;
 
 use Auth\Entity\User;
 use Doctrine\ORM\EntityManager;
@@ -15,13 +16,18 @@ class AuthTable
     public function getUserByEmail($email)
     {
 
-        $row = $this->em->find('Auth\Entity\User', $email);
+        $sql = "SELECT u FROM Auth\Entity\User u WHERE u.email = '".$email."'";
 
-        if(!$row) {
-            ; // fail authentication
-        }
+        $query = $this->em->createQuery($sql);
+        $resultSet = $query->getResult();
 
-        return $row;
+        //$row = $this->em->find('Auth\Entity\User', $email);
+
+       // if(!$row) {
+            ; // row not found
+        //}
+        return $resultSet;
+        //return $row;
 
     }
 

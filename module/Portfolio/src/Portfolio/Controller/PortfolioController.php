@@ -1,10 +1,17 @@
 <?php
+/**
+ * Programmed by Greg Gallant
+ */
 namespace Portfolio\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Portfolio\PortfolioManager;
 
+
+/**
+ * Web Software/design/logos etc portfolio class controller
+ */
 class PortfolioController extends AbstractActionController
 {
 
@@ -54,7 +61,7 @@ class PortfolioController extends AbstractActionController
             ));
         }
 
-        /* Get Dimensions of images and thumbnails on port screen */
+        /* Get Dimensions of images and thumbnails on port screen - throw it in a manager */
         $iDim = $this->pManager->getImageDimensions($id);
         $tDim = $this->pManager->getThumbDimensions($id);
 
@@ -65,6 +72,8 @@ class PortfolioController extends AbstractActionController
 
         /* Total Row Count by portfolio type for the jQuery */
         $totalRows = $this->pManager->getPortfolioCountByType($id);
+
+        /* Height width thumbnails, ugh... throw it in a manager */
 
         /* Handle the view */
         $view = new ViewModel(array(

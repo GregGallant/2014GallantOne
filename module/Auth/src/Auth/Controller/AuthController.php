@@ -6,17 +6,19 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\Authentication\Adapter\DbTable as AuthAdapter;
 //use Auth\Form\AuthForm;
+use Auth\AuthManager;
 use Zend\Http\Request;
 use Zend\Form\Form;
 use Auth\Form\UserForm;
+use Auth\Form\BaseUserForm;
 use Zend\Form\Annotation\AnnotationBuilder;
 use Auth\Entity\User;
 use Doctrine\ORM\EntityManager;
+use Zend\Authentication\Result;
 
 class AuthController extends AbstractActionController
 {
 
-    protected $authManager;
 
     public function getEntityManager()
     {
@@ -30,8 +32,6 @@ class AuthController extends AbstractActionController
     public function initAuthManager()
     {
 
-        $sm = $this->getServiceLocator();
-        $this->authManager = new AuthManager($sm);
     }
 
     public function loginAction()
@@ -42,26 +42,36 @@ class AuthController extends AbstractActionController
         $form->setBindOnValidate(false);
         */
 
+
+
         $builder = new AnnotationBuilder();
-        $form = $builder->createForm(new UserForm());
+        $form = $builder->createForm(new BaseUserForm());
 
         $form->get('submit')->setAttribute('value', 'Login');
 
         $request = $this->getRequest();
 
         if ($request->isPost()) {
-            //$userCreds = $this->authManager->getUser("username");
-            /*
-            $authAdapter = new AuthAdapter(
-                $dbAdapter, 'user', 'username', 'password'
-            );
-            */
+            $form->setData($request->getPost());
+
+
+            $authManager = new AuthManager($this->getServiceLocator());
+            $result = $authManager->authUser($form);
+
+            if ($result->isValid())  {
+                $someId = $result->getIdentity();
+                return $this->redirect()->toRoute('success');
+            }
+
+            /* Handle invalid login */
+            $messages = '';
+            foreach($result->getMessages() as $message) {
+                $messages .= $message."<br>";
+            }
+            return array( 'form' => $form, 'error' => $messages );
         }
 
-        //return new ViewModel(array());
-        return array(
-            'form' => $form,
-        );
+        return array( 'form' => $form, 'error' => null );
 
     }
 
@@ -71,6 +81,8 @@ class AuthController extends AbstractActionController
      */
     public function registerAction()
     {
+
+        /* Form Builder */
         $builder = new AnnotationBuilder();
         $form = $builder->createForm(new UserForm());
         $form->get('submit')->setAttribute('value', 'Register');
@@ -84,13 +96,12 @@ class AuthController extends AbstractActionController
 
             $user = new User();
             //$form->bind($user);
-           // $user->populate($form->getData());
 
-
+            /* Doctrine insert from entity */
             if ($form->isValid()) {
                 //$form->bindValues();
-                $user->populate($form->getData());
-                $this->getEntityManager()->persist($user);
+                $user->populate($form->getData());  // populate User object
+                $this->getEntityManager()->persist($user);  // persist object until flush (insert)
                 $this->getEntityManager()->flush();
 
                 return $this->redirect()->toRoute('login');
@@ -103,6 +114,11 @@ class AuthController extends AbstractActionController
 
     }
 
+    public function successAction() {
+
+        return new ViewModel();
+
+    }
 }
 
 /*

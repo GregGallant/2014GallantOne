@@ -21,7 +21,23 @@ class Module
 
     public function getServiceConfig()
     {
-        ;
+
+        return array(
+            'factories' => array(
+                /*
+                'authenticationadapter' => array(
+                    'odm_default' => array(
+                        'objectManager' => 'Doctrine\Common\Persistence\ObjectManager',
+                        //'objectManager' => 'doctrine.documentmanager.odm_default',
+                        'identityClass' => 'Auth\Entity\User',
+                        'identityProperty' => 'email',
+                        'credentialProperty' => 'password',
+                        'credentialCallable' => 'Auth\Entity\User::hashPassword'
+                    ),
+                ),
+                */
+            ),
+        );
     }
     public function getConfig()
     {

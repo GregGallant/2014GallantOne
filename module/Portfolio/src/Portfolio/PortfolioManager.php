@@ -42,6 +42,7 @@ class PortfolioManager {
 
 
     /**
+     * This is stupid, fix later
      * @param $id
      * @return array
      */

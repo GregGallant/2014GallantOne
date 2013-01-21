@@ -22,12 +22,17 @@ class Module
     }
 
 
+    /**
+     * todo: get rid of Zend's stupid tablegateway crap
+     *  implment auth config but rewire in doctrine in auth module --gg
+     *
+     * */
     public function getServiceConfig()
     {
         /*
         return array(
             'factories' => array(
-                'Portfolio\Model\PortfolioEntity' => function($sm) {
+                'Portfolio\Model\Portfolio' => function($sm) {
                     $pEntity = new PortfolioEntity();
                     return $pEntity;
                 },

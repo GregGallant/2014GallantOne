@@ -97,4 +97,12 @@ class User
         $this->setLastName($data['last_name']);
 
     }
+
+
+    public function populateLogin($data)
+    {
+        $this->setEmail($data['email']);
+        $this->setPassword($data['password']);
+
+    }
 }
