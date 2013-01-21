@@ -14,10 +14,7 @@ return array(
             'admin' => array(
                 'type' => 'segment',
                 'options' => array(
-                    'route' => '/admin[/:id]',
-                    'constraints' => array(
-                        'id' => '[0-9]+',
-                    ),
+                    'route' => '/admin',
                     'defaults' => array(
                         'controller' => 'Admin\Controller\Admin',
                         'action' => 'index',

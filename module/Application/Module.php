@@ -19,7 +19,7 @@ use Zend\Permissions\Acl\Resource\GenericResource as Resource;
 
 use Application\View\Helper as MyViewHelper;
 use Auth\AuthManager;
-use Zend\Session\Container;
+use Zend\Session\Container as Container;
 use Auth\Entity\User;
 
 class Module
@@ -27,6 +27,8 @@ class Module
     protected $ev;
 
     protected $sm;
+
+    protected $authManager;
 
     public function onBootstrap(MvcEvent $e)
     {
@@ -50,6 +52,7 @@ class Module
             return new MyViewHelper($e->getRouteMatch());
         });
 
+        /* Call predispatch */
         $eventManager = $e->getApplication()->getEventManager();
         $eventManager->attach( \Zend\Mvc\MvcEvent::EVENT_DISPATCH, array($this, 'preDispatch'), 100 );
     }
@@ -59,55 +62,24 @@ class Module
     public function preDispatch()
     {
         /* ACL Stuff here */
-
-        $authManager = new AuthManager($this->sm);
-
-        /* Retrieve Session */
-        $gUser = new Container('gUser');
-        if ($gUser->eName != null)
-        {
-            $userData = $authManager->getUserByEmail($gUser->eName);
-            $user = $userData[0];
-            $userRoleObj = $authManager->getUserRole($user);
-            $userRole = $userRoleObj[0]->getRole();
-
-        } else {
-            $userRole = 'guest';
-        }
-
-        $roleData = $authManager->getUserRoles();
-
         $mvh = new MyViewHelper($this->ev->getRouteMatch());
-
         $resource = $mvh->getController();
         $action = $mvh->getAction();
 
-        /* Create ACL */
-        $acl = new Acl();
 
-        foreach($roleData as $aRole) {
-            $acl->addRole(new Role($aRole->getRole()));
-        }
+        $this->authManager = new AuthManager($this->sm);
 
-        $acl->addRole(new Role($gUser->eName), $userRole);
+        /* Retrieve Session */
+        $gUser = new Container('gUser');
 
-        /* Create this resource and/or action */
-        $acl->addResource(new Resource($resource));
-        $acl->addResource(new Resource($action), $resource);
+        /* Get User Role info */
+        $userRole = $this->getUserRoleFromSession($gUser);
 
+        /* Get all the user roles */
+        $acl = $this->buildAclRoles();
 
-        /* What we are protecting */
-        if ($resource != 'Album\Controller\Album')
-        {
-            $acl->allow('guest', $resource);
-        } else {
-
-            if ($action == 'index') {
-                $acl->allow('guest', $resource);
-            } else {
-                $acl->deny('guest', $resource);
-            }
-        }
+        /* Build actual security */
+        $acl = $this->buildSecurity($acl, $gUser, $userRole);
 
         $acl->allow('admin', $resource);
 
@@ -141,5 +113,85 @@ class Module
                 ),
             ),
         );
+    }
+
+    /**
+     * get the user role info from the user
+     * @param Container $gUser
+     * @return string
+     */
+    private function getUserRoleFromSession(Container $gUser)
+    {
+        if ($gUser->eName != null)
+        {
+            $userData = $this->authManager->getUserByEmail($gUser->eName);
+            $user = $userData[0];
+            $userRoleObj = $this->authManager->getUserRole($user);
+            $userRole = $userRoleObj[0]->getRole();
+
+        } else {
+            $userRole = 'guest';
+        }
+
+        return $userRole;
+
+    }
+
+    private function buildAclRoles()
+    {
+        $roleData = $this->authManager->getUserRoles();
+
+        /* Create ACL */
+        $acl = new Acl();
+
+        foreach($roleData as $aRole) {
+            $acl->addRole(new Role($aRole->getRole()));
+        }
+
+        return $acl;
+
+    }
+
+    /**
+     * Build Security Conditions and protect
+     *
+     * @param Acl $acl
+     * @param Container $gUser
+     * @param $userRole
+     * @return \Zend\Permissions\Acl\Acl
+     */
+    private function buildSecurity(Acl $acl, Container $gUser, $userRole)
+    {
+
+        $mvh = new MyViewHelper($this->ev->getRouteMatch());
+        $resource = $mvh->getController();
+        $action = $mvh->getAction();
+
+        $acl->addRole(new Role($gUser->eName), $userRole);
+
+        /* Create this resource and/or action */
+        $acl->addResource(new Resource($resource));
+        $acl->addResource(new Resource($action), $resource);
+
+
+        /* What we are protecting */
+        //PSUEDO
+        /**
+         * Get a list of protected controllers from database
+         * build iterative for loop
+         */
+        if ($resource != 'Album\Controller\Album')
+        {
+            $acl->allow('guest', $resource);
+        } else {
+
+            if ($action == 'index') {
+                $acl->allow('guest', $resource);
+            } else {
+                $acl->deny('guest', $resource);
+            }
+        }
+
+        return $acl;
     }
 }
