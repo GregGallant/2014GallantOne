@@ -4,8 +4,6 @@ namespace Auth\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Zend\Authentication\Adapter\DbTable as AuthAdapter;
-//use Auth\Form\AuthForm;
 use Auth\AuthManager;
 use Zend\Http\Request;
 use Zend\Form\Form;
@@ -13,8 +11,8 @@ use Auth\Form\UserForm;
 use Auth\Form\BaseUserForm;
 use Zend\Form\Annotation\AnnotationBuilder;
 use Auth\Entity\User;
-use Doctrine\ORM\EntityManager;
 use Zend\Authentication\Result;
+use Zend\Session\Container;
 
 class AuthController extends AbstractActionController
 {
@@ -37,13 +35,7 @@ class AuthController extends AbstractActionController
     public function loginAction()
     {
 
-        /*
-        $form = new AuthForm();
-        $form->setBindOnValidate(false);
-        */
-
-
-
+        /* Build annotation style form */
         $builder = new AnnotationBuilder();
         $form = $builder->createForm(new BaseUserForm());
 
@@ -54,25 +46,28 @@ class AuthController extends AbstractActionController
         if ($request->isPost()) {
             $form->setData($request->getPost());
 
-
+            /* Authenticate User */
             $authManager = new AuthManager($this->getServiceLocator());
             $result = $authManager->authUser($form);
 
+            /* User is authenticated */
             if ($result->isValid())  {
-                $someId = $result->getIdentity();
+                $authUserEmail = $result->getIdentity();
+
+                $gUser = new Container('gUser');
+                $gUser->eName = $authUserEmail;
+
                 return $this->redirect()->toRoute('success');
             }
 
-            /* Handle invalid login */
-            $messages = '';
-            foreach($result->getMessages() as $message) {
-                $messages .= $message."<br>";
-            }
+            /* Handle invalid login messages */
+            $messages = $this->handleLoginMessages($result);
+
             return array( 'form' => $form, 'error' => $messages );
         }
 
+        // Get request handling
         return array( 'form' => $form, 'error' => null );
-
     }
 
     /**
@@ -116,30 +111,20 @@ class AuthController extends AbstractActionController
 
     public function successAction() {
 
-        return new ViewModel();
+        $gUser = new Container('gUser');
 
+        return new ViewModel(array('gUser' => $gUser->eName ));
+
+    }
+
+    private function handleLoginMessages($result)
+    {
+        $messages = '';
+        foreach($result->getMessages() as $message) {
+            $messages .= $message."<br>";
+        }
+
+        return $messages;
     }
 }
 
-/*
-
-use Zend\Authentication\Adapter\DbTable as AuthAdapter;
-
-// Configure the instance with constructor parameters...
-$authAdapter = new AuthAdapter($dbAdapter,
-                               'users',
-                               'username',
-                               'password'
-                               );
-
-// ...or configure the instance with setter methods
-$authAdapter = new AuthAdapter($dbAdapter);
-
-$authAdapter
-    ->setTableName('users')
-    ->setIdentityColumn('username')
-    ->setCredentialColumn('password')
-;
-
-
- */

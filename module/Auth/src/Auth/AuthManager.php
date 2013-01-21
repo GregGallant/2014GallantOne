@@ -58,9 +58,6 @@ class AuthManager
             //$result = $authService->authenticate($this->auth);
 
         }
-
-
-
     }
 
 
