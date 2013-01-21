@@ -7,6 +7,8 @@ use Album\Form\AlbumForm;
 use Album\Entity\Album;
 use Doctrine\ORM\EntityManager;
 
+
+
 class AlbumController extends AbstractActionController
 {
 
@@ -31,8 +33,14 @@ class AlbumController extends AbstractActionController
     public function indexAction()
     {
 
+
+        /* ACL Strategy */
+        //$allowed = $this->initACL();
+
+
         return new ViewModel(array(
             'albums' => $this->getEntityManager()->getRepository('Album\Entity\Album')->findAll(),
+            'acl' => $allowed,
         ));
     }
 
@@ -143,6 +151,33 @@ class AlbumController extends AbstractActionController
             $this->albumTable = $sm->get('Album\Entity\AlbumTable');
         }
         return $this->albumTable;
+    }
+
+    /* ACL Testing */
+    private function initACL()
+    {
+
+        $acl = new Acl();
+
+        $acl->addRole(new Role('guest'))
+            ->addRole(new Role('member'))
+            ->addRole(new Role('admin'));
+
+        $parents = array('guest', 'member', 'admin');
+        $asshole = array('guest');
+        $acl->addRole(new Role('dudeski'), $parents);
+
+        $acl->addResource(new Resource('Album'));
+
+        $acl->deny('guest', 'Album');
+        $acl->allow('member', 'Album');
+
+        if ($acl->isAllowed('dudeski', 'Album')) {
+            return "User is allowed";
+        }
+
+        return $this->redirect()->toRoute('login');
+
     }
 
 }

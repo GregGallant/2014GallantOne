@@ -5,6 +5,7 @@ $title = 'My albums';
 $this->headTitle($title);
 ?>
 <h3>A list of songs I need in order to code stronger...</h3>
+    <h6><?php //echo $this->myviewalias()->echoController() ?></h6>
 <p>
     <a href="<?php echo $this->url('album', array('action'=>'add'));?>">Add new album</a>
 </p>
