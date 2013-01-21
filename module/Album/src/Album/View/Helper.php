@@ -15,11 +15,22 @@ class Helper extends AbstractHelper
         $this->route = $route;
     }
 
-    public function echoController()
+    public function getController()
     {
         $controller = $this->route->getParam('controller', 'index');
         //echo $controller;
         return $controller;
     }
 
+    public function getAction()
+    {
+        $action = $this->route->getParam('action');
+        return $action;
+    }
+
+    public function getProtected()
+    {
+        $acl = $this->route->getParam('acl');
+        return $acl;
+    }
 }

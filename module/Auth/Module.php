@@ -42,39 +42,82 @@ class Module
         /* ACL Stuff here */
 
         $mvh = new MyViewHelper($this->ev->getRouteMatch());
-        var_dump($mvh->echoController());
+        var_dump($mvh->getProtected());
         //var_dump(new MyViewHelper($this->ev->getRouteMatch())->myviewalias()->echoController());
 
-        $resource = $mvh->echoController();
+        $resource = $mvh->getController();
+        $action = $mvh->getAction();
+
         $acl = new Acl();
 
-        $acl->addRole(new Role('guest'))
-            ->addRole(new Role('member'))
-            ->addRole(new Role('admin'));
+        $acl->addRole(new Role('guest'));
+        $acl->addRole(new Role('member'), 'guest');
+        $acl->addRole(new Role('admin'));
 
         $parents = array('guest', 'member', 'admin');
-        $asshole = array('guest');
+        $databaseUserLevel = array('member');
 
-        $acl->addRole(new Role('dudeski'), $asshole);
+        $acl->addRole(new Role('dudeskiSession'), $databaseUserLevel);
 
         $acl->addResource(new Resource($resource));
+        $acl->addResource(new Resource($action), $resource);
 
-        if ($resource == 'Application\Controller\Index' || $resource == 'Portfolio\Controller\Portfolio')
+
+        $acl->allow('dudeskiSession', array($resource), array($action));
+
+        //PSUEDOCODE
+        /*
+         *  Make a list of all protected controllers (modules)
+         *  Make a sublist of all protected actions of public controllers
+         *  Parse list into conditions
+         *  Read from database
+         */
+
+        $acl->deny(null, $resource);
+
+        if ($resource != 'Album\Controller\Album')
         {
             $acl->allow('guest', $resource);
         } else {
-            $acl->deny('guest', $resource);
+            /* All protected content */
+
+            // check protected modules
+
+            // check protected indexes
+
+            $acl->allow('guest', $resource);
+            //$acl->deny('guest', $resource);
         }
 
-        $acl->allow('member', $resource);
+        /* This is just testing */
+/*
+        if ($resource == 'Application\Controller\Index' || $resource == 'Portfolio\Controller\Portfolio')
+        {
+            $acl->allow('guest', $resource);
+        } else if ($resource == 'Album\Controller\Album') {
+            if($action == 'index') {
+                $acl->allow('guest', $resource);
+            } else if($action == 'delete') {
+                $acl->deny('member', $resource);
+            } else {
+                $acl->allow('member', $resource);
+                $acl->deny('guest', $resource);
+            }
+            //$acl->deny('guest', null, array('edit', 'add', 'delete'));
+            //$acl->allow('guest', null, 'index');
+        } else {
+            $acl->deny('guest', $resource);
+        }
+*/
+        //$acl->allow('member', $resource);
         $acl->allow('admin', $resource);
 
         /* Login acl */
-        if ($acl->isAllowed('dudeski', $resource)) {
+        if ($acl->isAllowed('dudeskiSession', $resource)) {
             return;
         }
 
-        if ($resource != "Auth\\Controller\\Auth") {
+        if ($resource != 'Auth\Controller\Auth') {
             $response = $this->ev->getResponse();
             $response->setHeaders( $response->getHeaders()->addHeaderLine('Location', '/login') );
             $response->setStatusCode(302);
