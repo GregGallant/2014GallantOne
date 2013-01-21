@@ -62,18 +62,20 @@ class Module
 
         $authManager = new AuthManager($this->sm);
 
+        /* Retrieve Session */
         $gUser = new Container('gUser');
         if ($gUser->eName != null)
         {
             $userData = $authManager->getUserByEmail($gUser->eName);
             $user = $userData[0];
+            $userRoleObj = $authManager->getUserRole($user);
+            $userRole = $userRoleObj[0]->getRole();
 
-            $userRole='guest';  // query
-            //$userRole = $authManager->getUserRole($user);
         } else {
             $userRole = 'guest';
         }
 
+        $roleData = $authManager->getUserRoles();
 
         $mvh = new MyViewHelper($this->ev->getRouteMatch());
         var_dump($userRole);
@@ -81,72 +83,37 @@ class Module
         $resource = $mvh->getController();
         $action = $mvh->getAction();
 
+        /* Create ACL */
         $acl = new Acl();
 
-        $acl->addRole(new Role('guest'));
-        $acl->addRole(new Role('member'), 'guest');
-        $acl->addRole(new Role('admin'));
+        foreach($roleData as $aRole) {
+            $acl->addRole(new Role($aRole->getRole()));
+        }
 
-        $parents = array('guest', 'member', 'admin');
-        $databaseUserLevel = array('guest');
+        $acl->addRole(new Role($gUser->eName), $userRole);
 
-        $acl->addRole(new Role('dudeskiSession'), $databaseUserLevel);
-
+        /* Create this resource and/or action */
         $acl->addResource(new Resource($resource));
         $acl->addResource(new Resource($action), $resource);
 
 
-        $acl->allow('dudeskiSession', array($resource), array($action));
-
-        //PSUEDOCODE
-        /*
-         *  Make a list of all protected controllers (modules)
-         *  Make a sublist of all protected actions of public controllers
-         *  Parse list into conditions
-         *  Read from database
-         */
-
-        $acl->deny(null, $resource);
-
+        /* What we are protecting */
         if ($resource != 'Album\Controller\Album')
         {
             $acl->allow('guest', $resource);
         } else {
-            /* All protected content */
 
-            // check protected modules
-
-            // check protected indexes
-
-            //$acl->allow('guest', $resource);
-            $acl->deny('guest', $resource);
+            if ($action == 'index') {
+                $acl->allow('guest', $resource);
+            } else {
+                $acl->deny('guest', $resource);
+            }
         }
 
-        /* This is just testing */
-        /*
-                if ($resource == 'Application\Controller\Index' || $resource == 'Portfolio\Controller\Portfolio')
-                {
-                    $acl->allow('guest', $resource);
-                } else if ($resource == 'Album\Controller\Album') {
-                    if($action == 'index') {
-                        $acl->allow('guest', $resource);
-                    } else if($action == 'delete') {
-                        $acl->deny('member', $resource);
-                    } else {
-                        $acl->allow('member', $resource);
-                        $acl->deny('guest', $resource);
-                    }
-                    //$acl->deny('guest', null, array('edit', 'add', 'delete'));
-                    //$acl->allow('guest', null, 'index');
-                } else {
-                    $acl->deny('guest', $resource);
-                }
-        */
-        //$acl->allow('member', $resource);
         $acl->allow('admin', $resource);
 
         /* Login acl */
-        if ($acl->isAllowed('dudeskiSession', $resource)) {
+        if ($acl->isAllowed($gUser->eName, $resource)) {
             return;
         }
 

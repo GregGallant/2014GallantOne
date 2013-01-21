@@ -4,6 +4,8 @@ namespace Auth\Model;
 use Auth\Entity\User;
 use Auth\Entity\AclRole;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\NativeQuery;
+use Doctrine\ORM\Query\ResultSetMapping;
 
 class AuthTable
 {
@@ -32,10 +34,6 @@ class AuthTable
 
     }
 
-    public function saveUser(User $user) {
-        ;
-    }
-
     /**
      * Returns the ACL Role of the specified user
      * @param $email
@@ -43,15 +41,28 @@ class AuthTable
      */
     public function getUserRoleByEmail($email)
     {
-        //$sql = 'select r.role FROM Auth\Entity\User u, Auth\Entity\AclRole r WHERE u.acl_role_id = r.id AND u.email = "'.$email.'"';
 
-        $sql = 'select r.role FROM Auth\Entity\User u, Auth\Entity\AclRole r
-        JOIN u.acl_role_id r
-        WHERE u.email = "'.$email.'"';
+        // DQL is seriously stupid.  Map an actual SQL statement the way Hibernate does, please.
+        $rsm = new ResultSetMapping;
+        $rsm->addEntityResult('Auth\Entity\User', 'u');
+        $rsm->addEntityResult('Auth\Entity\AclRole', 'r');
+        $rsm->addFieldResult('r', 'id', 'id');
+        $rsm->addFieldResult('r', 'role', 'role');
 
-        $query = $this->em->createQuery($sql);
+        $sql = 'select r.* FROM user u, acl_role r WHERE u.acl_role_id = r.id AND u.email = "'.$email.'"';
+
+        $query = $this->em->createNativeQuery($sql, $rsm);
+
         $resultSet = $query->getResult();
 
         return $resultSet;
+    }
+
+    public function getAclRoles()
+    {
+        $sql = "SELECT r FROM Auth\Entity\AclRole r";
+
+        $query = $this->em->createQuery($sql);
+        return $query->getResult();
     }
 }

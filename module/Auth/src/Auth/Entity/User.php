@@ -3,6 +3,7 @@
 namespace Auth\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Auth\Entity\AclRole;
 
 /**
  * @ORM\Entity
@@ -49,11 +50,10 @@ class User
     protected $acl_role_id;
 
     /**
-    * ORM\OneToOne(targetEntity="AclRole")
-    * ORM\JoinColumn(name="acl_role_id", referencedColumnName="id")
-    */
+     * ORM\OneToOne(targetEntity="AclRole", fetch="LAZY")
+     * ORM\JoinColumn(name="acl_role_id", referencedColumnName="id")
+     */
     protected $acl_role;
-
 
     public function setEmail($email)
     {
@@ -126,6 +126,7 @@ class User
     }
 
 
+
     public function populate($data)
     {
         $this->setEmail($data['email']);
@@ -145,6 +146,16 @@ class User
         $this->setEmail($data['email']);
         $this->setPassword($data['password']);
 
+    }
+
+    public function setAclRole($acl_role)
+    {
+        $this->acl_role = $acl_role;
+    }
+
+    public function getAclRole()
+    {
+        return $this->acl_role;
     }
 
 

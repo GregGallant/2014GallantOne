@@ -22,11 +22,6 @@ class AuthManager
         $this->dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
     }
 
-    public function authenticate()
-    {
-
-    }
-
     public function getUser(User $user)
     {
         return $this->authDao->getUserByEmail($user->getEmail());
@@ -66,6 +61,11 @@ class AuthManager
     public function getUserRole(User $user)
     {
         return $this->authDao->getUserRoleByEmail($user->getEmail());
+    }
+
+    public function getUserRoles()
+    {
+        return $this->authDao->getAclRoles();
     }
 
 }
