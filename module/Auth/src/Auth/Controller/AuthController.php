@@ -92,6 +92,9 @@ class AuthController extends AbstractActionController
                 //$form->bindValues();
                 $user->populate($form->getData());  // populate User object
 
+                $user->setStatus(1); // Active User
+                $user->setAclRoleId(1); // guest
+
 
                 $this->getEntityManager()->persist($user);  // persist object until flush (insert)
                 $this->getEntityManager()->flush();
