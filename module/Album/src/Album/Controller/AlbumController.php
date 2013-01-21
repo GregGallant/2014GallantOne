@@ -40,7 +40,6 @@ class AlbumController extends AbstractActionController
 
         return new ViewModel(array(
             'albums' => $this->getEntityManager()->getRepository('Album\Entity\Album')->findAll(),
-            'acl' => $allowed,
         ));
     }
 

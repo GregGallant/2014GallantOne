@@ -1,6 +1,6 @@
 <?php
 
-namespace Album\View;
+namespace Application\View;
 
 use Zend\Mvc\Controller\Plugin\PostRedirectGet as PostRedirectGet;
 use Zend\View\Helper\AbstractHelper;

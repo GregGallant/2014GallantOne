@@ -17,7 +17,7 @@ use Zend\Permissions\Acl\Acl;
 use Zend\Permissions\Acl\Role\GenericRole as Role;
 use Zend\Permissions\Acl\Resource\GenericResource as Resource;
 
-use Album\View\Helper as MyViewHelper; // TODO: Put this in the application module
+use Application\View\Helper as MyViewHelper;
 use Auth\AuthManager;
 use Zend\Session\Container;
 use Auth\Entity\User;
@@ -78,7 +78,6 @@ class Module
         $roleData = $authManager->getUserRoles();
 
         $mvh = new MyViewHelper($this->ev->getRouteMatch());
-        var_dump($userRole);
 
         $resource = $mvh->getController();
         $action = $mvh->getAction();
