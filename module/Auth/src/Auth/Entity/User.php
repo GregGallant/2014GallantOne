@@ -38,6 +38,22 @@ class User
      */
     protected $last_name;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $status;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $acl_role_id;
+
+    /**
+    * ORM\OneToOne(targetEntity="AclRole")
+    * ORM\JoinColumn(name="acl_role_id", referencedColumnName="id")
+    */
+    protected $acl_role;
+
 
     public function setEmail($email)
     {
@@ -89,12 +105,37 @@ class User
         return $this->password;
     }
 
+    public function setAclRoleId($acl_role_id)
+    {
+        $this->acl_role_id = $acl_role_id;
+    }
+
+    public function getAclRoleId()
+    {
+        return $this->acl_role_id;
+    }
+
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+
     public function populate($data)
     {
         $this->setEmail($data['email']);
         $this->setPassword($data['password']);
         $this->setFirstName($data['first_name']);
         $this->setLastName($data['last_name']);
+
+        // do checks for registration
+        $this->setStatus($data['status']);
+        $this->setAclRoleId($data['acl_role_id']);
 
     }
 
@@ -105,4 +146,6 @@ class User
         $this->setPassword($data['password']);
 
     }
+
+
 }

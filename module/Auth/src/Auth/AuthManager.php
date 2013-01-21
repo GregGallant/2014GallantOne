@@ -32,6 +32,11 @@ class AuthManager
         return $this->authDao->getUserByEmail($user->getEmail());
     }
 
+    public function getUserByEmail($email)
+    {
+        return $this->authDao->getUserByEmail($email);
+    }
+
     public function setUser(User $user)
     {
         $this->authDao->saveUser($user);
@@ -58,5 +63,9 @@ class AuthManager
         }
     }
 
+    public function getUserRole(User $user)
+    {
+        return $this->authDao->getUserRoleByEmail($user->getEmail());
+    }
 
 }
