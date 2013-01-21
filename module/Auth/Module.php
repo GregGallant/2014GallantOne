@@ -45,6 +45,7 @@ class Module
         var_dump($mvh->echoController());
         //var_dump(new MyViewHelper($this->ev->getRouteMatch())->myviewalias()->echoController());
 
+        $resource = $mvh->echoController();
         $acl = new Acl();
 
         $acl->addRole(new Role('guest'))
@@ -53,19 +54,34 @@ class Module
 
         $parents = array('guest', 'member', 'admin');
         $asshole = array('guest');
+
         $acl->addRole(new Role('dudeski'), $asshole);
 
-        $acl->addResource(new Resource('Album'));
+        $acl->addResource(new Resource($resource));
 
-        $acl->deny('guest', 'Album');
-        $acl->allow('member', 'Album');
+        if ($resource == 'Application\Controller\Index' || $resource == 'Portfolio\Controller\Portfolio')
+        {
+            $acl->allow('guest', $resource);
+        } else {
+            $acl->deny('guest', $resource);
+        }
 
-        //if ($acl->isAllowed('dudeski', 'Album')) {
-            //return;
-        //}
+        $acl->allow('member', $resource);
+        $acl->allow('admin', $resource);
 
+        /* Login acl */
+        if ($acl->isAllowed('dudeski', $resource)) {
+            return;
+        }
 
-        //return $this->redirect()->toRoute('login');
+        if ($resource != "Auth\\Controller\\Auth") {
+            $response = $this->ev->getResponse();
+            $response->setHeaders( $response->getHeaders()->addHeaderLine('Location', '/login') );
+            $response->setStatusCode(302);
+            $response->sendHeaders();
+            exit();
+        }
+
     }
 
     public function getAutoloaderConfig()

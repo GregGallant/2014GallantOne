@@ -2,7 +2,7 @@
 
 namespace Album\View;
 
-
+use Zend\Mvc\Controller\Plugin\PostRedirectGet as PostRedirectGet;
 use Zend\View\Helper\AbstractHelper;
 
 class Helper extends AbstractHelper
@@ -18,6 +18,8 @@ class Helper extends AbstractHelper
     public function echoController()
     {
         $controller = $this->route->getParam('controller', 'index');
-        echo $controller;
+        //echo $controller;
+        return $controller;
     }
+
 }
