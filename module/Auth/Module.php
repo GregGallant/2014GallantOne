@@ -2,8 +2,23 @@
 
 namespace Auth;
 
+
 class Module
 {
+
+    /* PreDispatching */
+    public function onBootstrap( $e )
+    {
+        $eventManager = $e->getApplication()->getEventManager();
+        $eventManager->attach( \Zend\Mvc\MvcEvent::EVENT_DISPATCH, array($this, 'preDispatch'), 100 );
+    }
+
+    public function preDispatch()
+    {
+        //var_dump("Shiza");
+        /* ACL Stuff here */
+    }
+
     public function getAutoloaderConfig()
     {
         return array(

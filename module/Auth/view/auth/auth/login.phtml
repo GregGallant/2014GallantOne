@@ -1,3 +1,4 @@
+<h1>Login</h1>
 <?php
 
 $form = $this->form;
@@ -16,8 +17,6 @@ $form->prepare();
 if ($error != null)  {
     echo $error;
 }
-
-var_dump($this->form->getMessages());
 
 echo $this->form()->openTag($form);
 echo $this->formRow($form->get('email'));

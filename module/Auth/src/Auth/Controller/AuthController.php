@@ -27,11 +27,6 @@ class AuthController extends AbstractActionController
         return $this->em;
     }
 
-    public function initAuthManager()
-    {
-
-    }
-
     public function loginAction()
     {
 

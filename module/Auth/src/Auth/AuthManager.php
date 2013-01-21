@@ -46,7 +46,6 @@ class AuthManager
             $user->populateLogin($form->getData());
 
             $this->auth = new AuthAdapter($this->dbAdapter, 'user', 'email', 'password');
-            //$authService = new AuthenticationService();
 
             $this->auth->setIdentity($user->getEmail());
             $this->auth->setCredential($user->getPassword());
@@ -55,29 +54,9 @@ class AuthManager
             $result = $this->auth->authenticate();
 
             return $result;
-            //$result = $authService->authenticate($this->auth);
 
         }
     }
 
 
-    /* Primary authentication function */
-    /*
-    public function authenticateUser()
-    {
-
-        // Get the auth adapter
-
-        $adapter = $this->getAuthAdapter();
-
-    }
-
-    private function getAuthAdapter()
-    {
-        $dbAdapter = Zend_Db_Table::getDefaultAdapter();
-
-        $authAdapter = new AuthAdapter($dbAdapter, 'users');
-        //$authAdapter = new Zend_Auth_Adapter_DbTable($dbAdapter);
-    }
-    */
 }
