@@ -81,6 +81,26 @@ return array(
                     )
                 ),
             ),
+            'admin' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/admin',
+                    'defaults' => array(
+                        'controller' => 'Admin\Controller\Admin',
+                        'action' => 'index'
+                    )
+                ),
+            ),
+            'clients' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/clients',
+                    'defaults' => array(
+                        'controller' => 'Clients\Controller\Clients',
+                        'action' => 'index'
+                    )
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them

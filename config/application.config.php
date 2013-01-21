@@ -8,6 +8,8 @@ return array(
         'Portfolio',
         'Photography',
         'Auth',
+        'Admin',
+        'Clients'
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
