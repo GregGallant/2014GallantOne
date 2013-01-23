@@ -69,14 +69,20 @@ class Module
 
         $this->authManager = new AuthManager($this->sm);
 
-        /* Retrieve Session */
+        /* Retrieve Empty Session */
         $gUser = new Container('gUser');
+        //$gUser->offsetUnset('eName');
 
-        /* Get User Role info */
-        $userRole = $this->getUserRoleFromSession($gUser);
+        if (is_null($gUser->eName))   {
+            $userRole = 'guest';
+        } else {
+            /* Get User Role info */
+            $userRole = $this->getUserRoleFromSession($gUser);
+        }
 
         /* Get all the user roles */
         $acl = $this->buildAclRoles();
+
 
         /* Build actual security */
         $acl = $this->buildSecurity($acl, $gUser, $userRole);
@@ -84,7 +90,13 @@ class Module
         $acl->allow('admin', $resource);
 
         /* Login acl */
+        /* Guest User */
         if ($acl->isAllowed($gUser->eName, $resource)) {
+            return;
+        }
+
+        /* Not logged in User */
+        if ($acl->isAllowed('__nullUser', $resource)) {
             return;
         }
 
@@ -166,8 +178,11 @@ class Module
         $mvh = new MyViewHelper($this->ev->getRouteMatch());
         $resource = $mvh->getController();
         $action = $mvh->getAction();
-
-        $acl->addRole(new Role($gUser->eName), $userRole);
+        if (is_null($gUser->eName)) {
+            $acl->addRole(new Role('__nullUser'), $userRole);
+        } else {
+            $acl->addRole(new Role($gUser->eName), $userRole);
+        }
 
         /* Create this resource and/or action */
         $acl->addResource(new Resource($resource));
@@ -183,6 +198,7 @@ class Module
         if ($resource != 'Album\Controller\Album')
         {
             $acl->allow('guest', $resource);
+            $acl->allow('__nullUser', $resource);
         } else {
 
             if ($action == 'index') {
