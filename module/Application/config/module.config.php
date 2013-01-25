@@ -136,8 +136,10 @@ return array(
     'service_manager' => array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
+            //'viewhelpermanager' => 'Application\View\Helper',
         ),
     ),
+    //'viewhelpermanager' => array(),
     'translator' => array(
         'locale' => 'en_US',
         'translation_file_patterns' => array(
@@ -149,6 +151,10 @@ return array(
         ),
     ),
     'controllers' => array(
+        'factories' => array(
+            //'viewhelpermanager' => 'Application\View\Helper',
+            'viewHelper' => 'Application\View\Helper',
+        ),
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController'
         ),

@@ -21,8 +21,10 @@ use Application\View\Helper as MyViewHelper;
 use Auth\AuthManager;
 use Zend\Session\Container as Container;
 use Auth\Entity\User;
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 
-class Module
+
+class Module implements AutoloaderProviderInterface
 {
     protected $ev;
 
@@ -54,15 +56,17 @@ class Module
 
         /* Call predispatch */
         $eventManager = $e->getApplication()->getEventManager();
-        $eventManager->attach( \Zend\Mvc\MvcEvent::EVENT_DISPATCH, array($this, 'preDispatch'), 100 );
+        //$eventManager->attach('\Zend\Mvc\MvcEvent::EVENT_DISPATCH', array($this, 'preDispatch'), 100 );
+        $eventManager->attach('dispatch', array($this, 'preDispatch'), 100 );
+        //$this->preDispatch();
     }
 
 
 
-    public function preDispatch()
+    public function preDispatch($e)
     {
         /* ACL Stuff here */
-        $mvh = new MyViewHelper($this->ev->getRouteMatch());
+        $mvh = new MyViewHelper($e->getRouteMatch());
         $resource = $mvh->getController();
         $action = $mvh->getAction();
 
@@ -73,7 +77,8 @@ class Module
         $gUser = new Container('gUser');
         //$gUser->offsetUnset('eName');
 
-        if (is_null($gUser->eName))   {
+        if (!$gUser->offsetExists('eName'))
+        {
             $userRole = 'guest';
         } else {
             /* Get User Role info */
@@ -81,22 +86,33 @@ class Module
         }
 
         /* Get all the user roles */
-        $acl = $this->buildAclRoles();
+        $roleData = $this->authManager->getUserRoles();
+        if(empty($roleData)) {
+            var_dump('ERROR! ACL TABLE IS EMPTY!');
+            return; // TODO: Handle this Exception - Create your own Exception mappings
+        } else {
+            $acl = $this->buildAclRoles($roleData);
+        }
 
+            /* Build actual security */
+        $resource = $mvh->getController();
+        $action = $mvh->getAction();
 
-        /* Build actual security */
-        $acl = $this->buildSecurity($acl, $gUser, $userRole);
+        if ($gUser->offsetExists('eName') != false)
+        {
+            $userSession = $gUser->offsetGet('eName');
+            $acl->addRole(new Role($userSession), $userRole);
+        } else {
+            $userSession = 'guest';
+        }
+
+        $acl = $this->buildSecurity($resource, $action, $acl);
 
         $acl->allow('admin', $resource);
 
         /* Login acl */
         /* Guest User */
-        if ($acl->isAllowed($gUser->eName, $resource)) {
-            return;
-        }
-
-        /* Not logged in User */
-        if ($acl->isAllowed('__nullUser', $resource)) {
+        if ($acl->isAllowed($userSession, $resource)) {
             return;
         }
 
@@ -149,9 +165,8 @@ class Module
 
     }
 
-    private function buildAclRoles()
+    private function buildAclRoles($roleData)
     {
-        $roleData = $this->authManager->getUserRoles();
 
         /* Create ACL */
         $acl = new Acl();
@@ -168,21 +183,11 @@ class Module
      * Build Security Conditions and protect
      *
      * @param Acl $acl
-     * @param Container $gUser
-     * @param $userRole
      * @return \Zend\Permissions\Acl\Acl
      */
-    private function buildSecurity(Acl $acl, Container $gUser, $userRole)
+    private function buildSecurity($resource, $action, Acl $acl)
     {
 
-        $mvh = new MyViewHelper($this->ev->getRouteMatch());
-        $resource = $mvh->getController();
-        $action = $mvh->getAction();
-        if (is_null($gUser->eName)) {
-            $acl->addRole(new Role('__nullUser'), $userRole);
-        } else {
-            $acl->addRole(new Role($gUser->eName), $userRole);
-        }
 
         /* Create this resource and/or action */
         $acl->addResource(new Resource($resource));
@@ -198,7 +203,6 @@ class Module
         if ($resource != 'Album\Controller\Album')
         {
             $acl->allow('guest', $resource);
-            $acl->allow('__nullUser', $resource);
         } else {
 
             if ($action == 'index') {
