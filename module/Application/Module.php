@@ -150,7 +150,7 @@ class Module implements AutoloaderProviderInterface
      */
     private function getUserRoleFromSession(Container $gUser)
     {
-        if ($gUser->eName != null)
+        if (!$gUser->offsetExists("eName"))
         {
             $userData = $this->authManager->getUserByEmail($gUser->eName);
             $user = $userData[0];

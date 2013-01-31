@@ -8,6 +8,10 @@ use Auth\Model\AuthTable;
 use Zend\Authentication\Result;
 use Zend\Authentication\Adapter\DbTable as AuthAdapter;
 
+define("ENC_ALGORITHM", MCRYPT_BLOWFISH);
+define("ENC_MODE", MCRYPT_MODE_CFB);
+
+
 class AuthManager
 {
 
@@ -49,12 +53,13 @@ class AuthManager
             $saltData = $this->authDao->getSaltByEmail($user->getEmail());
             $salt = $saltData[0]->getSalt();
             $encPass = $saltData[0]->getPassword();
+            $ivy = $saltData[0]->getIvy();
 
             $this->auth = new AuthAdapter($this->dbAdapter, 'user', 'email', 'password');
 
             $this->auth->setIdentity($user->getEmail());
 
-            $password = $this->decryptPassword($user, $salt, $encPass);
+            $password = $this->decryptPassword($user, $salt, $encPass, $ivy);
 
             $this->auth->setCredential($password);
 
@@ -77,23 +82,41 @@ class AuthManager
     }
 
 
-    public function encryptPassword($user)
+    public function encryptPassword(User $user)
     {
         $uPassword = $user->getPassword();
 
-        $algorithm = MCRYPT_BLOWFISH;
-        $mode = MCRYPT_MODE_CFB;
+        //$algorithm = MCRYPT_BLOWFISH;
+        //$mode = MCRYPT_MODE_CFB;
         $salt = $this->generateSalt();
         $user->setSalt($salt);
 
-        $iv_size = mcrypt_get_iv_size($algorithm, $mode);
+        $iv_size = mcrypt_get_iv_size(ENC_ALGORITHM, ENC_MODE);
         $iv = mcrypt_create_iv($iv_size, MCRYPT_DEV_URANDOM);
-        $iv = "GregGallant";
-        $mpass = trim(base64_encode(mcrypt_encrypt($algorithm, $salt, $uPassword, $mode, $iv)));
+
+        $user->setIvy(base64_encode($iv));
+
+        $mpass = trim(base64_encode(mcrypt_encrypt(ENC_ALGORITHM, $salt, $uPassword, ENC_MODE, $iv)));
         $user->setPassword($mpass);
 
         return $user;
     }
+
+    private function encodePassword()
+    {
+
+    }
+
+    private function decryptPassword(User $user, $salt, $encPass, $ivy)
+    {
+        $iv_size = mcrypt_get_iv_size(ENC_ALGORITHM, ENC_MODE);
+        $stored_iv = base64_decode($ivy);
+        $iv =  mcrypt_create_iv($iv_size, (int) $stored_iv);
+        $password = trim(base64_encode(mcrypt_encrypt(ENC_ALGORITHM, $salt, $user->getPassword(), ENC_MODE, $stored_iv)));
+        return $password;
+
+    }
+
 
     private function generateSalt()
     {
@@ -120,26 +143,5 @@ class AuthManager
         }
 
         return $password;
-    }
-
-    private function decryptPassword(User $user, $salt, $encPass)
-    {
-
-
-        $algorithm = MCRYPT_BLOWFISH;
-        $mode = MCRYPT_MODE_CFB;
-        $iv_size = mcrypt_get_iv_size($algorithm, $mode);
-        $iv = mcrypt_create_iv($iv_size, MCRYPT_DEV_URANDOM);
-        // Get iv
-        $ivPassword = mcrypt_decrypt($algorithm, $salt, base64_decode($encPass), $mode, str_pad('', $iv_size));
-        var_dump($salt);
-        $db_iv = substr($ivPassword, 0, $iv_size);
-        var_dump($db_iv);
-        $iv = "GregGallant";
-        //$dePass = substr(rtrim($ivPassword, "\0"), $iv_size);
-        $password = trim(base64_encode(mcrypt_encrypt($algorithm, $salt, $user->getPassword(), $mode, $iv)));
-        var_dump($password);
-        return $password;
-
     }
 }

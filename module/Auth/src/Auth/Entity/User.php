@@ -36,6 +36,11 @@ class User
     /**
      * @ORM\Column(type="string")
      */
+    protected $ivy;
+
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $first_name;
 
     /**
@@ -184,7 +189,7 @@ class User
         $this->setPassword($data['password']);
         $this->setFirstName($data['first_name']);
         $this->setLastName($data['last_name']);
-
+        $this->setIvy($data['ivy']);
         // do checks for registration
         $this->setStatus($data['status']);
         $this->setAclRoleId($data['acl_role_id']);
@@ -207,6 +212,16 @@ class User
     public function getAclRole()
     {
         return $this->acl_role;
+    }
+
+    public function setIvy($ivy)
+    {
+        $this->ivy = $ivy;
+    }
+
+    public function getIvy()
+    {
+        return $this->ivy;
     }
 
 

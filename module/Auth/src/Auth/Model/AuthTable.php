@@ -64,6 +64,7 @@ class AuthTable
         $rsm->addEntityResult('Auth\Entity\User', 'u');
         $rsm->addFieldResult('u', 'id', 'id');
         $rsm->addFieldResult('u', 'salt', 'salt');
+        $rsm->addFieldResult('u', 'ivy', 'ivy');
         $rsm->addFieldResult('u', 'password', 'password');
 
         $sql = 'select u.* FROM user u WHERE u.email = "'.$email.'"';
