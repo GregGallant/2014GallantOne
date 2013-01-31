@@ -3,4 +3,14 @@ LICENSE.txt
 README.txt
 demos/
 extras/documentation
-
+thumbsdb
+vendor/*
+artisan
+composer.json
+.env.local.php
+.env.development.php
+.env.php
+.module-cache
+GallantAPI/config/*.php
+GallantAPI/storage
+GallantOne/ideology

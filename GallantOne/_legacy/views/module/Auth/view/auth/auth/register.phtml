@@ -1,0 +1,50 @@
+<div class="formWrap">
+    <div class="formTitleWrap">
+        <h1>Register</h1>
+    </div>
+<?php
+
+$register_form = $this->register_form;
+
+$register_form->setAttribute('action', $this->url(
+
+    'register',
+    array(
+        'action' => 'register',
+        'email' => $this->email,
+        'password' => $this->password,
+        'confirm_password' => $this->confirm_password,
+        'first_name' => $this->first_name,
+        'last_name' => $this->last_name,
+    )
+));
+
+$register_form->prepare();
+
+if (isset($exception)) {
+   echo "<p>".$exception."<p>";
+}
+?>
+
+
+<?php
+echo $this->form()->openTag($register_form);
+echo $this->formRow($register_form->get('first_name'));
+echo "<br/>";
+echo $this->formRow($register_form->get('last_name'));
+echo "<br/>";
+echo $this->formRow($register_form->get('email'));
+echo "<br/>";
+echo $this->formRow($register_form->get('password'));
+echo "<br/>";
+echo $this->formRow($register_form->get('confirm_password'));
+echo "<br/>";
+echo "</div>";
+?>
+<div class="formTitleWrap">
+<?php
+echo $this->formSubmit($register_form->get('submit'));
+echo $this->form()->closeTag();
+
+?>
+</div>
