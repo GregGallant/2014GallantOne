@@ -7,15 +7,7 @@ use Zend\View\Model\ViewModel;
 class AdminController extends AbstractActionController
 {
 
-    protected $pManager; // PortfolioManager class
 
-    /*
-    public function initAdminManager()
-    {
-        $sm = $this->getServiceLocator();
-        $this->pManager = new AdminManager($sm);
-    }
-    */
     /**
      * @return \Zend\View\Model\ViewModel
      */
