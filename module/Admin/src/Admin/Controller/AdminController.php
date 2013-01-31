@@ -21,7 +21,12 @@ class AdminController extends AbstractActionController
      */
     public function indexAction()
     {
-        $view = new ViewModel(array());
+
+        /* Give router info to this */
+        $route = $this->getServiceLocator()->get('router');
+        $thisRoute = $route->getRequestUri()->getPath();
+
+        $view = new ViewModel(array('thisRoute'=>$thisRoute));
         return $view;
     }
 }

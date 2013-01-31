@@ -98,7 +98,7 @@ class Module implements AutoloaderProviderInterface
         $resource = $mvh->getController();
         $action = $mvh->getAction();
 
-        if ($gUser->offsetExists('eName') != false)
+        if ($gUser->offsetExists('eName'))
         {
             $userSession = $gUser->offsetGet('eName');
             $acl->addRole(new Role($userSession), $userRole);
@@ -150,13 +150,13 @@ class Module implements AutoloaderProviderInterface
      */
     private function getUserRoleFromSession(Container $gUser)
     {
-        if (!$gUser->offsetExists("eName"))
+
+        if ($gUser->offsetExists("eName"))
         {
             $userData = $this->authManager->getUserByEmail($gUser->eName);
             $user = $userData[0];
             $userRoleObj = $this->authManager->getUserRole($user);
             $userRole = $userRoleObj[0]->getRole();
-
         } else {
             $userRole = 'guest';
         }
@@ -174,7 +174,6 @@ class Module implements AutoloaderProviderInterface
         foreach($roleData as $aRole) {
             $acl->addRole(new Role($aRole->getRole()));
         }
-
         return $acl;
 
     }
@@ -200,16 +199,17 @@ class Module implements AutoloaderProviderInterface
          * Get a list of protected controllers from database
          * build iterative for loop
          */
-        if ($resource != 'Album\Controller\Album')
+        if ($resource != 'Album\Controller\Album' && $resource != 'Admin\Controller\Admin' && $resource != 'Clients\Controller\Clients')
         {
             $acl->allow('guest', $resource);
         } else {
 
-            if ($action == 'index') {
-                $acl->allow('guest', $resource);
-            } else {
+            //if ($action == 'index') {
+             //   $acl->allow('guest', $resource);
+            //} else {
                 $acl->deny('guest', $resource);
-            }
+                $acl->allow('admin', $resource);
+            //}
         }
 
         return $acl;
