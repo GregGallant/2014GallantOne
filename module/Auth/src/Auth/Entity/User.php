@@ -11,7 +11,6 @@ use Auth\Entity\AclRole;
  */
 class User
 {
-
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -48,6 +47,16 @@ class User
      * @ORM\Column(type="integer")
      */
     protected $acl_role_id;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $create_date;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $expire_date;
 
     /**
      * ORM\OneToOne(targetEntity="AclRole", fetch="LAZY")
@@ -125,7 +134,25 @@ class User
         return $this->status;
     }
 
+    public function setCreateDate($create_date)
+    {
+        $this->create_date = $create_date;
+    }
 
+    public function getCreateDate()
+    {
+        return $this->create_date;
+    }
+
+    public function setExpireDate($expire_date)
+    {
+        $this->expire_date = $expire_date;
+    }
+
+    public function getExpireDate()
+    {
+        return $this->expire_date;
+    }
 
     public function populate($data)
     {
@@ -157,6 +184,7 @@ class User
     {
         return $this->acl_role;
     }
+
 
 
 }

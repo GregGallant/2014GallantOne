@@ -14,6 +14,8 @@ use Auth\Entity\User;
 use Zend\Authentication\Result;
 use Zend\Session\Container;
 
+define("PASSWORD_LENGTH", 8);
+
 class AuthController extends AbstractActionController
 {
 
@@ -81,20 +83,25 @@ class AuthController extends AbstractActionController
 
         if ($request->isPost())
         {
-            //$form->bind(new User());
             $form->setData($request->getPost());
 
             $user = new User();
-            //$form->bind($user);
+
 
             /* Doctrine insert from entity */
             if ($form->isValid()) {
-                //$form->bindValues();
+
+                $encPass = $this->encryptPassword($user->getPassword());
+                $user->setPassword($encPass);
+
+                // Check password and confirm password
+
                 $user->populate($form->getData());  // populate User object
 
+                /* Set standardized Data */
                 $user->setStatus(1); // Active User
                 $user->setAclRoleId(1); // guest
-
+                $user->setCreateDate('NOW()');
 
                 $this->getEntityManager()->persist($user);  // persist object until flush (insert)
                 $this->getEntityManager()->flush();
@@ -126,5 +133,39 @@ class AuthController extends AbstractActionController
 
         return $messages;
     }
+
+    private function encryptPassword($uPassword)
+    {
+        $salt = $this->generateSalt();
+        return encrypt($uPassword, $salt);
+    }
+
+    private function generateSalt()
+    {
+        $password = "";
+        $possible = "8327649bcdfxhjkmnprqtvwgzyBCDFGHJQLMNPKRTVWXZY_-;";
+
+        $maxlength = strlen($possible);
+
+        if (PASSWORD_LENGTH > $maxlength) {
+            $length = $maxlength; // uhm, what's are length?  Fix this a bit.
+        } else {
+            $length = PASSWORD_LENGTH;
+        }
+
+        $i = 0;
+
+        while ($i < $length) {
+            // pick a random character from the possible
+            $char = substr($possible, mt_rand(0,$maxlength-1), 1);
+            if (!strstr($password, $char)) {
+                $password .= $char;
+                $i++;
+            }
+        }
+
+        return $password;
+    }
+
 }
 

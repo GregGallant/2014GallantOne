@@ -35,6 +35,15 @@ class BaseUserForm
     /**
      * @Annotation\Filter({"name":"StringTrim"})
      * @Annotation\Validator({"name":"Regex", "options":{"pattern":"/^[a-zA-Z][a-zA-Z0-9_-]{0,24}$/"}})
+     * @Annotation\Validator({"name":"Identical", "options":{"token":"password"}})
+     * @Annotation\Attributes({"type":"password"})
+     * @Annotation\Options({"label":"Confirm Password"})
+     */
+    public $confirm_password;
+
+    /**
+     * @Annotation\Filter({"name":"StringTrim"})
+     * @Annotation\Validator({"name":"Regex", "options":{"pattern":"/^[a-zA-Z][a-zA-Z0-9_-]{0,24}$/"}})
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"First Name"})
      */
