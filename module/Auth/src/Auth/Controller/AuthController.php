@@ -132,6 +132,18 @@ class AuthController extends AbstractActionController
 
     }
 
+    public function logoutAction()
+    {
+
+        $gUser = new Container('gUser');
+        if ($gUser->offsetExists("eName")) {
+            $gUser->offsetUnset("eName");
+        }
+
+        return $this->redirect()->toRoute('application');
+
+    }
+
     private function handleLoginMessages($result)
     {
         $messages = '';

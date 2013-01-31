@@ -43,6 +43,17 @@ return array(
                     ),
                 ),
             ),
+            'logout' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/logout',
+                    'constraints' => array( ),
+                    'defaults' => array(
+                        'controller' => 'Auth\Controller\Auth',
+                        'action' => 'logout',
+                    ),
+                ),
+            ),
         ),
     ),
 
