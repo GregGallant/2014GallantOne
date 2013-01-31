@@ -21,6 +21,8 @@ class AuthController extends AbstractActionController
 {
 
     protected $em;
+    protected $authManager;
+
 
     public function getEntityManager()
     {
@@ -100,7 +102,9 @@ class AuthController extends AbstractActionController
 
                     $user->populate($form->getData());  // populate User object
 
-                    $user = $this->encryptPassword($user);
+                    $authManager = new AuthManager($this->getServiceLocator());
+                    $user = $authManager->encryptPassword($user);
+                    //$user = $this->encryptPassword($user);
 
                     /* Set standardized Data */
                     $user->setStatus(1); // Active User

@@ -71,7 +71,7 @@ class User
 
 
     public function __construct() {
-        date_default_timezone_set('America/New_York');
+        //date_default_timezone_set('America/New_York');
         $dtz = date_default_timezone_get();
         $this->create_date = new \DateTime('now', new \DateTimeZone($dtz));
         $this->expire_date = new \DateTime('9999-11-11 11:11:11', new \DateTimeZone($dtz));

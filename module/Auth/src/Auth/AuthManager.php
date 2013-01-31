@@ -76,6 +76,52 @@ class AuthManager
         return $this->authDao->getAclRoles();
     }
 
+
+    public function encryptPassword($user)
+    {
+        $uPassword = $user->getPassword();
+
+        $algorithm = MCRYPT_BLOWFISH;
+        $mode = MCRYPT_MODE_CFB;
+        $salt = $this->generateSalt();
+        $user->setSalt($salt);
+
+        $iv_size = mcrypt_get_iv_size($algorithm, $mode);
+        $iv = mcrypt_create_iv($iv_size, MCRYPT_DEV_URANDOM);
+        $iv = "GregGallant";
+        $mpass = trim(base64_encode(mcrypt_encrypt($algorithm, $salt, $uPassword, $mode, $iv)));
+        $user->setPassword($mpass);
+
+        return $user;
+    }
+
+    private function generateSalt()
+    {
+        $password = "";
+        $possible = "8327649bcdfxhjkmnprqtvwgzyBCDFGHJQLMNPKRTVWXZY";
+
+        $maxlength = strlen($possible);
+
+        if (PASSWORD_LENGTH > $maxlength) {
+            $length = $maxlength; // uhm, what's are length?  Fix this a bit.
+        } else {
+            $length = PASSWORD_LENGTH;
+        }
+
+        $i = 0;
+
+        while ($i < $length) {
+            // pick a random character from the possible
+            $char = substr($possible, mt_rand(0,$maxlength-1), 1);
+            if (!strstr($password, $char)) {
+                $password .= $char;
+                $i++;
+            }
+        }
+
+        return $password;
+    }
+
     private function decryptPassword(User $user, $salt, $encPass)
     {
 
