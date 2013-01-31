@@ -58,6 +58,24 @@ class AuthTable
         return $resultSet;
     }
 
+    public function getSaltByEmail($email)
+    {
+        $rsm = new ResultSetMapping;
+        $rsm->addEntityResult('Auth\Entity\User', 'u');
+        $rsm->addFieldResult('u', 'id', 'id');
+        $rsm->addFieldResult('u', 'salt', 'salt');
+        $rsm->addFieldResult('u', 'password', 'password');
+
+        $sql = 'select u.* FROM user u WHERE u.email = "'.$email.'"';
+
+        $query = $this->em->createNativeQuery($sql, $rsm);
+
+        $resultSet = $query->getResult();
+
+        return $resultSet;
+
+    }
+
     public function getAclRoles()
     {
         $sql = "SELECT r FROM Auth\Entity\AclRole r";

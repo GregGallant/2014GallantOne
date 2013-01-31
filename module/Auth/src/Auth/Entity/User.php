@@ -31,6 +31,11 @@ class User
     /**
      * @ORM\Column(type="string")
      */
+    protected $salt;
+
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $first_name;
 
     /**
@@ -39,7 +44,7 @@ class User
     protected $last_name;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="smallint")
      */
     protected $status;
 
@@ -58,6 +63,19 @@ class User
      */
     protected $expire_date;
 
+    /**
+     * ORM\OneToOne(targetEntity="AclRole", fetch="LAZY")
+     * ORM\JoinColumn(name="acl_role_id", referencedColumnName="id")
+     */
+    protected $acl_role;
+
+
+    public function __construct() {
+        date_default_timezone_set('America/New_York');
+        $dtz = date_default_timezone_get();
+        $this->create_date = new \DateTime('now', new \DateTimeZone($dtz));
+        $this->expire_date = new \DateTime('9999-11-11 11:11:11', new \DateTimeZone($dtz));
+    }
 
     public function setEmail($email)
     {
@@ -149,6 +167,17 @@ class User
         return $this->expire_date;
     }
 
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+    }
+
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+
     public function populate($data)
     {
         $this->setEmail($data['email']);
@@ -159,8 +188,6 @@ class User
         // do checks for registration
         $this->setStatus($data['status']);
         $this->setAclRoleId($data['acl_role_id']);
-        $this->setCreateDate($data['create_date']);
-        $this->setExpireDate($data['expire_date']);
 
     }
 
@@ -181,7 +208,6 @@ class User
     {
         return $this->acl_role;
     }
-
 
 
 }

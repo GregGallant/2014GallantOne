@@ -20,6 +20,7 @@ define("PASSWORD_LENGTH", 8);
 class AuthController extends AbstractActionController
 {
 
+    protected $em;
 
     public function getEntityManager()
     {
@@ -94,21 +95,20 @@ class AuthController extends AbstractActionController
             if ($form->isValid()) {
 
 
-
+                    $this->em = $this->getEntityManager();
                     // Check password and confirm password
 
                     $user->populate($form->getData());  // populate User object
 
-                    $encPass = $this->encryptPassword($user->getPassword());
-                    $user->setPassword($encPass);
+                    $user = $this->encryptPassword($user);
 
                     /* Set standardized Data */
                     $user->setStatus(1); // Active User
                     $user->setAclRoleId(1); // guest
-                    $user->setCreateDate("2012-11-10 11:11:11");
-                    $user->setExpireDate("9999-11-10 11:11:11");
-                    $this->getEntityManager()->persist($user);  // persist object until flush (insert)
-                    $this->getEntityManager()->flush();
+                    //$user->setCreateDate("2012-11-10 11:11:11");
+                    //$user->setExpireDate("9999-11-10 11:11:11");
+                    $this->em->persist($user);  // persist object until flush (insert)
+                    $this->em->flush();
 
                 return $this->redirect()->toRoute('login');
             }
@@ -138,16 +138,22 @@ class AuthController extends AbstractActionController
         return $messages;
     }
 
-    private function encryptPassword($uPassword)
+    private function encryptPassword($user)
     {
+        $uPassword = $user->getPassword();
 
         $algorithm = MCRYPT_BLOWFISH;
         $mode = MCRYPT_MODE_CFB;
         $salt = $this->generateSalt();
+        $user->setSalt($salt);
+
         $iv_size = mcrypt_get_iv_size($algorithm, $mode);
         $iv = mcrypt_create_iv($iv_size, MCRYPT_DEV_URANDOM);
-        $mpass = mcrypt_encrypt($algorithm, $salt, $uPassword, $mode, $iv);
-        return $mpass;
+        $iv = "GregGallant";
+        $mpass = trim(base64_encode(mcrypt_encrypt($algorithm, $salt, $uPassword, $mode, $iv)));
+        $user->setPassword($mpass);
+
+        return $user;
     }
 
     private function generateSalt()
