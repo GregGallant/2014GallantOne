@@ -39,7 +39,7 @@ class User
     protected $last_name;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="boolean")
      */
     protected $status;
 
@@ -58,11 +58,6 @@ class User
      */
     protected $expire_date;
 
-    /**
-     * ORM\OneToOne(targetEntity="AclRole", fetch="LAZY")
-     * ORM\JoinColumn(name="acl_role_id", referencedColumnName="id")
-     */
-    protected $acl_role;
 
     public function setEmail($email)
     {
@@ -164,6 +159,8 @@ class User
         // do checks for registration
         $this->setStatus($data['status']);
         $this->setAclRoleId($data['acl_role_id']);
+        $this->setCreateDate($data['create_date']);
+        $this->setExpireDate($data['expire_date']);
 
     }
 

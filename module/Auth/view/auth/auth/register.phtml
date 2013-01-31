@@ -18,6 +18,10 @@ $form->setAttribute('action', $this->url(
 
 $form->prepare();
 
+if ($exception != null) {
+   echo "<p>".$exception."<p>";
+}
+
 echo $this->form()->openTag($form);
 echo $this->formRow($form->get('email'));
 echo "<br/>";
