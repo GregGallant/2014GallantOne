@@ -5,4 +5,8 @@
 
 
 <!-- Content Partial -->
-<?php echo $this->partial("admin".$thisRoute); ?>
+<?php
+    if ($thisRoute != '/admin/') {
+        echo $this->partial("admin".$thisRoute);
+    }
+?>
