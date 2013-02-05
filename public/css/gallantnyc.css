@@ -4,7 +4,41 @@
     padding:0;
 }
 
-html, body, #bg, #bg table, #bg td {
+html {
+
+}
+
+body {
+    background-color:#f6f5ee;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+#pagewrap {
+    width:800px;
+    margin:0 auto;
+
+}
+
+#header {
+    width:800px;
+    height:98px;
+}
+
+#content {
+    width:800px;
+}
+
+#footer {
+    clear:both;
+}
+
+#bg, #bg table, #bg td {
     height:100%;
     width:100%;
     overflow:hidden;
@@ -69,3 +103,18 @@ div.transbox p {
     font-weight:bold;
     color:#000000;
 }
+
+img {
+    border:0;
+    max-width:100%;
+    height:auto;
+    width: auto\9; /* ie 8 */
+
+}
+
+/************************************************************************************
+CLEARFIX
+*************************************************************************************/
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.clearfix { display: inline-block; }
+.clearfix { display: block; zoom: 1; }
