@@ -23,6 +23,16 @@ use Zend\Session\Container as Container;
 use Auth\Entity\User;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 
+use Networks\NetworkAdapterFactory;
+use DoctrineORMModule\Service\EntityManagerFactory;
+use DoctrineORMModule\Service\DBALConnectionFactory;
+use DoctrineORMModule\Service\ConfigurationFactory;
+use DoctrineModule\Service\DriverFactory;
+use DoctrineORMModule\Service\EntityResolverFactory;
+use DoctrineModule\Service\EventManagerFactory;
+use Zend\Form\Annotation\AnnotationBuilder;
+use Zend\ServiceManager\ServiceLocatorInterface;
+
 
 class Module implements AutoloaderProviderInterface
 {
@@ -213,5 +223,29 @@ class Module implements AutoloaderProviderInterface
         }
 
         return $acl;
+    }
+
+    public function getServiceConfig()
+    {
+        return array(
+            'factories' => array(
+                'Networks\Entity\Networks' => function($sm) {
+                    $nEntity = new Networks();
+                    return $nEntity;
+                },
+                'doctrine.entitymanager.orm_gallantmedia' => new EntityManagerFactory("orm_gallantmedia"),
+                'doctrine.eventmanager.orm_gallantmedia' => new EventManagerFactory("orm_gallantmedia"),
+                'doctrine.connection.orm_gallantmedia' => new DBALConnectionFactory("orm_gallantmedia"),
+                'doctrine.configuration.orm_gallantmedia' => new ConfigurationFactory("orm_gallantmedia"),
+                'doctrine.driver.orm_gallantmedia' => new DriverFactory('orm_gallantmedia'),
+                'doctrine.entity_resolver.orm_gallantmedia' => new EntityResolverFactory('orm_gallantmedia'),
+
+                'DoctrineORMModule\Form\Annotation\AnnotationBuilder' => function(ServiceLocatorInterface $sl) {
+                    return new AnnotationBuilder($sl->get('doctrine.entitymanager.orm_gallantmedia'));
+                },
+
+            ),
+
+        );
     }
 }

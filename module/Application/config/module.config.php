@@ -81,6 +81,16 @@ return array(
                     )
                 ),
             ),
+            'networks' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/networks',
+                    'defaults' => array(
+                        'controller' => 'Networks\Controller\Networks',
+                        'action' => 'index'
+                    )
+                ),
+            ),
             'admin' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(

@@ -1,0 +1,39 @@
+<div id="content" class="clearfix">
+
+   <?php
+    $form = $this->form;
+/*
+    $form->setAttribute('action', $this->url(
+        'index',
+        array(
+            'action' => 'index',
+        )
+    ));*/
+
+
+
+    /*
+*/
+    $form->prepare();
+
+    echo $this->form()->openTag($form);
+    echo $this->formSubmit($form->get('submit'));
+    echo $this->form()->closeTag();
+
+    foreach($allNetworks as $network) {
+
+       $img = explode(".", $network->getName());
+       $imgName = $img[1];
+       echo "<div>";
+       echo "<img width=\"295px\" height=\"222px\" src=\"/images/iecapt/".$imgName.".png\">";
+       echo "</div>";
+       echo "<div style=\"color:#ffffff;\">";
+       echo $network->getName();
+       echo "</div>\n";
+    }
+
+   ?>
+
+
+</div>
+

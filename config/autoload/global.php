@@ -12,6 +12,7 @@
  */
 
 return array(
+
     'db' => array(
         'driver'         => 'Pdo',
         'dsn'            => 'mysql:dbname=gallantone;host=localhost',
@@ -24,5 +25,15 @@ return array(
             'Zend\Db\Adapter\Adapter'
             => 'Zend\Db\Adapter\AdapterServiceFactory',
         ),
+    ),
+
+    'dbgm' => array(
+        'driver'         => 'Pdo',
+        'dsn'            => 'mysql:dbname=gallantmedia;host=localhost',
+        'driver_options' => array(
+            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+        ),
+
+
     ),
 );
