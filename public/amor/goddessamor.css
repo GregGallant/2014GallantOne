@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    background-color:#f6f5ee;
+    background-image:url('../amor/amor_back.png');
     margin-left:auto;
     margin-right:auto;
 }
@@ -20,7 +20,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 #pagewrap {
-    width:100%;
+    width:960px;
     margin:0 auto;
 
 }
@@ -34,54 +34,40 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     position:relative;
     margin-left:auto;
     margin-right:auto;
-    width:1016px;
+    width:960px;
     height:80px;
-    top:37px;
+    top:33px;
 }
 
 #content {
-    width:1016px;
-    height:574px;
+    display:inline-block;
+    width:680px;
+    float:left;
+}
+
+.screen {
+    width:680px;
+}
+
+#sidebar {
+    display:inline-block;
+    background-image:url('../amor/amor_sidebar.png');
+    width:275px;
+    height:685px;
+    float:right;
+}
+
+#infoBoard {
+    margin-left:auto;
+    margin-right:auto;
+    height:100%;
+    width:651px;
+    background-image:url('../amor/info_board.gif');
 }
 
 .menuHeader {
     width:100%;
     height:28px;
-    background-image:url('../design/gonyc_menuback.jpg');
-}
-
-.greenScreen {
-    width:100%;
-    height:546px;
-    background-image:url('../design/gonyc_back.jpg');
-}
-
-.greenCenterScreen {
-    margin-left:auto;
-    margin-right:auto;
-    width:1016px;
-    height:546px;
-}
-
-.productScreen {
-    width:100%;
-    height:546px;
-    background-image:url('../design/prod_back.png');
-}
-
-.prodCenterScreen {
-    margin-left:auto;
-    margin-right:auto;
-    width:1016px;
-    height:546px;
-    background-image:url('../design/prod_model.png');
-}
-
-#fancy {
-    float:right;
-    display:inline-block;
-    width:283px;
-    height:542px;
 }
 
 #portfolioText {
