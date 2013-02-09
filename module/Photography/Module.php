@@ -4,9 +4,12 @@ namespace Photography;
 use Photography\Entity\Photography;
 use Photography\Model\PhotographyTable;
 use Zend\Db\ResultSet\ResultSet;
+use Zend\ModuleManager\ModuleManager;
 
 class Module
 {
+
+
     public function getAutoloaderConfig()
     {
         return array(

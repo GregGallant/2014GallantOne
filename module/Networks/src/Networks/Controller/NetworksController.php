@@ -27,7 +27,7 @@ class NetworksController extends AbstractActionController
     public function indexAction()
     {
         // Initalize a new layout for GallantNYC.com
-        $this->layout('layout/layout.phtml');
+        $this->layout('layout/networksLayout.phtml');
 
         $this->initNetworksManager();
 
@@ -57,6 +57,16 @@ class NetworksController extends AbstractActionController
         }
 
         $view = new ViewModel(array('form'=>$form, 'allNetworks'=>$allNetworks));
+        return $view;
+    }
+
+
+    public function designAction()
+    {
+        $route = $this->getServiceLocator()->get('router');
+        $thisRoute = $route->getRequestUri()->getPath();
+        $view = new ViewModel(array('thisRoute'=>$thisRoute));
+        $view->setTerminal(true);
         return $view;
     }
 }

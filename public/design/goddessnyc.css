@@ -9,9 +9,9 @@ html {
 }
 
 body {
+    background-color:#f6f5ee;
     margin-left:auto;
     margin-right:auto;
-    background-color:#1c1c1c;
 }
 
 /* set html5 elements to block */
@@ -20,23 +20,79 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 #pagewrap {
-    width:800px;
+    width:100%;
     margin:0 auto;
-    border:1px solid #f9f9f9;
 
 }
 
 #header {
-    background-color:#ffffff;
-    width:800px;
-    height:98px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.goHeader {
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    width:1016px;
+    height:80px;
+    top:37px;
 }
 
 #content {
-    padding:10px 10px 10px 10px;
-    width:auto;
-    height:100%;
-    background-color:#0f0f0f;
+    width:1016px;
+    height:574px;
+}
+
+.menuHeader {
+    width:100%;
+    height:28px;
+    background-image:url('../design/gonyc_menuback.jpg');
+}
+
+.greenScreen {
+    width:100%;
+    height:546px;
+    background-image:url('../design/gonyc_back.jpg');
+}
+
+.greenCenterScreen {
+    margin-left:auto;
+    margin-right:auto;
+    width:1016px;
+    height:546px;
+}
+
+#fancy {
+    float:right;
+    display:inline-block;
+    width:283px;
+    height:542px;
+}
+
+#portfolioText {
+    float:left;
+    padding-top:88px;
+    display:inline-block;
+    width:656px;
+    height:123px;
+}
+
+.portfolioBlurb {
+    padding-top:5px;
+    font-family:Helvetica,Arial,sans-serif;
+    font-size:1.2em;
+    color:#ffffff;
+    width:585px;
+    line-height:1.3em;
+    letter-spacing:.05em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#blurbButton {
+    width:620px;
+    height:189px;
 }
 
 #footer {

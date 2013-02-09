@@ -4,6 +4,7 @@ namespace Photography\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Photography\PhotographyManager;
+use Zend\Mvc\Service\ViewHelperManagerFactory;
 
 class PhotographyController extends AbstractActionController
 {
@@ -22,10 +23,12 @@ class PhotographyController extends AbstractActionController
     public function indexAction()
     {
         // Initalize a new layout for GallantNYC.com
-        $this->layout('layout/layout.phtml');
 
+
+        $this->layout('layout/photographyLayout.phtml');
 
         $view = new ViewModel(array());
+        //$view->setTerminal(true);
         return $view;
     }
 }

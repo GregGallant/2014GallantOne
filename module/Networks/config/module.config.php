@@ -14,15 +14,23 @@ return array(
             'networks' => array(
                 'type' => 'segment',
                 'options' => array(
-                    'route' => '/networks[/:id]',
-                    'constraints' => array(
-                        'id' => '[0-9]+',
-                    ),
+                    'route' => '/networks',
                     'defaults' => array(
                         'controller' => 'Networks\Controller\Networks',
                         'action' => 'index',
                     ),
                 ),
+            ),
+            'design' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/networks/[:slug]',
+                    'defaults' => array(
+                        'controller' => 'Networks\Controller\Networks',
+                        'action' => 'design',
+                    ),
+                ),
+                'may_terminate' => true,
             ),
         ),
     ),
