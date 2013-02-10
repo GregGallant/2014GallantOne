@@ -9,7 +9,9 @@
 
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/images/favicon.ico'))
-                        ->prependStylesheet($this->basePath() . '/css/gallantone.css')
+                        ->prependStylesheet($this->basePath() . '/css/one_portfolio.css')
+                        ->prependStylesheet($this->basePath() . '/css/one.css')
+                        ->prependStylesheet($this->basePath() . '/css/one-media-queries.css')
                         ->prependStylesheet($this->basePath() . '/js/fancybox/source/jquery.fancybox.css')
         ?>
 
@@ -22,16 +24,18 @@
 
     </head>
     <body>
-    <div class="motherboard">
-        <div class="leftFade"><img src="/images/leftFadeEdge.jpg"/></div>
-        <div class="centerContent">
-            <div class="headerLogo"><a href="<?php echo $this->url('home')?>"><img border="0" src="/images/logoHeader.jpg"/></a></div>
+    <img alt="full screen background image" src="/images/one/gg_sunset.png" id="full-screen-background-image" />
+    <div id="pagewrap">
+        <header id="header">
+            <div class="goHeader">
+                <a href="/"><img alt="GallantOne.com" border="0" src="/images/one/one_logo.png" /></a>
+            </div>
             <?php echo $this->partial("application/index/menu.phtml", "array()"); ?>
+            <div class="goLine"></div>
+        </header>
             <?php echo $this->content; ?>
-        </div>
-        <?php echo $this->partial("application/index/rightContent.phtml", "array()"); ?>
-
-    <div class="rightFade"><img src="/images/rightFadeEdge.jpg"/></div>
+        <!-- end content -->
     </div>
     </body>
+
 </html>

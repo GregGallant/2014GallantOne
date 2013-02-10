@@ -6,22 +6,65 @@
     }
 
     #pagewrap {
-        width:98%;
+        margin-left:auto;
+        margin-right:auto;
     }
 
-    #header {
-        width:92%;
+    #pagewrap > #header {
+        width:75%;
         height:auto;
         margin: 0 0 0 0;
     }
 
-    #content {
-        width:92%;
-        height:auto;
-        margin: 0 0 0 0;
+    #pagewrap > .header > .goHeader {
+        position:relative;
+        margin-left:auto;
+        margin-right:auto;
+        height:80px;
+        width:300px;
+        display:inline-block;
     }
 
-    h1 {
+    #pagewrap> .header > #onemenuBar {
+        margin:20px 0px 0px 0px;
+        width:253px;
+        height:40px;
+    }
+
+    #onemenuBar > .onemenuText {
+        font-family:Arial,sans-serif;
+        font-size:.7em;
+        padding-left:7px;
+        padding-top:5px;
+    }
+
+    #onemenuBar > .onemenuText > .menuPlacement {
+        padding-left:5px;
+        padding-right:5px;
+        display:inline-block;
+        font-family:Verdana,Arial,sans-serif;
+        letter-spacing:.22em;
+    }
+
+
+    .linePlacement {
+        padding-left:5px;
+        padding-right:5px;
+        padding-top:3px;
+        display:inline-block;
+        color:#336f33;
+    }
+
+
+    #pagewrap > #textHeader {
+        display:block;
+        margin-top:50px;
+        margin-left:auto;
+        margin-right:auto;
+        width:640px;
+    }
+
+    #pagewrap > #textHeader > h1 {
         font-family:Arvil,sans-serif;
         font-size:3.9em;
         font-weight:normal;
@@ -29,35 +72,30 @@
         color:#ffffff;
     }
 
-    h3 {
+    #pagewrap > #textHeader > h3 {
+        margin-left:auto;
+        margin-right:auto;
         font-family:Arvil,sans-serif;
         font-size:1.7em;
         font-weight:normal;
         letter-spacing:.07em;
         color:#d8bb9e;
+        width:640px;
     }
-
-    .textHeader {
-        margin-top:100px;
-        margin-left:auto;
-        margin-right:auto;
-        text-align:center;
-    }
-
 
     .goLine {
         margin-top:5px;
         margin-bottom:5px;
-        width:630px;
+        width:330px;
         height:6px;
-        background-image:url('../one/gg_line.png');
+        background-image:url('../images/one/gg_line.png');
     }
 
-    .goBoxes {
+    #pagewrap > #goBoxes {
         margin-top:100px;
-        margin-left:auto;
-        margin-right:auto;
-        width:600px;
+        margin-left:0px;
+        margin-right:0px;
+        width:65%;
         color:#d0d0d0;
         font-family:Trebuchet MS, Helvetica, Arial, sans-serif;
         font-size:0.70em;
@@ -65,15 +103,15 @@
         line-height:1.6em;
     }
 
-    .descBox {
+    #goBoxes > .descBox {
         display:inline-block;
         float:left;
-        width:320px;
+        width:340px;
         text-align:justify;
         text-justify:inter-word;
     }
 
-    .aboutBox {
+    #goBoxes > .aboutBox {
         display:inline-block;
         float:right;
         width:220px;
@@ -88,12 +126,12 @@
     }
 
 
-    .line_540 {
+    #goBoxes > .descBox > .line_540 {
         margin-top:5px;
         margin-bottom:5px;
         width:340px;
         height:3px;
-        background-image:url('../one/line_540.png');
+        background-image:url('../images/one/line_540.png');
         background-repeat:no-repeat;
     }
 
@@ -103,13 +141,20 @@
         margin-bottom:5px;
         width:240px;
         height:3px;
-        background-image:url('../one/line_240.png');
+        background-image:url('../images/one/line_240.png');
         background-repeat:no-repeat;
+    }
+    #contactButton {
+        float:none;
+        text-align:center;
+        padding-top:10px;
     }
 
     #viewButton {
-        text-align:right;
+        float:none;
+        text-align:center;
         padding-top:10px;
+
     }
 
 
@@ -124,7 +169,7 @@
     }
 
     #header > .goHeader {
-        width:75%;
+        width:25%;
         height:auto;
         margin-left:0px;
         display:block;
@@ -140,9 +185,11 @@
     }
 
 
-    .textHeader {
+    #pagewrap .textHeader {
         display:block;
         margin-top:50px;
+        margin-left:auto;
+        margin-right:auto;
     }
 
     .goHeader {
@@ -172,7 +219,7 @@
         display:block;
         width:300px;
         height:6px;
-        background-image:url('../one/gg_line.png');
+        background-image:url('../images/one/gg_line.png');
     }
 
     .goBoxes {
@@ -215,7 +262,7 @@
         margin-bottom:5px;
         width:240px;
         height:3px;
-        background-image:url('../one/line_540.png');
+        background-image:url('../images/one/line_540.png');
         background-repeat:no-repeat;
     }
 
@@ -225,11 +272,18 @@
         margin-bottom:5px;
         width:240px;
         height:3px;
-        background-image:url('../one/line_240.png');
+        background-image:url('../images/one/line_240.png');
         background-repeat:no-repeat;
     }
 
+    #contactButton {
+        float:none;
+        text-align:center;
+        padding-top:10px;
+    }
+
     #viewButton {
+        float:none;
         text-align:center;
         padding-top:10px;
 
@@ -245,6 +299,29 @@
     #main-nav a{
         font-size:90%;
     }
+
+
+
+    #header {
+        display:block;
+    }
+
+    #header > .goHeader {
+        width:25%;
+        height:auto;
+        margin-left:0px;
+        display:block;
+    }
+
+    #content {
+        width:400px;
+        float:none;
+    }
+
+    #pagewrap #header img {
+        width:85%;
+    }
+
 }
 
 

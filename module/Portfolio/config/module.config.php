@@ -38,7 +38,18 @@ return array(
                     ),
                 ),
             ),
-
+            // Contact form
+            'contact' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/contact',
+                    'constraints' => array( ),
+                    'defaults' => array(
+                        'controller' => 'Portfolio\Controller\Portfolio',
+                        'action' => 'contact',
+                    ),
+                ),
+            ),
         ),
     ),
 

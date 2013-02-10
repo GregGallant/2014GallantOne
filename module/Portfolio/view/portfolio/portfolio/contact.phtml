@@ -1,0 +1,31 @@
+<div>
+    <h3>Contact GallantOne.com</h3>
+
+<?php
+
+$form = $this->form;
+
+$form->setAttribute('action', $this->url(
+
+        'contact',
+        array(
+            'action' => 'contact',
+            'name' => $this->name,
+            'email' => $this->email,
+            'subject' => $this->subject,
+            'message' => $this->message,
+        )
+    ));
+
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo '<div class="cform">'.$this->formRow($form->get('name')).'</div>';
+echo '<div class="cform">'.$this->formRow($form->get('email')).'</div>';
+echo '<div class="cform">'.$this->formRow($form->get('subject')).'</div>';
+echo '<div class="cform">'.$this->formRow($form->get('message')).'</div>';
+echo '<div class="csubmit">'.$this->formRow($form->get('submit')).'</div>';
+echo $this->form()->closeTag();
+
+?>
+</div>

@@ -7,6 +7,9 @@ namespace Portfolio\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Portfolio\PortfolioManager;
+use Zend\Form\Annotation\AnnotationBuilder;
+use Portfolio\Form\ContactForm;
+use Application\MailManagerImpl;
 
 
 /**
@@ -16,6 +19,8 @@ class PortfolioController extends AbstractActionController
 {
 
     protected $pManager; // PortfolioManager class
+    protected $mailManager;
+
 
     public function initPortfolioManager()
     {
@@ -98,4 +103,34 @@ class PortfolioController extends AbstractActionController
         return $view;
     }
 
+    /**
+     * Contact Form
+     */
+    public function contactAction()
+    {
+        $builder = new AnnotationBuilder();
+        $form = $builder->createForm(new ContactForm());
+        $form->get('submit')->setAttribute('value', 'Send Message');
+
+        $this->mailManager = new MailManagerImpl();
+
+        $request = $this->getRequest();
+
+        if ($request->isPost()) {
+
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+
+                // TODO: send e-mail (populate ContactForm with $form data
+                $this->mailManager->sendContactMail($form);
+
+                return $this->redirect()->toRoute('success');
+
+            }
+
+        }
+
+       return array('form'=>$form,);
+    }
 }

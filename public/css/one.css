@@ -110,16 +110,32 @@ p {
     position:relative;
     margin-left:auto;
     margin-right:auto;
-    width:960px;
     height:80px;
-    top:33px;
+    top:18px;
+    float:left;
+}
+
+
+#onemenuBar {
+    margin:40px 0px 0px 00px;
+    width:553px;
+    height:40px;
+    float:right;
+}
+
+.onemenuText {
+    text-align:right;
+    font-family:Arial,sans-serif;
+    font-size:.8em;
+    padding-left:7px;
+    padding-top:5px;
 }
 
 @font-face {
     font-style:normal;
     font-weight:normal;
     font-family: Arvil;
-    src: url('../one/Arvil/Arvil_Sans.ttf') format("opentype");
+    src: url('Arvil/Arvil_Sans.ttf') format("opentype");
 }
 
 h1 {
@@ -138,7 +154,7 @@ h3 {
     color:#d8bb9e;
 }
 
-.textHeader {
+#textHeader {
     margin-top:100px;
     margin-left:auto;
     margin-right:auto;
@@ -151,10 +167,11 @@ h3 {
     margin-bottom:5px;
     width:960px;
     height:6px;
-    background-image:url('../one/gg_line.png');
+    background-image:url('../images/one/gg_line.png');
+    clear:both;
 }
 
-.goBoxes {
+#goBoxes {
     margin-top:100px;
     margin-left:auto;
     margin-right:auto;
@@ -193,7 +210,7 @@ h3 {
     margin-bottom:5px;
     width:540px;
     height:3px;
-    background-image:url('../one/line_540.png');
+    background-image:url('../images/one/line_540.png');
     background-repeat:no-repeat;
 }
 
@@ -203,14 +220,20 @@ h3 {
     margin-bottom:5px;
     width:240px;
     height:3px;
-    background-image:url('../one/line_240.png');
+    background-image:url('../images/one/line_240.png');
     background-repeat:no-repeat;
 }
 
 
+#contactButton {
+    display:inline-block;
+    padding-top:10px;
+    float:right;
+}
 
 #viewButton {
-    text-align:right;
+    display:inline-block;
+    float:right;
     padding-top:10px;
 }
 
