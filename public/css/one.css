@@ -30,9 +30,10 @@ html, body {
 }
 
 /* set html5 elements to block */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+/*article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
+*/
  
 p {
     margin-top:15px;
@@ -256,13 +257,12 @@ div.transbox p {
     font-weight:bold;
     color:#000000;
 }
-/*
+
 img {
     border:0;
     max-width:100%;
     height:auto;
-*/
-    /* width: auto\9; *//* ie 8 */
+    width: auto\9; /* ie 8 */
 
 }
 /************************************************************************************

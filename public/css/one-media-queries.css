@@ -1,4 +1,8 @@
-@media screen and (max-width:960px) {
+@media screen and (max-width: 960px) {
+
+    html {
+        -webkit-text-size-adjust:none;
+    }
 
     img.bg {
         left: 50%;
@@ -6,295 +10,121 @@
     }
 
     #pagewrap {
-        margin-left:auto;
-        margin-right:auto;
+        width:310px;
     }
 
-    #pagewrap > #header {
-        width:75%;
-        height:auto;
-        margin: 0 0 0 0;
+    #pagewrap #header {
+        width:310px;
     }
 
-    #pagewrap > .header > .goHeader {
-        position:relative;
-        margin-left:auto;
-        margin-right:auto;
-        height:80px;
-        width:300px;
-        display:inline-block;
+    #pagewrap #header .goLine {
+        width:310px;
     }
 
-    #pagewrap> .header > #onemenuBar {
-        margin:20px 0px 0px 0px;
-        width:253px;
-        height:40px;
+    #pagewrap >header .goHeader {
+        float:none;
+        height:70%;
     }
 
-    #onemenuBar > .onemenuText {
-        font-family:Arial,sans-serif;
-        font-size:.7em;
-        padding-left:7px;
-        padding-top:5px;
+    #pagewrap h1 {
+        font-size:1.7em;
     }
 
-    #onemenuBar > .onemenuText > .menuPlacement {
-        padding-left:5px;
-        padding-right:5px;
+    #pagewrap h3 {
+        font-size:0.8em;
+    }
+
+    #pagewrap #header #onemenuBar .linePlacement {
+        display:none;
+    }
+
+    #pagewrap #header #onemenuBar .menuPlacement {
+        margin-left:0px;
+        padding-left:2px;
+        padding-right:2px;
         display:inline-block;
         font-family:Verdana,Arial,sans-serif;
-        letter-spacing:.22em;
+        letter-spacing:.18em;
     }
 
-
-    .linePlacement {
-        padding-left:5px;
-        padding-right:5px;
-        padding-top:3px;
-        display:inline-block;
-        color:#336f33;
-    }
-
-
-    #pagewrap > #textHeader {
-        display:block;
-        margin-top:50px;
-        margin-left:auto;
-        margin-right:auto;
-        width:640px;
-    }
-
-    #pagewrap > #textHeader > h1 {
-        font-family:Arvil,sans-serif;
-        font-size:3.9em;
-        font-weight:normal;
-        letter-spacing:.07em;
-        color:#ffffff;
-    }
-
-    #pagewrap > #textHeader > h3 {
-        margin-left:auto;
-        margin-right:auto;
-        font-family:Arvil,sans-serif;
-        font-size:1.7em;
-        font-weight:normal;
-        letter-spacing:.07em;
-        color:#d8bb9e;
-        width:640px;
-    }
-
-    .goLine {
-        margin-top:5px;
-        margin-bottom:5px;
-        width:330px;
-        height:6px;
-        background-image:url('../images/one/gg_line.png');
-    }
-
-    #pagewrap > #goBoxes {
-        margin-top:100px;
+    #pagewrap #header #onemenuBar .menuPlacementLast {
         margin-left:0px;
-        margin-right:0px;
-        width:65%;
-        color:#d0d0d0;
-        font-family:Trebuchet MS, Helvetica, Arial, sans-serif;
+        padding-left:2px;
+        padding-right:2px;
+        display:inline-block;
+        font-family:Verdana,Arial,sans-serif;
+        letter-spacing:.18em;
+    }
+
+    #pagewrap #header #onemenuBar {
+        display:block;
+        margin:10px 0px 0px 0px;
+        padding-left:10px;
+        width:310px;
+        height:40px;
+        float:none;
+    }
+
+    #pagewrap #header .onemenuText {
+        text-align:left;
+        font-family:Arial,sans-serif;
+        font-size:.7em;
+        padding-left:1px;
+        padding-top:5px;
+        width:310px;
+    }
+
+    #pagewrap #textHeader {
+        width:310px;
+        margin-top:70px;
+        margin-left:0px;
+    }
+
+    #pagewrap h1 {
+        max-width:310px;
+    }
+
+    #pagewrap h3 {
+        max-width:310px;
+    }
+
+    #pagewrap #goBoxes {
+        width:310px;
+        margin-top:50px;
+        margin-left:0px;
         font-size:0.70em;
-        letter-spacing:.07em;
+        letter-spacing:.06em;
         line-height:1.6em;
     }
 
-    #goBoxes > .descBox {
-        display:inline-block;
-        float:left;
-        width:340px;
-        text-align:justify;
-        text-justify:inter-word;
+    #pagewrap #goBoxes .descBox {
+        display:block;
+        width:310px;
     }
 
-    #goBoxes > .aboutBox {
-        display:inline-block;
-        float:right;
-        width:220px;
-        text-align:justify;
-        text-justify:inter-word;
-    }
-
-    .gSubHeader {
-        font-family:Arvil, Helvetica, Arial, sans-serif;
-        font-size:2.1em;
-        color:#e8cbae;
-    }
-
-
-    #goBoxes > .descBox > .line_540 {
-        margin-top:5px;
-        margin-bottom:5px;
-        width:340px;
-        height:3px;
-        background-image:url('../images/one/line_540.png');
-        background-repeat:no-repeat;
-    }
-
-
-    .line_240 {
-        margin-top:5px;
-        margin-bottom:5px;
-        width:240px;
-        height:3px;
-        background-image:url('../images/one/line_240.png');
-        background-repeat:no-repeat;
-    }
-    #contactButton {
-        float:none;
-        text-align:center;
-        padding-top:10px;
-    }
-
-    #viewButton {
-        float:none;
-        text-align:center;
-        padding-top:10px;
-
-    }
-
-
-}
-
-@media screen and (max-width:650px) {
-
-
-
-    #header {
+    #pagewrap #goBoxes .descBox #viewButton {
         display:block;
     }
 
-    #header > .goHeader {
-        width:25%;
+    #pagewrap #goBoxes .aboutBox {
+        display:block;
+        float:none;
+        width:310px;
+    }
+
+    #pagewrap #goBoxes .line_540 {
+        display:block;
+        width:310px;
+    }
+
+    img {
+        border:0;
+        max-width:100%;
         height:auto;
-        margin-left:0px;
-        display:block;
-    }
-
-    #content {
-        width:400px;
-        float:none;
-    }
-
-    #pagewrap #header img {
-        width:85%;
-    }
-
-
-    #pagewrap .textHeader {
-        display:block;
-        margin-top:50px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-
-    .goHeader {
-        width:75%;
-        display:block;
-    }
-
-    h1 {
-        font-family:Arvil,sans-serif;
-        font-size:1.9em;
-        font-weight:normal;
-        letter-spacing:.07em;
-        color:#ffffff;
-    }
-
-    h3 {
-        font-family:Arvil,sans-serif;
-        font-size:0.83em;
-        font-weight:normal;
-        letter-spacing:.07em;
-        color:#d8bb9e;
-    }
-
-    .goLine {
-        margin-top:45px;
-        margin-bottom:5px;
-        display:block;
-        width:300px;
-        height:6px;
-        background-image:url('../images/one/gg_line.png');
-    }
-
-    .goBoxes {
-        margin-top:50px;
-        width:300px;
-        color:#d0d0d0;
-        font-family:Trebuchet MS, Helvetica, Arial, sans-serif;
-        font-size:0.60em;
-        letter-spacing:.07em;
-        line-height:1.6em;
-    }
-
-
-    .descBox {
-        float:none;
-        display:block;
-        width:280px;
-        text-align:justify;
-        text-justify:inter-word;
-        margin-bottom:20px;
-    }
-
-    .aboutBox {
-        float:none;
-        display:block;
-        width:280px;
-        text-align:justify;
-        text-justify:inter-word;
-    }
-
-    .gSubHeader {
-        font-family:Arvil, Helvetica, Arial, sans-serif;
-        font-size:2.1em;
-        color:#e8cbae;
-    }
-
-
-    .line_540 {
-        margin-top:5px;
-        margin-bottom:5px;
-        width:240px;
-        height:3px;
-        background-image:url('../images/one/line_540.png');
-        background-repeat:no-repeat;
-    }
-
-
-    .line_240 {
-        margin-top:5px;
-        margin-bottom:5px;
-        width:240px;
-        height:3px;
-        background-image:url('../images/one/line_240.png');
-        background-repeat:no-repeat;
-    }
-
-    #contactButton {
-        float:none;
-        text-align:center;
-        padding-top:10px;
-    }
-
-    #viewButton {
-        float:none;
-        text-align:center;
-        padding-top:10px;
+        width: auto\9; /* ie 8 */
 
     }
-}
 
-@media screen and (max-width: 480px) {
-
-    html {
-        -webkit-text-size-adjust:none;
-    }
 
     #main-nav a{
         font-size:90%;
@@ -302,28 +132,29 @@
 
 
 
-    #header {
-        display:block;
+    /*
+        #header {
+            display:block;
+        }
+
+        #header > .goHeader {
+            width:70%;
+            height:auto;
+            margin-left:0px;
+            display:block;
+        }
+
+        #content {
+            width:310px;
+            float:none;
+        }
+
+        #pagewrap #header img {
+            width:85%;
+        }
+
+    */
     }
-
-    #header > .goHeader {
-        width:25%;
-        height:auto;
-        margin-left:0px;
-        display:block;
-    }
-
-    #content {
-        width:400px;
-        float:none;
-    }
-
-    #pagewrap #header img {
-        width:85%;
-    }
-
-}
-
 
 
 .video embed,
