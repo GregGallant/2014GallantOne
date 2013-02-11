@@ -10,15 +10,17 @@
     }
 
     #pagewrap {
-        width:310px;
+        width:480px;
     }
 
     #pagewrap #header {
-        width:310px;
+        width:480px;
     }
 
     #pagewrap #header .goLine {
-        width:310px;
+        width:480px;
+        margin-top:2px;
+        margin-bottom:2px;
     }
 
     #pagewrap >header .goHeader {
@@ -26,16 +28,9 @@
         height:70%;
     }
 
-    #pagewrap h1 {
-        font-size:1.7em;
-    }
-
-    #pagewrap h3 {
-        font-size:0.8em;
-    }
 
     #pagewrap #header #onemenuBar .linePlacement {
-        display:none;
+        /*display:none;*/
     }
 
     #pagewrap #header #onemenuBar .menuPlacement {
@@ -58,10 +53,176 @@
 
     #pagewrap #header #onemenuBar {
         display:block;
-        margin:10px 0px 0px 0px;
-        padding-left:10px;
+        margin:3px 0px 0px 0px;
+        padding-left:40px;
+        width:480px;
+        height:20px;
+        float:none;
+    }
+
+    #pagewrap #header .onemenuText {
+        text-align:left;
+        font-family:Arial,sans-serif;
+        font-size:.7em;
+        padding-left:1px;
+        padding-top:5px;
+        width:480px;
+    }
+
+    #pagewrap #textHeader {
+        width:480px;
+        margin-top:70px;
+        margin-left:0px;
+    }
+
+    #pagewrap h1 {
+        max-width:480px;
+        font-size:2.8em;
+    }
+
+    #pagewrap h3 {
+        max-width:480px;
+        font-size:1.5em;
+    }
+
+    #pagewrap #goBoxes {
+        width:480px;
+        margin-top:50px;
+        margin-left:0px;
+        margin-right:0px;
+        font-size:0.70em;
+        letter-spacing:.06em;
+        line-height:1.6em;
+    }
+
+    #pagewrap #goBoxes .descBox {
+        display:block;
+        width:470px;
+        margin:0px 3px 0px 3px;
+    }
+
+    #pagewrap #goBoxes .descBox #viewButton {
+        display:block;
+    }
+
+    #pagewrap #goBoxes .aboutBox {
+        display:block;
+        float:none;
+        width:470px;
+        margin:0px 3px 0px 3px;
+    }
+
+    #pagewrap #goBoxes .line_540 {
+        display:block;
+        width:480px;
+    }
+
+    img {
+        border:0;
+        max-width:100%;
+        height:auto;
+        width: auto\9; /* ie 8 */
+
+    }
+
+
+    #main-nav a{
+        font-size:90%;
+    }
+
+
+
+    /*
+        #header {
+            display:block;
+        }
+
+        #header > .goHeader {
+            width:70%;
+            height:auto;
+            margin-left:0px;
+            display:block;
+        }
+
+        #content {
+            width:480px;
+            float:none;
+        }
+
+        #pagewrap #header img {
+            width:85%;
+        }
+
+    */
+    }
+
+
+.video embed,
+.video object,
+.video iframe {
+    width:100%;
+    height:auto;
+}
+
+@media screen and (max-width: 479px) {
+
+    html {
+        -webkit-text-size-adjust:none;
+    }
+
+    img.bg {
+        left: 50%;
+        margin-left: -512px;   /* 50% */
+    }
+
+    #pagewrap {
         width:310px;
-        height:40px;
+    }
+
+    #pagewrap #header {
+        width:310px;
+    }
+
+    #pagewrap #header .goLine {
+        width:310px;
+        margin-top:2px;
+        margin-bottom:2px;
+    }
+
+    #pagewrap >header .goHeader {
+        float:none;
+        height:70%;
+    }
+
+
+    #pagewrap #header #onemenuBar .linePlacement {
+        /*display:none;*/
+    }
+
+    #pagewrap #header #onemenuBar .menuPlacement {
+        margin-left:0px;
+        padding-left:2px;
+        padding-right:2px;
+        display:inline-block;
+        font-family:Verdana,Arial,sans-serif;
+        letter-spacing:.18em;
+    }
+
+    #pagewrap #header #onemenuBar .menuPlacementLast {
+        margin-left:0px;
+        padding-left:2px;
+        padding-right:2px;
+        display:inline-block;
+        font-family:Verdana,Arial,sans-serif;
+        letter-spacing:.18em;
+    }
+
+    #pagewrap #header #onemenuBar {
+        display:block;
+        margin:3px 0px 0px 0px;
+        padding-left:40px;
+        width:310px;
+        height:20px;
         float:none;
     }
 
@@ -82,10 +243,12 @@
 
     #pagewrap h1 {
         max-width:310px;
+        font-size:1.9em;
     }
 
     #pagewrap h3 {
         max-width:310px;
+        font-size:0.9em;
     }
 
     #pagewrap #goBoxes {
@@ -154,7 +317,7 @@
         }
 
     */
-    }
+}
 
 
 .video embed,
@@ -163,5 +326,6 @@
     width:100%;
     height:auto;
 }
+
 
 <meta name="viewport" content="width=device-width; initial-scale=1.0">

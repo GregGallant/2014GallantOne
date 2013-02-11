@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9cc10a4-4a87-448f-a237-8c9302e14af1" name="Default" comment="Responsive design for GallantnYC">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/design/Thumbs.db" afterPath="$PROJECT_DIR$/public/design/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Thumbs.db" afterPath="$PROJECT_DIR$/public/images/Thumbs.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common" afterPath="$PROJECT_DIR$/vendor/doctrine/common" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/data-fixtures" afterPath="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/dbal" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal" />
@@ -11,10 +9,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/doctrine-orm-module" afterPath="$PROJECT_DIR$/vendor/doctrine/doctrine-orm-module" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/orm" afterPath="$PROJECT_DIR$/vendor/doctrine/orm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Symfony/Component/Console" afterPath="$PROJECT_DIR$/vendor/symfony/console/Symfony/Component/Console" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/view/admin/admin/resources.phtml" afterPath="$PROJECT_DIR$/module/Admin/view/admin/admin/resources.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" afterPath="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/one-media-queries.css" afterPath="$PROJECT_DIR$/public/css/one-media-queries.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/one.css" afterPath="$PROJECT_DIR$/public/css/one.css" />
     </list>
     <ignored path="GallantOne.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,7 +56,7 @@
           <file leaf-file-name="one-media-queries.css" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/css/one-media-queries.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="78" column="19" selection-start="1543" selection-end="1543" vertical-scroll-proportion="0.30459127">
+                <state line="94" column="25" selection-start="1889" selection-end="1889" vertical-scroll-proportion="0.6282195">
                   <folding />
                 </state>
               </provider>
@@ -1688,7 +1684,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/one-media-queries.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="19" selection-start="1543" selection-end="1543" vertical-scroll-proportion="0.30459127">
+        <state line="94" column="25" selection-start="1889" selection-end="1889" vertical-scroll-proportion="0.6282195">
           <folding />
         </state>
       </provider>
