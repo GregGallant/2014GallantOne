@@ -350,10 +350,11 @@ a.menuPlacement:visited {
 
 .portScreenContent
 {
+    position:relative;
     top:25px;
     display:inline-block;
     color:#c3c3c3;
-    padding:20px 20px 20px 20px;
+    padding:0px 20px 20px 20px;
     font-family: Century Gothic, sans-serif;
 }
 
@@ -362,6 +363,26 @@ a.menuPlacement:visited {
 {
     width:731px;
     height:370px;
+}
+
+.innerPortLeft
+{
+    display:inline-block;
+    margin-top:35px;
+    float:left;
+}
+
+.innerPortRight
+{
+    margin:0px 0px 0px 0px;
+    display:inline-block;
+    float:right;
+    padding-left:30px;
+}
+
+.fuckIE {
+    max-width:90px;
+    max-height:90px;
 }
 
 .button {

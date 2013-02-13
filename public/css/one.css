@@ -136,6 +136,13 @@ p {
     font-style:normal;
     font-weight:normal;
     font-family: Arvil;
+    src: url('Arvil/Arvil_Sans.eot');
+}
+
+@font-face {
+    font-style:normal;
+    font-weight:normal;
+    font-family: Arvil;
     src: url('Arvil/Arvil_Sans.ttf') format("opentype");
 }
 

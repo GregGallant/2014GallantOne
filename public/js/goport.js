@@ -17,6 +17,15 @@ $(document).ready(function() {
         var aScreenJQ = '#' + aScreen.id;
         if (i != 0) {
             $(aScreenJQ).hide();
+
+            //var leftPort = document.getElementById('portfolioImage'+i);
+            //var rightPort = document.getElementById('innerPortRight'+i);
+            //var lpjq = '#' + leftPort.id;
+            //var rpjq = '#' + rightPort.id;
+            //$(lpjq).hide();
+           // $(rpjq).toggleClass("hidden");
+
+            //$(aScreenJQ).toggleClass("hidden");
         }
     }
 
