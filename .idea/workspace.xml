@@ -35,53 +35,53 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="PortfolioController.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php">
+          <file leaf-file-name="networksLayout.phtml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Networks/view/layout/networksLayout.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="51" column="32" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0">
+                <state line="6" column="0" selection-start="116" selection-end="116" vertical-scroll-proportion="-3.9230769">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PortfolioManager.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/PortfolioManager.php">
+          <file leaf-file-name="index.phtml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/admin/index.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="75" column="33" selection-start="1499" selection-end="1499" vertical-scroll-proportion="0.0">
+                <state line="9" column="12" selection-start="235" selection-end="235" vertical-scroll-proportion="-5.8846154">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="one-media-queries.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/css/one-media-queries.css">
+          <file leaf-file-name="resources.phtml" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/admin/resources.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="115" column="21" selection-start="2285" selection-end="2285" vertical-scroll-proportion="0.0">
+                <state line="12" column="19" selection-start="340" selection-end="340" vertical-scroll-proportion="0.24085006">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="media-queries.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/css/media-queries.css">
+          <file leaf-file-name="home.phtml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/admin/home.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="4" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
+                <state line="4" column="6" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="goport.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/js/goport.js">
+          <file leaf-file-name="responsive_layout.phtml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/layout/responsive_layout.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="13" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
+                <state line="26" column="28" selection-start="792" selection-end="792" vertical-scroll-proportion="-17.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="learnmore.phtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/learnmore.phtml">
+          <file leaf-file-name="oldResponsive.phtml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/layout/oldResponsive.phtml">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
                   <folding />
@@ -89,37 +89,37 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.phtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/index.phtml">
+          <file leaf-file-name="AdminController.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Controller/AdminController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="37" column="45" selection-start="2338" selection-end="2338" vertical-scroll-proportion="-18.307692">
+                <state line="17" column="38" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="portcontrol.phtml" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/portcontrol.phtml">
+          <file leaf-file-name="adminmenu.phtml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/admin/adminmenu.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="0" selection-start="581" selection-end="581" vertical-scroll-proportion="0.27450982">
+                <state line="1" column="21" selection-start="103" selection-end="103" vertical-scroll-proportion="-0.65384614">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="MailManagerImpl.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Application/src/Application/MailManagerImpl.php">
+          <file leaf-file-name="NetworksController.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Controller/NetworksController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="0" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
+                <state line="29" column="10" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PhotographyController.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Photography/src/Photography/Controller/PhotographyController.php">
+          <file leaf-file-name="gmediaLayout.phtml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/layout/gmediaLayout.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="28" column="0" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
+                <state line="11" column="26" selection-start="335" selection-end="335" vertical-scroll-proportion="-7.1923075">
                   <folding />
                 </state>
               </provider>
@@ -138,10 +138,28 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="one.css" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="one.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/css/one.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="134" column="11" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.22844344">
+                <state line="134" column="11" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.phtml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Networks/view/networks/networks/index.phtml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="1" column="22" selection-start="58" selection-end="58" vertical-scroll-proportion="-0.65384614">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Module.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/module/Application/Module.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="211" column="181" selection-start="6283" selection-end="6283" vertical-scroll-proportion="0.57110864">
                   <folding />
                 </state>
               </provider>
@@ -151,15 +169,6 @@
             <entry file="file://$PROJECT_DIR$/public/css/one_portfolio.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="358" column="0" selection-start="6449" selection-end="6449" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Portfolio.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Entity/Portfolio.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -204,7 +213,7 @@
           <file leaf-file-name="layout.phtml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/module/Application/view/layout/layout.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="20" column="31" selection-start="1113" selection-end="1113" vertical-scroll-proportion="-13.076923">
+                <state line="19" column="13" selection-start="1006" selection-end="1006" vertical-scroll-proportion="-12.423077">
                   <folding />
                 </state>
               </provider>
@@ -226,22 +235,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/module/Application/view/application/index/menu.phtml" />
-        <option value="$PROJECT_DIR$/module/Portfolio/config/module.config.php" />
-        <option value="$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/contact.phtml" />
-        <option value="$PROJECT_DIR$/module/Application/src/Application/MailManager.php" />
-        <option value="$PROJECT_DIR$/module/Portfolio/src/Portfolio/Form/ContactForm.php" />
-        <option value="$PROJECT_DIR$/module/Application/src/Application/MailManagerImpl.php" />
-        <option value="$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php" />
-        <option value="$PROJECT_DIR$/module/Admin/view/admin/admin/resources.phtml" />
-        <option value="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" />
-        <option value="$PROJECT_DIR$/public/css/one-media-queries.css" />
         <option value="$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/index.phtml" />
         <option value="$PROJECT_DIR$/public/js/goport.js" />
         <option value="$PROJECT_DIR$/module/Portfolio/src/Portfolio/PortfolioManager.php" />
         <option value="$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/portcontrol.phtml" />
         <option value="$PROJECT_DIR$/public/css/one_portfolio.css" />
         <option value="$PROJECT_DIR$/public/css/one.css" />
+        <option value="$PROJECT_DIR$/public/css/gallantmedia.css" />
+        <option value="$PROJECT_DIR$/module/Networks/view/layout/networksLayout.phtml" />
+        <option value="$PROJECT_DIR$/module/Admin/view/admin/layout/responsive_layout.phtml" />
+        <option value="$PROJECT_DIR$/module/Admin/src/Admin/Controller/AdminController.php" />
+        <option value="$PROJECT_DIR$/module/Admin/view/admin/admin/adminmenu.phtml" />
+        <option value="$PROJECT_DIR$/module/Admin/view/admin/admin/home.phtml" />
+        <option value="$PROJECT_DIR$/module/Admin/view/admin/admin/index.phtml" />
+        <option value="$PROJECT_DIR$/module/Admin/view/admin/admin/resources.phtml" />
+        <option value="$PROJECT_DIR$/module/Networks/view/networks/networks/index.phtml" />
+        <option value="$PROJECT_DIR$/module/Application/Module.php" />
       </list>
     </option>
   </component>
@@ -335,6 +344,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gallantmedia" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -763,6 +812,10 @@
               <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -787,6 +840,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Networks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Networks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Networks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1384,11 +1467,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\GallantMedia\Documents\GallantMedia\Websites\GallantOne\module\Admin\view\admin\layout" />
       <recent name="C:\Users\GallantMedia\Documents\GallantMedia\Websites\GallantOne\public\images" />
       <recent name="C:\Users\GallantMedia\Documents\GallantMedia\Websites\GallantOne\public\one" />
       <recent name="C:\Users\GallantMedia\Documents\GallantMedia\Websites\GallantOne\public\design" />
       <recent name="C:\Users\GallantMedia\Documents\GallantMedia\Websites\GallantOne\module\Networks\view\networks\networks" />
-      <recent name="C:\Users\GallantMedia\Documents\GallantMedia\Websites\GallantOne\public\images\iecapt" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Web Application.GallantOne.com">
@@ -1564,28 +1647,91 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/module/Application/src/Application/MailManagerImpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/gallantmedia.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="26" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Application/src/Application/Controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/layout/responsive_layout.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="28" selection-start="792" selection-end="792" vertical-scroll-proportion="-17.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Controller/NetworksController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="10" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Controller/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="38" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Networks/view/layout/networksLayout.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="116" selection-end="116" vertical-scroll-proportion="-3.9230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/module/Application/view/layout/layout.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="31" selection-start="1113" selection-end="1113" vertical-scroll-proportion="-13.076923">
+        <state line="19" column="13" selection-start="1006" selection-end="1006" vertical-scroll-proportion="-12.423077">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/media-queries.css">
+    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/admin/adminmenu.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
+        <state line="1" column="21" selection-start="103" selection-end="103" vertical-scroll-proportion="-0.65384614">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Form/ContactForm.php">
+    <entry file="file://$PROJECT_DIR$/module/Photography/src/Photography/Controller/PhotographyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="4" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.0">
+        <state line="28" column="0" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/learnmore.phtml">
+    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/admin/home.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="6" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/admin/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="12" selection-start="235" selection-end="235" vertical-scroll-proportion="-5.8846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/autoload_classmap.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -1594,84 +1740,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/admin/resources.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1999" selection-end="1999" vertical-scroll-proportion="-25.5">
+        <state line="12" column="19" selection-start="340" selection-end="340" vertical-scroll-proportion="0.24085006">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml">
+    <entry file="file://$PROJECT_DIR$/module/Networks/view/networks/networks/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="204" selection-start="879" selection-end="879" vertical-scroll-proportion="0.29859486">
+        <state line="1" column="22" selection-start="58" selection-end="58" vertical-scroll-proportion="-0.65384614">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/menu.phtml">
+    <entry file="file://$PROJECT_DIR$/module/Application/Module.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/goport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="13" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="45" selection-start="2338" selection-end="2338" vertical-scroll-proportion="-18.307692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Photography/view/layout/photographyLayout.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="925" selection-end="925" vertical-scroll-proportion="-19.615385">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="32" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/gallantnyc.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/PortfolioManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="33" selection-start="1499" selection-end="1499" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/portcontrol.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="581" selection-end="581" vertical-scroll-proportion="0.27450982">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/one_portfolio.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="358" column="0" selection-start="6449" selection-end="6449" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/one.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="11" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.22844344">
+        <state line="211" column="181" selection-start="6283" selection-end="6283" vertical-scroll-proportion="0.57110864">
           <folding />
         </state>
       </provider>

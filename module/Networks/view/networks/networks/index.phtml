@@ -1,6 +1,18 @@
 <div id="content" class="clearfix">
-
+   <div style="clear:both; border:2px inset #999999; display:none;">
    <?php
+    foreach($allNetworks as $network) {
+
+        $img = explode(".", $network->getName());
+        $imgName = $img[1];
+        echo "<div style=\"display:inline-block; border:1px solid #393939; width:145px;\">";
+        echo "<img width=\"145px\" height=\"92px\" src=\"/images/iecapt/".$imgName.".png\">";
+        echo "<div style=\"font-family:verdana,sans-serif; font-size:6pt; color:#3f3f3f;\">";
+        echo $network->getName();
+        echo "</div>";
+        echo "</div>\n";
+    }
+
     $form = $this->form;
 /*
     $form->setAttribute('action', $this->url(
@@ -20,20 +32,8 @@
     echo $this->formSubmit($form->get('submit'));
     echo $this->form()->closeTag();
 
-    foreach($allNetworks as $network) {
-
-       $img = explode(".", $network->getName());
-       $imgName = $img[1];
-       echo "<div>";
-       echo "<img width=\"295px\" height=\"222px\" src=\"/images/iecapt/".$imgName.".png\">";
-       echo "</div>";
-       echo "<div style=\"color:#ffffff;\">";
-       echo $network->getName();
-       echo "</div>\n";
-    }
-
    ?>
 
-
+  </div>
 </div>
 

@@ -12,6 +12,7 @@ body {
     margin-left:auto;
     margin-right:auto;
     background-color:#1c1c1c;
+    background-image:url('../images/gallantmedia/gm_back.jpg');
 }
 
 /* set html5 elements to block */
@@ -20,7 +21,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 #pagewrap {
-    width:800px;
+    width:960px;
     margin:0 auto;
     border:1px solid #f9f9f9;
 
@@ -28,7 +29,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 #header {
     background-color:#ffffff;
-    width:800px;
+    width:960px;
     height:98px;
 }
 
@@ -36,7 +37,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     padding:10px 10px 10px 10px;
     width:auto;
     height:100%;
-    background-color:#0f0f0f;
+    background-color:#ffffff;
 }
 
 #footer {

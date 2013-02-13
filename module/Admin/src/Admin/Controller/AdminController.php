@@ -14,6 +14,9 @@ class AdminController extends AbstractActionController
     public function indexAction()
     {
 
+        // Initalize a new layout for GallantNYC.com
+        $this->layout('layout/networksLayout.phtml');
+
         /* Give router info to this */
         $route = $this->getServiceLocator()->get('router');
         $thisRoute = $route->getRequestUri()->getPath();

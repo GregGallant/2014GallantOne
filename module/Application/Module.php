@@ -209,7 +209,7 @@ class Module implements AutoloaderProviderInterface
          * Get a list of protected controllers from database
          * build iterative for loop
          */
-        if ($resource != 'Album\Controller\Album' && $resource != 'Admin\Controller\Admin' && $resource != 'Clients\Controller\Clients')
+        if ($resource != 'Album\Controller\Album' && $resource != 'Admin\Controller\Admin' && $resource != 'Clients\Controller\Clients' && $resource != '\Networks\Controller\Networks')
         {
             $acl->allow('guest', $resource);
         } else {
