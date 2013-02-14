@@ -32,6 +32,9 @@
             </div>
             <?php echo $this->partial("application/index/menu.phtml", "array()"); ?>
             <div class="goLine"></div>
+            <div class="authMenu">
+                <div class="loginPlacement"><a class="loginPlacement" href="/login">login</a> / <a class="loginPlacement" href="/register">register</a></div>
+            </div>
         </header>
             <?php echo $this->content; ?>
         <!-- end content -->

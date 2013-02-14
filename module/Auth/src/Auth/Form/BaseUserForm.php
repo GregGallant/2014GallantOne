@@ -19,7 +19,7 @@ class BaseUserForm
 
     /**
      * @Annotation\Validator({"name":"EmailAddress"})
-     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Attributes({"type":"text", "class":"form_input"})
      * @Annotation\Options({"label":"Email"})
      */
     public $email;
