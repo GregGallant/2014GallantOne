@@ -233,6 +233,16 @@ h3 {
     color:#d8bb9e;
 }
 
+
+h6 {
+    font-family:Helvetica,Arial,sans-serif;
+    font-size:.8em;
+    font-weight:normal;
+    letter-spacing:.08em;
+    line-height:20px;
+    color:#d8bb9e;
+}
+
 #textHeader {
     margin-top:100px;
     margin-left:auto;
@@ -456,6 +466,23 @@ h3 {
     background: -webkit-linear-gradient(top, rgb(228,237,189) 2%,rgb(207,219,120) 3%,rgb(149,175,54) 100%);
     background: -o-linear-gradient(top, rgb(228,237,189) 2%,rgb(207,219,120) 3%,rgb(149,175,54) 100%); background: -ms-linear-gradient(top, rgb(228,237,189) 2%,rgb(207,219,120) 3%,rgb(149,175,54) 100%); background: linear-gradient(top, rgb(228,237,189) 2%,rgb(207,219,120) 3%,rgb(149,175,54) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4edbd', endColorstr='#95af36',GradientType=0 );
+}
+
+
+#userForm ul {
+    margin-top:0px;
+    list-style-type:none;
+    text-align:right;
+}
+
+#userForm li {
+    margin-top:0px;
+    font-family:Trebuchet MS, Helvetica, Arial, sans-serif;
+    font-size:0.72em;
+    font-weight:bold;
+    color:#dcecec;
+    letter-spacing:.1em;
+
 }
 
 

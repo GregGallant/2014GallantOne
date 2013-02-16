@@ -22,7 +22,7 @@ class MailManagerImpl implements MailManager
 
         $message->addFrom($contactForm->getEmail(), $contactForm->getName())
             ->addTo(GALLANTMAIL)
-            ->setSubject($contactForm->getSubject());
+            ->setSubject("GALLANTONE.com CLIENT: ".$contactForm->getSubject());
 
         $message->setBody($contactForm->getMessage());
         $message->addReplyTo(GALLANTMAIL, "Greg Gallant");
@@ -32,7 +32,7 @@ class MailManagerImpl implements MailManager
         try {
             $transport->send($message);
         } catch(\Exception $e) {
-            throw new \Exception;
+            throw new \Exception("Send mail fail: ".$e->getMessage());
             //return $e->getMessage(); // please log this...
         }
 
