@@ -32,6 +32,17 @@ return array(
                     ),
                 ),
             ),
+            'loginregister' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/loginregister',
+                    'constraints' => array( ),
+                    'defaults' => array(
+                        'controller' => 'Auth\Controller\Auth',
+                        'action' => 'loginregister',
+                    ),
+                ),
+            ),
             'success' => array(
                 'type' => 'segment',
                 'options' => array(

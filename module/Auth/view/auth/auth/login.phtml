@@ -1,10 +1,10 @@
-<h1>Login</h1>
 <div class="formWrap">
+    <h1>Login</h1>
    <?php
 
-$form = $this->form;
+$login_form = $this->login_form;
 
-$form->setAttribute('action', $this->url(
+$login_form->setAttribute('action', $this->url(
     'login',
     array(
         'action' => 'login',
@@ -13,18 +13,18 @@ $form->setAttribute('action', $this->url(
     )
 ));
 
-$form->prepare();
+$login_form->prepare();
 
 if ($error != null)  {
     echo $error;
 }
 
-echo $this->form()->openTag($form);
-echo $this->formRow($form->get('email'));
+echo $this->form()->openTag($login_form);
+echo $this->formRow($login_form->get('email'));
 echo "<br/>";
-echo $this->formRow($form->get('password'));
+echo $this->formRow($login_form->get('password'));
 echo "<br/>";
-echo $this->formSubmit($form->get('submit'));
+echo $this->formSubmit($login_form->get('submit'));
 echo $this->form()->closeTag();
 ?>
 </div>

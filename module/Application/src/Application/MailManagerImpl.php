@@ -31,9 +31,9 @@ class MailManagerImpl implements MailManager
         $transport = new SendMailTransport();
         try {
             $transport->send($message);
-            return 1;
         } catch(\Exception $e) {
-            return $e->getMessage(); // please log this...
+            throw new \Exception;
+            //return $e->getMessage(); // please log this...
         }
 
     }

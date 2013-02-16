@@ -127,9 +127,9 @@ class PortfolioController extends AbstractActionController
 
                 // TODO: send e-mail (populate ContactForm with $form data
                 $error = $this->mailManager->sendContactMail($contact_form);
-                if ($error != 1) {
-                    return $this->redirect()->toRoute('login');
-                }
+                /*if ($error != 1) {
+                    throw new \Exception;
+                }*/
                 return $this->redirect()->toRoute('success');
 
             }

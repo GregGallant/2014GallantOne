@@ -1,12 +1,12 @@
-<div class="formTitleWrap">
-    <h1>Register</h1>
-</div>
 <div class="formWrap">
+    <div class="formTitleWrap">
+        <h1>Register</h1>
+    </div>
 <?php
 
-$form = $this->form;
+$register_form = $this->register_form;
 
-$form->setAttribute('action', $this->url(
+$register_form->setAttribute('action', $this->url(
 
     'register',
     array(
@@ -19,7 +19,7 @@ $form->setAttribute('action', $this->url(
     )
 ));
 
-$form->prepare();
+$register_form->prepare();
 
 if (isset($exception)) {
    echo "<p>".$exception."<p>";
@@ -28,22 +28,22 @@ if (isset($exception)) {
 
 
 <?php
-echo $this->form()->openTag($form);
-echo $this->formRow($form->get('first_name'));
+echo $this->form()->openTag($register_form);
+echo $this->formRow($register_form->get('first_name'));
 echo "<br/>";
-echo $this->formRow($form->get('last_name'));
+echo $this->formRow($register_form->get('last_name'));
 echo "<br/>";
-echo $this->formRow($form->get('email'));
+echo $this->formRow($register_form->get('email'));
 echo "<br/>";
-echo $this->formRow($form->get('password'));
+echo $this->formRow($register_form->get('password'));
 echo "<br/>";
-echo $this->formRow($form->get('confirm_password'));
+echo $this->formRow($register_form->get('confirm_password'));
 echo "<br/>";
 echo "</div>";
 ?>
 <div class="formTitleWrap">
 <?php
-echo $this->formSubmit($form->get('submit'));
+echo $this->formSubmit($register_form->get('submit'));
 echo $this->form()->closeTag();
 
 ?>

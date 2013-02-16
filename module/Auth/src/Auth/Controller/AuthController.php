@@ -65,11 +65,11 @@ class AuthController extends AbstractActionController
             /* Handle invalid login messages */
             $messages = $this->handleLoginMessages($result);
 
-            return array( 'form' => $form, 'error' => $messages );
+            return array( 'login_form' => $form, 'error' => $messages );
         }
 
         // Get request handling
-        return array( 'form' => $form, 'error' => null );
+        return array( 'login_form' => $form, 'error' => null );
     }
 
     /**
@@ -118,10 +118,85 @@ class AuthController extends AbstractActionController
             }
         }
 
+
         return array(
-            'form' => $form,
+            'register_form' => $form,
         );
 
+    }
+
+    public function loginregisterAction()
+    {
+
+        /* Build annotation style form */
+        $builder = new AnnotationBuilder();
+        $login_form = $builder->createForm(new BaseUserForm());
+
+        $login_form->get('submit')->setAttribute('value', 'Login');
+
+        /* Register init stuff */
+        $register_form = $builder->createForm(new UserForm());
+        $register_form->get('submit')->setAttribute('value', 'Register');
+        /* End register init stuff */
+
+        $request = $this->getRequest();
+
+        if ($request->isPost()) {
+
+            $login_form->setData($request->getPost());
+
+            /* Authenticate User */
+            $authManager = new AuthManager($this->getServiceLocator());
+            $result = $authManager->authUser($login_form);
+
+            /* User is authenticated */
+            if ($result->isValid())  {
+                $authUserEmail = $result->getIdentity();
+
+                $gUser = new Container('gUser');
+                $gUser->eName = $authUserEmail;
+
+                return $this->redirect()->toRoute('success');
+            }
+
+            /* Register stuff */
+            $user = new User();
+            $this->em = $this->getEntityManager();
+            // Check password and confirm password
+
+            $user->populate($register_form->getData());  // populate User object
+
+            $authManager = new AuthManager($this->getServiceLocator());
+            $user = $authManager->encryptPassword($user);
+            //$user = $this->encryptPassword($user);
+
+            /* Set standardized Data */
+            $user->setStatus(1); // Active User
+            $user->setAclRoleId(1); // guest
+            //$user->setCreateDate("2012-11-10 11:11:11");
+            //$user->setExpireDate("9999-11-10 11:11:11");
+            $this->em->persist($user);  // persist object until flush (insert)
+            $this->em->flush();
+
+            //return $this->redirect()->toRoute('login');
+
+            /* End Register stuff */
+
+            /* Handle invalid login messages */
+            $messages = $this->handleLoginMessages($result);
+
+            return array( 'login_form' => $login_form, 'error' => $messages );
+        }
+
+        // Get request handling
+        return array( 'login_form' => $login_form, 'register_form'=>$register_form, 'error' => null );
+        /* Form Builder */
+        /*
+        $builder = new AnnotationBuilder();
+        $form = $builder->createForm(new UserForm());
+        $form->get('submit')->setAttribute('value', 'Register');
+        */
+        //return new ViewModel();
     }
 
     public function successAction() {
