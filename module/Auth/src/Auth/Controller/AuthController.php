@@ -207,6 +207,15 @@ class AuthController extends AbstractActionController
 
     }
 
+    public function mailsuccessAction() {
+
+        $gUser = new Container('gUser');
+
+        return new ViewModel(array('gUser' => $gUser->eName ));
+
+    }
+
+
     public function logoutAction()
     {
 

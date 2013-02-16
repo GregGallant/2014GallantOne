@@ -54,6 +54,17 @@ return array(
                     ),
                 ),
             ),
+            'mailsuccess' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/mailsuccess',
+                    'constraints' => array( ),
+                    'defaults' => array(
+                        'controller' => 'Auth\Controller\Auth',
+                        'action' => 'mailsuccess',
+                    ),
+                ),
+            ),
             'logout' => array(
                 'type' => 'segment',
                 'options' => array(

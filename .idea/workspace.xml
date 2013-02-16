@@ -44,10 +44,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="one.css" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="one.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/css/one.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="241" column="20" selection-start="3696" selection-end="3696" vertical-scroll-proportion="0.60918254">
+                <state line="184" column="40" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="module.config.php" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/module/Auth/config/module.config.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="49" column="45" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.63829786">
                   <folding />
                 </state>
               </provider>
@@ -123,7 +132,7 @@
           <file leaf-file-name="AuthController.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/module/Auth/src/Auth/Controller/AuthController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="175" column="57" selection-start="5130" selection-end="5130" vertical-scroll-proportion="0.0">
+                <state line="165" column="0" selection-start="4673" selection-end="4673" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -138,10 +147,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PortfolioController.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="PortfolioController.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="118" column="32" selection-start="3133" selection-end="3133" vertical-scroll-proportion="0.0">
+                <state line="108" column="34" selection-start="2828" selection-end="2828" vertical-scroll-proportion="0.27659574">
                   <folding />
                 </state>
               </provider>
@@ -156,10 +165,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="mailSuccess.phtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Auth/view/auth/auth/mailSuccess.phtml">
+          <file leaf-file-name="mailsuccess.phtml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Auth/view/auth/auth/mailsuccess.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="31" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
+                <state line="6" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -174,10 +183,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="contact.phtml" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="contact.phtml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/contact.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="3" column="7" selection-start="128" selection-end="128" vertical-scroll-proportion="0.05882353">
+                <state line="18" column="6" selection-start="513" selection-end="513" vertical-scroll-proportion="-11.769231">
                   <folding />
                 </state>
               </provider>
@@ -217,22 +226,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/module/Portfolio/src/Portfolio/Form/ContactForm.php" />
         <option value="$PROJECT_DIR$/module/Networks/src/Networks/Service/TestService.php" />
-        <option value="$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php" />
-        <option value="$PROJECT_DIR$/module/Auth/config/module.config.php" />
         <option value="$PROJECT_DIR$/module/Application/config/module.config.php" />
         <option value="$PROJECT_DIR$/module/Auth/view/auth/auth/loginregister.php" />
-        <option value="$PROJECT_DIR$/module/Auth/src/Auth/Controller/AuthController.php" />
         <option value="$PROJECT_DIR$/module/Auth/view/auth/auth/login.phtml" />
         <option value="$PROJECT_DIR$/module/Auth/view/auth/auth/register.phtml" />
         <option value="$PROJECT_DIR$/module/Auth/view/auth/auth/loginregister.phtml" />
-        <option value="$PROJECT_DIR$/module/Auth/view/auth/auth/mailSuccess.phtml" />
         <option value="$PROJECT_DIR$/module/Application/src/Application/MailManagerImpl.php" />
         <option value="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" />
         <option value="$PROJECT_DIR$/public/css/one_portfolio.css" />
-        <option value="$PROJECT_DIR$/public/css/one.css" />
         <option value="$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/contact.phtml" />
+        <option value="$PROJECT_DIR$/public/css/one.css" />
+        <option value="$PROJECT_DIR$/module/Auth/view/auth/auth/mailSuccess.phtml" />
+        <option value="$PROJECT_DIR$/module/Auth/src/Auth/Controller/AuthController.php" />
+        <option value="$PROJECT_DIR$/module/Auth/config/module.config.php" />
+        <option value="$PROJECT_DIR$/module/Auth/view/auth/auth/mailsuccess.phtml" />
+        <option value="$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php" />
       </list>
     </option>
   </component>
@@ -1372,13 +1381,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/Application/Module.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="4" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Auth/view/auth/auth/register.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="4" selection-start="27" selection-end="27" vertical-scroll-proportion="-0.65384614">
@@ -1400,30 +1402,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Auth/src/Auth/Controller/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="57" selection-start="5130" selection-end="5130" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Form/ContactForm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="4" selection-start="1681" selection-end="1681" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="32" selection-start="3133" selection-end="3133" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Auth/view/auth/auth/success.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="-1.3076923">
           <folding />
         </state>
       </provider>
@@ -1438,13 +1419,6 @@
     <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="26" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.6862745">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Auth/view/auth/auth/mailSuccess.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="31" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1470,16 +1444,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/one.css">
+    <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/contact.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="241" column="20" selection-start="3696" selection-end="3696" vertical-scroll-proportion="0.60918254">
+        <state line="18" column="6" selection-start="513" selection-end="513" vertical-scroll-proportion="-11.769231">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/contact.phtml">
+    <entry file="file://$PROJECT_DIR$/public/css/one.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="7" selection-start="128" selection-end="128" vertical-scroll-proportion="0.05882353">
+        <state line="184" column="40" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Auth/view/auth/auth/success.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="-1.3076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Auth/view/auth/auth/mailsuccess.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Auth/src/Auth/Controller/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="165" column="0" selection-start="4673" selection-end="4673" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Auth/config/module.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="45" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.63829786">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="34" selection-start="2828" selection-end="2828" vertical-scroll-proportion="0.27659574">
           <folding />
         </state>
       </provider>
