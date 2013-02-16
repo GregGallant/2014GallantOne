@@ -1,5 +1,6 @@
 <h1>Login</h1>
-<?php
+<div class="formWrap">
+   <?php
 
 $form = $this->form;
 
@@ -20,7 +21,10 @@ if ($error != null)  {
 
 echo $this->form()->openTag($form);
 echo $this->formRow($form->get('email'));
+echo "<br/>";
 echo $this->formRow($form->get('password'));
+echo "<br/>";
 echo $this->formSubmit($form->get('submit'));
 echo $this->form()->closeTag();
-
+?>
+</div>

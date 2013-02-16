@@ -14,39 +14,38 @@ class ContactForm
 
     /**
      * @Annotation\Filter({"name":"StringTrim"})
-     * @Annotation\Validator({"name":"Regex", "options":{"pattern":"/^[a-zA-Z][a-zA-Z0-9_-]{0,24}$/"}})
      * @Annotation\Validator({"name":"StringLength", "options":{"min":"2"}})
-     * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Full Name"})
+     * @Annotation\Attributes({"type":"text", "class":"form_input", "placeholder":"Full Name"})
+     * @Annotation\Options({"label":""})
      */
     public $name;
 
     /**
      * @Annotation\Validator({"name":"EmailAddress"})
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Email"})
+     * @Annotation\Attributes({"type":"text", "class":"form_input", "placeholder":"Email Address"})
+     * @Annotation\Options({"label":""})
      */
     public $email;
 
     /**
      * @Annotation\Filter({"name":"StringTrim"})
-     * @Annotation\Validator({"name":"Regex", "options":{"pattern":"/^[a-zA-Z][a-zA-Z0-9_-]{0,24}$/"}})
      * @Annotation\Validator({"name":"StringLength", "options":{"min":"2"}})
-     * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Subject"})
+     * @Annotation\Attributes({"type":"text", "class":"form_input", "placeholder":"Subject"})
+     * @Annotation\Options({"label":""})
      */
     public $subject;
 
     /**
      * @Annotation\Filter({"name":"StringTrim"})
      * @Annotation\Validator({"name":"StringLength", "options":{"min":"2"}})
-     * @Annotation\Attributes({"type":"textarea"})
-     * @Annotation\Options({"label":"Message"})
+     * @Annotation\Attributes({"type":"textarea", "class":"form_textarea", "placeholder":"Project Details"})
+     * @Annotation\Options({"label":""})
      */
     public $message;
 
     /**
-     * @Annotation\Attributes({"type":"submit"})
+     * @Annotation\Attributes({"type":"submit", "class":"submit_button"})
      */
     public $submit;
 
@@ -99,5 +98,13 @@ class ContactForm
     public function getSubmit()
     {
         return $this->submit;
+    }
+
+    public function populate($form)
+    {
+        $this->setName($form['name']);
+        $this->setEmail($form['email']);
+        $this->setSubject($form['subject']);
+        $this->setMessage($form['message']);
     }
 }

@@ -13,7 +13,8 @@ class MailManagerImpl implements MailManager
 
     public function sendContactMail($contactForm)
     {
-        if (!$contactForm instanceof ContactForm) {
+        if (!$contactForm instanceof ContactForm)
+        {
             throw new \Exception;
         }
 
@@ -28,7 +29,12 @@ class MailManagerImpl implements MailManager
         $message->setEncoding("UTF-8");
 
         $transport = new SendMailTransport();
-        $transport->send($message);
+        try {
+            $transport->send($message);
+            return 1;
+        } catch(\Exception $e) {
+            return $e->getMessage(); // please log this...
+        }
 
     }
 

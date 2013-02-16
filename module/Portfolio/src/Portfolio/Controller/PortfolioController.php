@@ -122,15 +122,20 @@ class PortfolioController extends AbstractActionController
 
             if ($form->isValid()) {
 
-                // TODO: send e-mail (populate ContactForm with $form data
-                $this->mailManager->sendContactMail($form);
+                $contact_form = new ContactForm();
+                $contact_form->populate($form->getData());
 
+                // TODO: send e-mail (populate ContactForm with $form data
+                $error = $this->mailManager->sendContactMail($contact_form);
+                if ($error != 1) {
+                    return $this->redirect()->toRoute('login');
+                }
                 return $this->redirect()->toRoute('success');
 
             }
 
         }
 
-       return array('form'=>$form,);
+        return array('form'=>$form,);
     }
 }

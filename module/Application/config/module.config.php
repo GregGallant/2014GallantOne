@@ -61,6 +61,7 @@ return array(
                     )
                 ),
             ),
+            /*
             'light' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -71,6 +72,7 @@ return array(
                     )
                 ),
             ),
+            */
             'photography' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -166,7 +168,7 @@ return array(
             'viewHelper' => 'Application\View\Helper',
         ),
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
         ),
     ),
     'view_manager' => array(

@@ -1,5 +1,6 @@
-
-<h1>Register</h1>
+<div class="formTitleWrap">
+    <h1>Register</h1>
+</div>
 <div class="formWrap">
 <?php
 
@@ -28,17 +29,20 @@ if (isset($exception)) {
 
 <?php
 echo $this->form()->openTag($form);
+echo $this->formRow($form->get('first_name'));
+echo "<br/>";
+echo $this->formRow($form->get('last_name'));
+echo "<br/>";
 echo $this->formRow($form->get('email'));
 echo "<br/>";
 echo $this->formRow($form->get('password'));
 echo "<br/>";
 echo $this->formRow($form->get('confirm_password'));
 echo "<br/>";
-echo $this->formRow($form->get('first_name'));
-echo "<br/>";
-echo $this->formRow($form->get('last_name'));
-echo "<br/>";
 echo "</div>";
+?>
+<div class="formTitleWrap">
+<?php
 echo $this->formSubmit($form->get('submit'));
 echo $this->form()->closeTag();
 
