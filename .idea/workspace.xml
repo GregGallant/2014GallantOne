@@ -35,42 +35,6 @@
     <splitter split-orientation="horizontal" split-proportion="0.4293126">
       <split-first>
         <leaf>
-          <file leaf-file-name="layout.phtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Application/view/layout/layout.phtml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="14" column="22" selection-start="728" selection-end="728" vertical-scroll-proportion="-9.153846">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="register.phtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Auth/view/auth/auth/register.phtml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="-4.576923">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="login.phtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Auth/view/auth/auth/login.phtml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="0" selection-start="549" selection-end="549" vertical-scroll-proportion="-19.615385">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="contact.phtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/contact.phtml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="26" column="48" selection-start="755" selection-end="755" vertical-scroll-proportion="-17.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="ContactForm.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Form/ContactForm.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -80,17 +44,17 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="MailManagerImpl.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="MailManagerImpl.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/module/Application/src/Application/MailManagerImpl.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="20" selection-start="879" selection-end="879" vertical-scroll-proportion="0.6426117">
+                <state line="35" column="57" selection-start="971" selection-end="971" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="MailManager.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Application/src/Application/MailManager.php">
+          <file leaf-file-name="NetworkAdapterFactory.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/NetworkAdapterFactory.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
                   <folding />
@@ -98,10 +62,46 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="menu.phtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/menu.phtml">
+          <file leaf-file-name="service.log" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Service/service.log">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="5" selection-start="524" selection-end="524" vertical-scroll-proportion="-5.8846154">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TestApi.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Service/TestApi.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ConfigAwareInterface.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Service/ConfigAwareInterface.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TestService.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Service/TestService.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="21" column="24" selection-start="378" selection-end="378" vertical-scroll-proportion="0.17525773">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TestResponse.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Service/TestResponse.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="28" column="0" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -110,7 +110,7 @@
           <file leaf-file-name="NetworksController.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Controller/NetworksController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="29" column="10" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
+                <state line="39" column="3" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -156,7 +156,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PortfolioController.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="PortfolioController.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="130" column="59" selection-start="3580" selection-end="3580" vertical-scroll-proportion="0.7905935">
@@ -235,7 +235,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/css/one_portfolio.css" />
         <option value="$PROJECT_DIR$/module/Application/view/application/index/menu.phtml" />
         <option value="$PROJECT_DIR$/module/Application/view/layout/layout.phtml" />
         <option value="$PROJECT_DIR$/module/Auth/src/Auth/Form/UserForm.php" />
@@ -251,6 +250,7 @@
         <option value="$PROJECT_DIR$/module/Portfolio/src/Portfolio/Form/ContactForm.php" />
         <option value="$PROJECT_DIR$/module/Application/src/Application/MailManagerImpl.php" />
         <option value="$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php" />
+        <option value="$PROJECT_DIR$/module/Networks/src/Networks/Service/TestService.php" />
       </list>
     </option>
   </component>
@@ -680,6 +680,80 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Networks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Networks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Networks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GallantOne" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Networks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Networks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1264,90 +1338,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/admin/adminmenu.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="5" selection-start="268" selection-end="268" vertical-scroll-proportion="-3.2692308">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="57" selection-start="1317" selection-end="1317" vertical-scroll-proportion="-11.115385">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/src/Application/MailManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Auth/src/Auth/Form/BaseUserForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="6" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Networks/view/networks/networks/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="22" selection-start="58" selection-end="58" vertical-scroll-proportion="-0.65384614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Portfolio/Module.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/Module.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="211" column="181" selection-start="6283" selection-end="6283" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/one_portfolio.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="218" column="0" selection-start="4121" selection-end="4121" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/src/Application/Controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/config/module.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="1931" selection-end="1931" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Portfolio/config/module.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="34" selection-start="925" selection-end="925" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zendframework/library/Zend/Form/Annotation/AnnotationBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="0" selection-start="5605" selection-end="5605" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Form/ContactForm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="104" column="29" selection-start="2395" selection-end="2395" vertical-scroll-proportion="0.0">
@@ -1362,16 +1352,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/src/Application/MailManagerImpl.php">
+    <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="20" selection-start="879" selection-end="879" vertical-scroll-proportion="0.6426117">
+        <state line="130" column="59" selection-start="3580" selection-end="3580" vertical-scroll-proportion="0.7905935">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php">
+    <entry file="file://$PROJECT_DIR$/module/Application/src/Application/MailManagerImpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="59" selection-start="3580" selection-end="3580" vertical-scroll-proportion="0.7905935">
+        <state line="35" column="57" selection-start="971" selection-end="971" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Application/view/layout/layout.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="22" selection-start="728" selection-end="728" vertical-scroll-proportion="-9.153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/NetworkAdapterFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Auth/view/auth/auth/register.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="-4.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Service/service.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Auth/view/auth/auth/login.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="549" selection-end="549" vertical-scroll-proportion="-19.615385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/contact.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="48" selection-start="755" selection-end="755" vertical-scroll-proportion="-17.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Service/TestResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Service/TestApi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Application/src/Application/MailManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Service/ConfigAwareInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/menu.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="5" selection-start="524" selection-end="524" vertical-scroll-proportion="-5.8846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Networks/src/Networks/Service/TestService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="24" selection-start="378" selection-end="378" vertical-scroll-proportion="0.17525773">
           <folding />
         </state>
       </provider>

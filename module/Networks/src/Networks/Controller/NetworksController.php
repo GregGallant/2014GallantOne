@@ -30,14 +30,15 @@ class NetworksController extends AbstractActionController
         $this->layout('layout/networksLayout.phtml');
 
         $this->initNetworksManager();
-
+/*
         try {
             $allNetworks = $this->networksManager->getAllNetworks();
         } catch (\Exception $e) {
             $allNetworks = array();
             var_dump($e->getMessage());
         }
-
+ */
+		$allNetworks = array();
         /* Build the submit 'form' */
         $builder = new AnnotationBuilder();
         $form = $builder->createForm(new NetworkRefresh());
@@ -56,7 +57,16 @@ class NetworksController extends AbstractActionController
             return $this->redirect()->toRoute('networks');
         }
 
-        $view = new ViewModel(array('form'=>$form, 'allNetworks'=>$allNetworks));
+		$sm = $this->getServiceLocator();
+		$testMe = $sm->get('TestService');
+		$testMe->setServiceManager($sm);
+		$apiMe = $sm->get('TestApi');
+		//var_dump($apiMe->getConfig());
+	//	$resp = $testMe->send($api);
+		//$serviceEcho = $testMe->onScreen(); // this fires
+		//$testMe->send($apiMe);
+        //$view = new ViewModel(array('form'=>$form, 'allNetworks'=>$allNetworks, 'serviceTest'=>$apiMe->getConfig()));
+        $view = new ViewModel(array('form'=>$form, 'allNetworks'=>$allNetworks, 'serviceTest'=>$testMe->goService()));
         return $view;
     }
 

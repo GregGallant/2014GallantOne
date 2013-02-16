@@ -1,7 +1,8 @@
 <?php
 namespace Networks;
 
-use Networks\Entity\Networks;
+//use Networks\Entity\Networks;
+use Networks\TestService;
 use Networks\Model\NetworksTable;
 use Zend\Db\ResultSet\ResultSet;
 use Networks\NetworkAdapterFactory;
@@ -29,17 +30,57 @@ class Module
         );
     }
 
-
+	/* Refer to: http://www.stephenrhoades.com/?p=513 */
     public function getServiceConfig()
     {
         return array(
-            'factories' => array(
+			'factories' => array(
+				'TestService' => function ($sm) {
+					$httpClient = new \Zend\Http\Client;
+					$httpClient->setAdapter(new \Zend\Http\Client\Adapter\Curl);
+
+					$client = new Service\TestService;
+					$client->setHttpClient($httpClient);
+					return $client;
+				},
+				),
+					'invokables' => array(
+						'TestApi' => 'Networks\Service\TestApi'
+					),
+					'shared' => array(
+						'TestApi' => false
+					),
+					'initializers' => array(
+						function ($instance, $sm) {
+							if ($instance instanceof \Networks\Services\ConfigAwareInterface) {
+								$config = $sm->get('application')->getConfig();
+								$apiConfig = isset($config['api-config']) ? $config['api-config'] : array('default'=>'Default Configuration');
+								$instance->setConfig($apiConfig);
+							}
+						}
+		),
+			
+					'abstract_factories' => array(
+						'TestResponse' => 'Networks\Service\TestResponse'
+					),
+
+
+
+
+
+				/*
                 'Networks\Entity\Networks' => function($sm) {
                     $nEntity = new Networks();
                     return $nEntity;
-                },
+				},
+				 */
+				/*
+				'invokables' => array(
+					'testSM' => 'Networks\NetworkAdapterFactory',
+				),
+				 */
 
-                'gmAdapter' => new NetworkAdapterFactory('dbgm'),
+                //'gmAdapter' => new NetworkAdapterFactory('dbgm'),
                 //'doctrine.entitymanager.orm_gallantmedia' => new EntityManagerFactory("orm_gallantmedia"),
                 /*
                 'doctrine.entitymanager.orm_gallantmedia' => new NetworkAdapterFactory("doctrine"),
@@ -53,7 +94,7 @@ class Module
                 },
                 */
 
-            ),
+
 
         );
     }

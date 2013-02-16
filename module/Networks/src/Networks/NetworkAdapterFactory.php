@@ -3,12 +3,14 @@
 namespace Networks;
 
 use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\AbstractFactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Db\Adapter\Adapter;
 
-class NetworkAdapterFactory implements FactoryInterface
+class NetworkAdapterFactory 
 {
-
+	//implements AbstractFactoryInterface
+/*
     protected $configKey;
 
     public function __construct($key)
@@ -20,6 +22,20 @@ class NetworkAdapterFactory implements FactoryInterface
     {
         $config = $serviceLocator->get('Config');
         return new Adapter($config[$this->configKey]);
-    }
+	}
+
+	public function printKey() {
+		echo $this->configKey;
+	}
+ */
+	public function canCreateServiceWithName($sm, $name, $reqName) 
+	{
+		return true;
+	}
+
+	public function createServiceWithName($sm, $name, $reqName)  
+	{
+		return $this;
+	}
 }
 
