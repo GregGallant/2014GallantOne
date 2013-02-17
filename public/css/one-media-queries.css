@@ -2,19 +2,52 @@
 
     html {
         -webkit-text-size-adjust:none;
+        max-width:474px;
+        overflow-x:hidden;
     }
+
+    body {
+        width:474px;
+        overflow-x:hidden;
+    }
+    /*
+   #goLogo {
+        width:75%;
+    }
+    */
 
     img.bg {
         left: 50%;
         margin-left: -512px;   /* 50% */
     }
 
+    #full-screen-background-image {
+        z-index: -999;
+        min-height: 100%;
+        max-width: 960px;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+
     #pagewrap {
         width:474px;
     }
 
+    /*
+        #header {
+            max-width:474px;
+        }
+    */
     #pagewrap #header {
+        max-width:474px;
         width:474px;
+    }
+
+    .authMenu {
+        width:464px;
     }
 
     #pagewrap #header .goLine {
@@ -23,11 +56,24 @@
         margin-bottom:2px;
     }
 
-    #pagewrap >header .goHeader {
+    #pagewrap > header .goHeader {
         float:none;
-        height:70%;
+        max-height:50px;
+        width:200px;
     }
 
+    .contactForm {
+        max-width:474px;
+    }
+
+    .form_textarea, .form_textarea:focus {
+        max-width:350px;
+        font-family:Trebuchet MS, sans-serif;
+    }
+
+    .csubmit {
+        max-width:377px;
+    }
 
     #pagewrap #header #onemenuBar .linePlacement {
         /*display:none;*/
@@ -58,6 +104,7 @@
         width:474px;
         height:20px;
         float:none;
+        clear:both;
     }
 
     #pagewrap #header .onemenuText {
@@ -65,8 +112,9 @@
         font-family:Arial,sans-serif;
         font-size:.7em;
         padding-left:1px;
-        padding-top:5px;
-        width:474px;
+        padding-top:2px;
+        width:434px;
+        text-align:right;
     }
 
     #pagewrap #textHeader {
@@ -168,12 +216,29 @@
 
     html {
         -webkit-text-size-adjust:none;
+        overflow-x:hidden;
+    }
+
+    body {
+        max-width:310px;
+        overflow-x:hidden;
+    }
+
+    #full-screen-background-image {
+        max-width:310px;
+        overflow-x:hidden;
     }
 
     img.bg {
         left: 50%;
         margin-left: -512px;   /* 50% */
     }
+
+    .authMenu {
+        width:305px;
+    }
+
+
 
     #pagewrap {
         width:310px;
@@ -183,14 +248,54 @@
         width:310px;
     }
 
+
+    .formWrap {
+        max-width:280px;
+    }
+
+
+    .form_textarea, .form_textarea:focus {
+        max-width:250px;
+        font-family:Trebuchet MS, sans-serif;
+    }
+
+    .contactForm {
+        max-width:310px;
+        padding:5px;
+    }
+
+
+    .form_input, .form_input:focus {
+        padding:2px;
+        margin:2px;
+        border:1px solid #339933;
+        max-width:200px;
+        font-family:Trebuchet MS, sans-serif;
+    }
+
+    .formTitleWrap {
+        max-width:310px;
+    }
+
+    .csubmit {
+        max-width:310px;
+    }
+    h6 {
+        width:310px;
+        font-size:.2em;
+    }
+
+
     #pagewrap #header .goLine {
         width:310px;
         margin-top:2px;
         margin-bottom:2px;
     }
 
-    #pagewrap >header .goHeader {
+    #pagewrap > header .goHeader {
         float:none;
+        max-height:40px;
+        margin-bottom:10px;
         height:70%;
     }
 
@@ -231,7 +336,7 @@
         font-family:Arial,sans-serif;
         font-size:.7em;
         padding-left:1px;
-        padding-top:5px;
+        padding-top:2px;
         width:310px;
     }
 
