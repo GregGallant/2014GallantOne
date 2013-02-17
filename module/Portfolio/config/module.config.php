@@ -17,6 +17,8 @@ return array(
                     'route' => '/portfolio[/:id]',
                     'constraints' => array(
                         'id' => '[0-9]+',
+                        'controller' => 'Portfolio\Controller\Portfolio',
+                        'action' => 'index',
                     ),
                     'defaults' => array(
                         'controller' => 'Portfolio\Controller\Portfolio',
@@ -38,6 +40,23 @@ return array(
                     ),
                 ),
             ),
+
+            'mobile' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/mobile[/:id]',
+                    'constraints' => array(
+                        'id' => '[0-9]+',
+                    ),
+
+                    'defaults' => array(
+                        'controller' => 'Portfolio\Controller\Portfolio',
+                        'action' => 'mobile',
+                    ),
+
+                ),
+            ),
+
             // Contact form
             'contact' => array(
                 'type' => 'segment',

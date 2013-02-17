@@ -3,6 +3,13 @@
 $(document).ready(function() {
 
 
+    /* Mobile redirect */
+    if (window.location.pathname == '/portfolio/1') {
+        if ($(window).width() <= 480) {
+            window.location = "/mobile/1";
+        }
+    }
+
 
     /* Hide the page until the grueling portfolio of eye bleeding work is fully loaded */
     $(window).load(function() {

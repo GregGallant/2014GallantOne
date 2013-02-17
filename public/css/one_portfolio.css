@@ -287,6 +287,17 @@ h5 {
     top:200px;
 }
 
+.mobileScreenContent
+{
+    position:relative;
+    top:25px;
+    display:block;
+    color:#c3c3c3;
+    padding:0px 20px 10px 20px;
+    height:auto;
+    font-family: Century Gothic, sans-serif;
+}
+
 .portScreenContent
 {
     position:relative;
@@ -319,6 +330,22 @@ h5 {
     padding-left:30px;
 }
 
+.portLeftWidth {
+    display:inline-block;
+    width:250px;
+    top:25px;
+}
+
+.portClientName {
+    font-size:1.0em;
+    font-weight:bold;
+}
+
+.portDetails {
+    font-size:.92em;
+}
+
+
 .fuckIE {
     max-width:90px;
     max-height:90px;
@@ -332,6 +359,25 @@ h5 {
     text-decoration: none;
     font: 12px/100% Verdana, Arial, Helvetica, sans-serif;
     padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+
+}
+
+.mButton {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 10px/100% Verdana, Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    width:105px;
     text-shadow: 0 1px 1px rgba(0,0,0,.3);
     -webkit-border-radius: .5em;
     -moz-border-radius: .5em;
@@ -426,6 +472,12 @@ a.button {
     display:inline-block;
     font-family:Verdana,Arial,sans-serif;
     letter-spacing:.1em;
+}
+.mobileMenu {
+    display:inline-block;
+    font-family:Verdana,Arial,sans-serif;
+    letter-spacing:.07em;
+    font-size:.7em;
 }
 
 .webMenuLast {

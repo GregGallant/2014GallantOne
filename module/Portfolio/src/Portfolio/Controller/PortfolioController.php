@@ -103,6 +103,11 @@ class PortfolioController extends AbstractActionController
         return $view;
     }
 
+    public function mobileAction()
+    {
+        return $this->indexAction();
+    }
+
     /**
      * Contact Form
      */

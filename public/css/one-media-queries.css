@@ -2,7 +2,7 @@
 
     html {
         -webkit-text-size-adjust:none;
-        max-width:474px;
+        /* max-width:474px; */
         overflow-x:hidden;
     }
 
@@ -21,6 +21,7 @@
         margin-left: -512px;   /* 50% */
     }
 
+    /*
     #full-screen-background-image {
         z-index: -999;
         min-height: 100%;
@@ -30,7 +31,7 @@
         top: 0;
         left: 0;
     }
-
+    */
 
     #pagewrap {
         width:474px;
@@ -220,13 +221,13 @@
     }
 
     body {
-        max-width:310px;
+        /* max-width:310px; */
         overflow-x:hidden;
     }
 
     #full-screen-background-image {
-        max-width:310px;
-        overflow-x:hidden;
+        /* max-width:310px;
+        overflow-x:hidden; */
     }
 
     img.bg {
@@ -246,6 +247,22 @@
 
     #pagewrap #header {
         width:310px;
+    }
+
+
+    .portLeftWidth {
+        display:inline-block;
+        max-width:150px;
+        top:10px;
+    }
+
+    .portClientName {
+        font-size:0.7em;
+        font-weight:bold;
+    }
+
+    .portDetails {
+        font-size:.62em;
     }
 
 
