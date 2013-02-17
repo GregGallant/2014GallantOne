@@ -35,10 +35,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.4293126">
       <split-first>
         <leaf>
-          <file leaf-file-name="one-media-queries.css" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="one-media-queries.css" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/css/one-media-queries.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="245" column="4" selection-start="4216" selection-end="4216" vertical-scroll-proportion="0.0">
+                <state line="244" column="0" selection-start="4208" selection-end="4208" vertical-scroll-proportion="0.39977604">
                   <folding />
                 </state>
               </provider>
@@ -56,16 +56,16 @@
           <file leaf-file-name="mobile.phtml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/mobile.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="16" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0">
+                <state line="13" column="95" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="goport.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="goport.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/js/goport.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="4" selection-start="212" selection-end="212" vertical-scroll-proportion="0.19036955">
+                <state line="13" column="89" selection-start="305" selection-end="305" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -120,19 +120,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="one.css" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="one.css" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/css/one.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="134" column="5" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.0">
+                <state line="51" column="0" selection-start="712" selection-end="712" vertical-scroll-proportion="0.9137738">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="one_portfolio.css" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="one_portfolio.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/css/one_portfolio.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="379" column="11" selection-start="6803" selection-end="6803" vertical-scroll-proportion="0.6662934">
+                <state line="181" column="19" selection-start="3582" selection-end="3582" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -159,7 +159,7 @@
           <file leaf-file-name="layout.phtml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/module/Application/view/layout/layout.phtml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="23" selection-start="639" selection-end="639" vertical-scroll-proportion="-7.8461537">
+                <state line="10" column="78" selection-start="361" selection-end="361" vertical-scroll-proportion="-6.5384617">
                   <folding />
                 </state>
               </provider>
@@ -223,16 +223,16 @@
         <option value="$PROJECT_DIR$/module/Auth/config/module.config.php" />
         <option value="$PROJECT_DIR$/module/Auth/view/auth/auth/mailsuccess.phtml" />
         <option value="$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/contact.phtml" />
-        <option value="$PROJECT_DIR$/public/css/one.css" />
         <option value="$PROJECT_DIR$/module/Auth/view/auth/auth/register.phtml" />
         <option value="$PROJECT_DIR$/module/Portfolio/config/module.config.php" />
         <option value="$PROJECT_DIR$/module/Portfolio/src/Portfolio/Controller/PortfolioController.php" />
         <option value="$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/learnmore.phtml" />
-        <option value="$PROJECT_DIR$/module/Application/view/layout/layout.phtml" />
-        <option value="$PROJECT_DIR$/public/css/one-media-queries.css" />
-        <option value="$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/mobile.phtml" />
-        <option value="$PROJECT_DIR$/public/css/one_portfolio.css" />
         <option value="$PROJECT_DIR$/public/js/goport.js" />
+        <option value="$PROJECT_DIR$/public/css/one_portfolio.css" />
+        <option value="$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/mobile.phtml" />
+        <option value="$PROJECT_DIR$/module/Application/view/layout/layout.phtml" />
+        <option value="$PROJECT_DIR$/public/css/one.css" />
+        <option value="$PROJECT_DIR$/public/css/one-media-queries.css" />
       </list>
     </option>
   </component>
@@ -1428,30 +1428,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/view/layout/layout.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="639" selection-end="639" vertical-scroll-proportion="-7.8461537">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/learnmore.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="24" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/one-media-queries.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="245" column="4" selection-start="4216" selection-end="4216" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/one.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="5" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1463,23 +1442,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/goport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="89" selection-start="305" selection-end="305" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/one_portfolio.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="379" column="11" selection-start="6803" selection-end="6803" vertical-scroll-proportion="0.6662934">
+        <state line="181" column="19" selection-start="3582" selection-end="3582" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Portfolio/view/portfolio/portfolio/mobile.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="16" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0">
+        <state line="13" column="95" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/goport.js">
+    <entry file="file://$PROJECT_DIR$/module/Application/view/layout/layout.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="212" selection-end="212" vertical-scroll-proportion="0.19036955">
+        <state line="10" column="78" selection-start="361" selection-end="361" vertical-scroll-proportion="-6.5384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/one.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="712" selection-end="712" vertical-scroll-proportion="0.9137738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/one-media-queries.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="244" column="0" selection-start="4208" selection-end="4208" vertical-scroll-proportion="0.39977604">
           <folding />
         </state>
       </provider>

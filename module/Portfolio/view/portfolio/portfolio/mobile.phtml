@@ -1,20 +1,13 @@
-<div style="height:100%;">
     <div class="preLoader" id="preLoader">
         <img src="/images/loader.gif"/>
     </div>
     <div class="portfolioContent" id="portfolioContent" style="display:none">
-        <div>
             <h1>Portfolio</h1>
-            <div>
-
-                <div>
-
                     <div class="mobileMenu"><a href="/mobile/1" class="mButton black">Web Software</a></div>
                     <div class="mobileMenu"><a href="/mobile/2" class="mButton black">Web Design</a></div>
                     <br/>
                     <div class="mobileMenu"><a href="/mobile/3" class="mButton black">Print Design</a></div>
                     <div class="webMenuLast"><a href="/mobile/4" class="mButton black">Logo Design</a></div>
-                </div>
                 <?php $ccount = 0; ?>
                 <?php foreach ($clients as $client) : ?>
                 <!-- The Screen -->
@@ -31,10 +24,5 @@
                 </div>
                 <?php $ccount++; ?>
                 <?php endforeach; ?>
-            </div>
-        </div>
-
-
     </div>
-</div>
 <input type="hidden" id="totalScreenContent" value="<?php echo $this->totalContent ?>">

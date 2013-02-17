@@ -289,8 +289,8 @@ h5 {
 
 .mobileScreenContent
 {
-    position:relative;
     top:25px;
+    margin-top:10px;
     display:block;
     color:#c3c3c3;
     padding:0px 20px 10px 20px;
