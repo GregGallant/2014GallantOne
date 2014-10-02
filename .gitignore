@@ -6,3 +6,4 @@ extras/documentation
 thumbsdb
 vendor/
 artisan
+composer.json
