@@ -41,7 +41,7 @@
     <div style="padding:20px; color:#cccccc; font-size:9pt;">Laravel / AngularJS / Foundation hybrid up soon... (previously Zend 2 with hand crafted media queries, <em>lol</em>)</div>
         <!-- end content -->
     </div>
-
+    
 </body>
 
 </html>
