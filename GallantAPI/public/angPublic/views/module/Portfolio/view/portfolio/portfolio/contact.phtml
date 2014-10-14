@@ -1,0 +1,34 @@
+<div class="contactForm">
+    <h1>Contact GallantOne</h1>
+    <h6>Have an idea or proposal you'd like to get consultation or information on?
+        <br/>Send GallantOne.com some info and we will do our best to help.</h6>
+<?php
+
+$form = $this->form;
+
+$form->setAttribute('action', $this->url(
+
+        'contact',
+        array(
+            'action' => 'contact',
+            'name' => $this->name,
+            'email' => $this->email,
+            'subject' => $this->subject,
+            'message' => $this->message,
+        )
+    ));
+
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo '<div class="cform">'.$this->formRow($form->get('name')).'</div>';
+echo '<div class="cform">'.$this->formRow($form->get('email')).'</div>';
+echo '<div class="cform">'.$this->formRow($form->get('subject')).'</div>';
+echo '<div class="cform">'.$this->formRow($form->get('message')).'</div>';
+echo '<div class="formTitleWrap" style="width:532px">';
+echo '<div class="csubmit">'.$this->formRow($form->get('submit')).'</div>';
+echo '</div>';
+echo $this->form()->closeTag();
+
+?>
+</div>

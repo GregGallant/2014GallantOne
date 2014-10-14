@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="Bootstrap.php">
+    <textsuites>
+        <testsuite name="zmaster">
+            <directory>./AlbumTest</directory>
+        </testsuite>
+    </textsuites>
+</phpunit>
