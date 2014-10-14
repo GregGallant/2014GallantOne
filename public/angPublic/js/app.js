@@ -34,3 +34,14 @@ linkApp.directive('links', function() {
         }]
     }
 });
+
+linkApp.directive('fcontent', function() {
+    return {
+        restrict: 'A',
+        replace: true,
+        templateUrl: "/angPublic/views/templates/fcontent.php",
+        controller: ['$scope', '$filter', function($scope, $filter) {
+            // Behavior goes here
+        }]
+    }
+});

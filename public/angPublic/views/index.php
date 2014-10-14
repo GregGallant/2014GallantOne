@@ -3,11 +3,12 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link href="/foundation/css/foundation.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
     <link href="/css/one.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="/css/one-media-queries.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="/css/one_portfolio.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
-    <link href="/foundation/css/foundation.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="/js/angular.min.js"></script>
@@ -18,13 +19,12 @@
 
     <!-- ANGULAR -->
     <!-- all angular resources will be loaded from the /public folder -->
-        <script src="/angPublic/js/controllers/mainCtrl.js"></script> <!-- load our controller -->
-        <script src="/angPublic/js/services/linkService.js"></script> <!-- load our service -->
-        <script src="/angPublic/js/app.js"></script> <!-- load our application -->
+    <script src="/angPublic/js/controllers/mainCtrl.js"></script> <!-- load our controller -->
+    <script src="/angPublic/js/services/linkService.js"></script> <!-- load our service -->
+    <script src="/angPublic/js/app.js"></script> <!-- load our application -->
 
 </head>
-<body>
-
+<body class="container" ng-app="linkApp" ng-controller="mainController">
     <img alt="full screen background image" src="/images/one/gg_sunset.png" id="full-screen-background-image" />
     <div id="pagewrap">
         <header id="header">
@@ -38,10 +38,10 @@
             </div>
         </header>
         <!-- Content goes here... -->
-    <div style="padding:20px; color:#cccccc; font-size:9pt;">Laravel / AngularJS / Foundation hybrid up soon... (previously Zend 2 with hand crafted media queries, <em>lol</em>)</div>
-        <!-- end content -->
-    </div>
-    
+        <div fcontent></div>
+            <!-- end content -->
+        </div>
+    </div> 
 </body>
 
 </html>

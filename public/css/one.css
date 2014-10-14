@@ -266,9 +266,12 @@ h6 {
     margin-left:auto;
     margin-right:auto;
     width:850px;
+}
+
+#goBoxes p {
     color:#d0d0d0;
     font-family:Trebuchet MS, Helvetica, Arial, sans-serif;
-    font-size:0.80em;
+    font-size:0.70em;
     letter-spacing:.07em;
     line-height:1.6em;
 }
