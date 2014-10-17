@@ -16,7 +16,8 @@ Route::get('/', function()
 	return View::make('hello');
 });
 */
-/* Angular Front-end */ 
+
+/* GallantAPI Time */
 Route::get('/', array('uses' => 'GallantController@index'));
 
 

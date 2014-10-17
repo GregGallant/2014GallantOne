@@ -7,3 +7,4 @@ thumbsdb
 vendor/
 artisan
 composer.json
+.env.local.php

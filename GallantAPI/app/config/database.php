@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'gallantone',
-			'username'  => 'root',
-			'password'  => 'chronus',
+			'host'      => $_ENV['GO_DB_HOST'],
+			'database'  => $_ENV['GO_DB_NAME'],
+			'username'  => $_ENV['GO_DB_USER'],
+			'password'  => $_ENV['GO_DB_PASS'],
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

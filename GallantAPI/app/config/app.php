@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://www.gallantone.com',
+	'url' => 'http://stageapi.gallantmedia.net',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'Gallant1W@sHer3!!',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
