@@ -41,7 +41,7 @@ linkApp.directive('fcontent', function()
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: "/views/templates/fcontent.php",
+        templateUrl: "/views/templates/fcontent.html",
         controller: ['$scope', '$filter', function($scope, $filter) {
             // Behavior goes here
         }]
