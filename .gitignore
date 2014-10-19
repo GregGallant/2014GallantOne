@@ -8,3 +8,5 @@ vendor/
 artisan
 composer.json
 .env.local.php
+.env.development.php
+.env.php

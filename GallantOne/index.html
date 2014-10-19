@@ -10,9 +10,13 @@
     <link href="/css/one_portfolio.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="/js/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+    <script src="//code.angularjs.org/1.2.9/angular-resource.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.js"></script>
+    <!--
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script src="//code.angularjs.org/1.2.9/angular-resource.min.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script> -->
     <script src="/js/mm-foundation-0.3.1.min.js"></script>
 
     <title>AngularMedia, by Greg</title>
@@ -20,6 +24,7 @@
     <!-- ANGULAR -->
     <!-- all angular resources will be loaded from the /public folder -->
     <script src="/angjs/controllers/mainCtrl.js"></script> <!-- load our controller -->
+    <script src="/angjs/controllers/portCtrl.js"></script> <!-- load our controller -->
     <script src="/angjs/services/linkService.js"></script> <!-- load our service -->
     <script src="/angjs/app.js"></script> <!-- load our application -->
 
@@ -27,21 +32,14 @@
 <body class="container" ng-app="linkApp" ng-controller="mainController">
     <img alt="full screen background image" src="/images/one/gg_sunset.png" id="full-screen-background-image" />
     <div id="pagewrap">
-        <header id="header">
-            <div class="goHeader">
-                <a href="/"><img id="goLogo" alt="GallantOne.com" border="0" src="/images/one/one_logo.png" /></a>
-            </div>
-            <!-- Menu goes here -->
-            <div class="goLine"></div>
-            <div class="authMenu">
-                <!-- <div class="loginPlacement"><a class="loginPlacement" href="/login">login</a> / <a class="loginPlacement" href="/register">register</a></div> -->
-            </div>
-        </header>
-        <!-- Content goes here... -->
-        <div fcontent></div>
-            <!-- end content -->
-        </div>
-    </div> 
+        <!-- Header... -->
+        <div header></div>
+        <!-- Content here... -->
+        <div ng-view></div>
+        <footer id="footer">
+        </footer>
+    </div>
+
 </body>
 
 </html>

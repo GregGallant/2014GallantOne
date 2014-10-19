@@ -20,4 +20,5 @@ Route::get('/', function()
 /* GallantAPI Time */
 Route::get('/', array('uses' => 'GallantController@index'));
 
+Route::get('/portfolio', array('uses' => 'PortfolioController@getAllPortfolio'));
 

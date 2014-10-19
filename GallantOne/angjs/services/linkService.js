@@ -12,7 +12,7 @@ angular.module('linkService', [])
                 return;
                 //return $http.get('/alinks'); // Call links as api call (code it)
             },
-/*
+
             portfolio : function() 
             {
                 return $http({
@@ -22,7 +22,7 @@ angular.module('linkService', [])
                     data: $.param(id)
                 });
             },
-*/
+
             save : function(linkData) 
             {
                 return $http({

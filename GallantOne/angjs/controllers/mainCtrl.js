@@ -7,14 +7,45 @@ angular.module('mainCtrl', [])
         $scope.linkData = {};
        
         $scope.loading = true;
+
+
+
 /*
         Link.get()
             .success(function(data) {
                 $scope.links = data;
                 $scope.loading = false; 
             });
-
 */
+
+
+        /* Portfolio Link */
+
+        $scope.portfolioLink = function() {
+
+            $scope.loading = true;
+
+
+            Link.portfolio($scope.linkData)
+
+                .success(function(data)
+                {
+
+                    Link.get()
+                        .success(function(getData)
+                        {
+                            $scope.links = getData;
+                            $scope.loading = false;
+                        });
+
+                })
+                .error(function(data) {
+                    console.log(data);
+                });
+        };
+
+
+
         /* Save Link */
 
         $scope.submitLink = function() {
