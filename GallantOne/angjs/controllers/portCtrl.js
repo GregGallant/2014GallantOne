@@ -2,11 +2,16 @@
 
 angular.module('portCtrl', [])
 
-    .controller('portController', function($scope, $http)  {
+    .controller('portController', function($scope, $http, Portfolio)  {
 
-        $http.get('/portfolio.html').success(function(data) {
+        $http.get('templates/content_portfolio.html').success(function(data) {
             $scope.portfolio_message = 'Portfolio Testing';
         });
 
+        Portfolio.get()
+            .success(function(data) {
+                $scope.portfolio = data;
+                $scope.loading = false;
+            });
   
     });

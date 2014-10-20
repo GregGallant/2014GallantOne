@@ -2,7 +2,7 @@
 
 angular.module('mainCtrl', [])
 
-    .controller('mainController', function($scope, $http, Link)  {
+    .controller('mainController', function($scope, $http, Portfolio)  {
       
         $scope.linkData = {};
        
@@ -11,7 +11,7 @@ angular.module('mainCtrl', [])
 
 
 /*
-        Link.get()
+        Portfolio.get()
             .success(function(data) {
                 $scope.links = data;
                 $scope.loading = false; 
@@ -19,19 +19,19 @@ angular.module('mainCtrl', [])
 */
 
 
-        /* Portfolio Link */
+        /* Portfolio Portfolio */
 
         $scope.portfolioLink = function() {
 
             $scope.loading = true;
 
 
-            Link.portfolio($scope.linkData)
+            Portfolio.portfolio($scope.linkData)
 
                 .success(function(data)
                 {
 
-                    Link.get()
+                    Portfolio.get()
                         .success(function(getData)
                         {
                             $scope.links = getData;
@@ -46,19 +46,19 @@ angular.module('mainCtrl', [])
 
 
 
-        /* Save Link */
+        /* Save Portfolio */
 
-        $scope.submitLink = function() {
+        $scope.submitPortfolio = function() {
 
             $scope.loading = true;
         
 
-            Link.save($scope.linkData) 
+            Portfolio.save($scope.linkData) 
 
                 .success(function(data) 
                 {
 
-                    Link.get()
+                    Portfolio.get()
                         .success(function(getData) 
                         {
                             $scope.links = getData;
@@ -72,18 +72,18 @@ angular.module('mainCtrl', [])
         };
 
 
-        /* Delete Link */
+        /* Delete Portfolio */
 
-        $scope.deleteLink = function(id) 
+        $scope.deletePortfolio = function(id) 
         {
             $scope.loading = true;
             
-            Link.destroy(id) 
+            Portfolio.destroy(id) 
 
                 .success(function(data) {
 
 
-                    Link.get()
+                    Portfolio.get()
                         .success(function(getData)  
                         {
 

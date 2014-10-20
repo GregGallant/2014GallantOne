@@ -22,3 +22,5 @@ Route::get('/', array('uses' => 'GallantController@index'));
 
 Route::get('/portfolio', array('uses' => 'PortfolioController@getAllPortfolio'));
 
+Route::get('/portfolio/{id}', array('uses' => 'PortfolioController@getPortfolio'));
+

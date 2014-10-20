@@ -30,7 +30,7 @@ class PortfolioController extends BaseController {
      */
     public function getPortfolio($id)
     {
-        $portfolio = Portfolio::all();
+        $portfolio = Portfolio::find($id);
         return Response::json($portfolio);
     }
 
