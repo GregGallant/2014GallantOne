@@ -9,7 +9,11 @@ angular.module('linkService', [])
             // get links
             get : function() 
             {
-                return $http.get('http://api.gallantone.com/portfolio'); // Call links as api call (code it)
+                return $http.get('http://devapi.gallantone.com/portfolio'); // Call links as api call (code it)
+
+               // $stuffcheck = $http.get('http://devapi.gallantone.com/portfolio'); // Call links as api call (code it)
+                //console.log($stuffcheck);
+                //return $stuffcheck;
             },
 /*
             portfolio : function() 

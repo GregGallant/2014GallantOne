@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://stageapi.gallantmedia.net',
+	'url' => 'http://devapi.gallantmedia.net',
 
 	/*
 	|--------------------------------------------------------------------------

@@ -1,6 +1,7 @@
 <?php
 
-use Portfolio;
+
+use \Portfolio;
 
 class PortfolioController extends BaseController {
 
@@ -21,6 +22,7 @@ class PortfolioController extends BaseController {
      */
     public function getAllPortfolio()
     {
+
         $portfolio = Portfolio::all();
         return Response::json($portfolio);
     }

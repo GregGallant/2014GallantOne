@@ -23,14 +23,38 @@ $app = new Illuminate\Foundation\Application;
 | given environment, then we will automatically detect it for you.
 |
 */
-
+/*
 $env = $app->detectEnvironment(array(
 
-	'local' => array('homestead'),
-	'stage' => array('www.gallantmedia.net'),
-	'prod' => array('www.gallantone.com'),
+	'local' => array('devapi.gallantone.com'),
+	'stage' => array('qaapi.gallantone.com'),
+	'prod' => array('api.gallantone.com')
 
 ));
+*/
+/* New environment setup */
+
+$env = $app->detectEnvironment(function ()
+{
+    $_ENV['domain'] = $_SERVER['SERVER_NAME'];
+    switch ($_SERVER['SERVER_NAME']) 
+    {
+        case "devapi.gallantone.com":
+            $environ = "development";
+            break; 
+        case "qaapi.gallantone.com":
+            $environ = "staging"; 
+            break; 
+        case "api.gallantone.com":
+            $environ = "production"; 
+            break; 
+        default:
+            $environ = "development"; 
+            break; 
+    } 
+    return $environ;
+});
+
 
 /*
 |--------------------------------------------------------------------------

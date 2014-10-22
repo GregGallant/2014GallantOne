@@ -1,5 +1,13 @@
 <?php
 
+header('Access-Control-Allow-Origin: http://dev.gallantone.com');
+//header('Access-Control-Allow-Origin: http://qa.gallantone.com');
+//header('Access-Control-Allow-Origin: http://www.gallantone.com');
+header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); 
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

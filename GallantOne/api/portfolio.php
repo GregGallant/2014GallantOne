@@ -19,17 +19,9 @@ class PortfolioAPI
     public function getAllPortfolio() 
     {
     
-       $url = "http://api.gallantone.com/portfolio";
+       $url = "http://devapi.gallantone.com/portfolio";
+       return $this->goCurl($url);
 
-       $this->ch = $this->initCurl();
-
-       // $output contains the output string 
-       $output = curl_exec($this->ch); 
-
-       // close curl resource to free up system resources 
-       curl_close($this->ch);
-
-       return $output;
     }
 
 
@@ -38,23 +30,14 @@ class PortfolioAPI
      */
     public function getPortfolio($id) 
     {
-       $url = "http://api.gallantone.com/portfolio/"+$id;
-
-       $this->ch = $this->initCurl();
-
-       // $output contains the output string 
-       $output = curl_exec($this->ch);
-
-       // close curl resource to free up system resources 
-       curl_close($this->ch);
-
-       return $output;  
+       $url = "http://devapi.gallantone.com/portfolio/"+$id;
+       return $this->goCurl($url);
     }
 
     /**
      * Curl setup
      */
-    private function initCurl() 
+    private function goCurl($url) 
     {
         // create curl resource 
         $ch = curl_init(); 
@@ -73,7 +56,11 @@ class PortfolioAPI
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
         curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
 
-        return $ch;
+        // $output contains the output string 
+        $output = curl_exec($ch); 
+        // close curl resource to free up system resources 
+        curl_close($ch);
+        return $output;
     }
 
 }
