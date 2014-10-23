@@ -9,12 +9,24 @@ angular.module('linkService', [])
             // get links
             get : function() 
             {
-                return $http.get('http://devapi.gallantone.com/portfolio'); // Call links as api call (code it)
+                console.log("The Get");
+                return $http.get('http://api.gallantone.com/portfolio'); // Call portfolio data as api call (code it)
 
-               // $stuffcheck = $http.get('http://devapi.gallantone.com/portfolio'); // Call links as api call (code it)
-                //console.log($stuffcheck);
-                //return $stuffcheck;
             },
+            getOne : function(id) 
+            {
+                console.log("The GetOne");
+                if (id == null) 
+                {
+                    id = 0; // This is not id but position
+                }
+                return $http.get('http://api.gallantone.com/portfolio/'+id); // Call One as api call (code it)
+            },
+            getTotal : function()
+            {
+                return $http.get('http://api.gallantone.com/portfolioTotal'); // Call One as api call (code it)
+            },
+            
 /*
             portfolio : function() 
             {

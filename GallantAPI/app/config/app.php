@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://devapi.gallantmedia.net',
+	'url' => 'http://api.gallantmedia.net',
 
 	/*
 	|--------------------------------------------------------------------------

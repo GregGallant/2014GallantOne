@@ -3,7 +3,7 @@
 header('Access-Control-Allow-Origin: http://dev.gallantone.com');
 //header('Access-Control-Allow-Origin: http://qa.gallantone.com');
 //header('Access-Control-Allow-Origin: http://www.gallantone.com');
-header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); 
+header('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS'); 
 
 
 
@@ -31,4 +31,6 @@ Route::get('/', array('uses' => 'GallantController@index'));
 Route::get('/portfolio', array('uses' => 'PortfolioController@getAllPortfolio'));
 
 Route::get('/portfolio/{id}', array('uses' => 'PortfolioController@getPortfolio'));
+
+Route::get('/portfolioTotal', array('uses' => 'PortfolioController@getPortfolioTotal'));
 

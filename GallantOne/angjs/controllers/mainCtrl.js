@@ -26,15 +26,15 @@ angular.module('mainCtrl', [])
             $scope.loading = true;
 
 
-            Portfolio.portfolio($scope.linkData)
+            Portfolio.portfolio($scope.portfolioData)
 
                 .success(function(data)
                 {
 
-                    Portfolio.get()
+                    Portfolio.get(id)
                         .success(function(getData)
                         {
-                            $scope.links = getData;
+                            $scope.portfolios = getData;
                             $scope.loading = false;
                         });
 

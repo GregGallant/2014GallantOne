@@ -2,50 +2,86 @@
 
 angular.module('portCtrl', [])
 
-    .controller('portController', function($scope, $http, Portfolio)  {
+    .run(function($rootScope) {  
+        $rootScope.portPos = 0;
+    })
+    
 
-            $scope.portfolioData = {};
-            
-            $scope.loading = true;
+    .controller('portController', function($scope, $http, Portfolio, $rootScope)  {
 
-/*
+        $scope.portfolioData = {};
+           
+        $scope.loading = true;
 
-            $scope.portfolioLink = function() {
+        $scope.default_id = 1;
 
 
-            Portfolio.portfolio($scope.portfolioData)
+        Portfolio.getTotal() 
+            .success(function(data) {
+                $scope.portTotal = data;
+            });
 
-                .success(function(data)
-                {
+        getOnePortfolio = function(id)
+        {
 
-console.log("port call: " + $scope.portfolioData);
-
-                    Portfolio.get()
-                        .success(function(getData)
-                        {
-                            $scope.portfolios = getData;
-                            $scope.loading = false;
-                        });
-
-                })
-                .error(function(data) {
-                    console.log(data);
+            Portfolio.getOne(id)
+                .success(function(data) {
+                    $rootScope.portPos = id;
+                    $scope.portfolio = data;
                 });
         };
-*/
-/*
-        $http.get('templates/content_portfolio.html').success(function(data) {
-            $scope.portfolio_message = 'Portfolio Testing';
-        });
-*/
-        Portfolio.get()
-            .success(function(data) {
-                $scope.portfolios = data;
-                $scope.loading = false;
-            });
-  
+       
+        /* Call default function (main method)  */
+        getOnePortfolio(0);
+
+        $scope.getCompletePortfolio = function()  
+        {
+            Portfolio.get()
+                .success(function(data) {
+                    $scope.portfolios = data;
+                    $scope.loading = false;
+                });
+        };
+
+
+        $scope.getPrev = function() 
+        {
+
+            $scope.id = parseInt($rootScope.portPos) - 1;
+
+            if (parseInt($scope.id) < 0) {
+                $scope.id = parseInt($scope.portTotal) - 1;
+            }
+
+            $rootScope.portPos = parseInt($scope.id);
+
+            Portfolio.getOne($scope.id)
+                .success(function(data) {
+                    $scope.portfolio = data;
+                });
+
+            console.log("portPos: " + $rootScope.portPos);
+        };
+
+        $scope.getNext = function() 
+        {
+            $scope.id = parseInt($rootScope.portPos) + 1;
+          
+            if ( parseInt($scope.id) > (parseInt($scope.portTotal) - 1) ) 
+            {
+                $scope.id = 0;
+            }
+
+            $rootScope.portPos = parseInt($scope.id);
+
+            Portfolio.getOne($scope.id)
+                .success(function(data) {
+                    $scope.portfolio = data;
+                });
+            
+            console.log("portPos: " + $rootScope.portPos);
+        };
+
     });
-
-
 
 

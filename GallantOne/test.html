@@ -17,7 +17,7 @@
     <script src="//code.angularjs.org/1.2.9/angular-animate.js"></script>
     <script src="js/TweenMax.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.js"></script>
-
+    
     <!--
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script src="//code.angularjs.org/1.2.9/angular-resource.min.js"></script>
@@ -33,8 +33,6 @@
     <script src="/angjs/services/linkService.js"></script> <!-- load our service -->
     <script src="/angjs/app.js"></script> <!-- load our application -->
 
-
-
 </head>
 <body class="container" ng-app="linkApp" ng-controller="portController">
     <img alt="full screen background image" src="/images/one/gg_sunset.png" id="full-screen-background-image" />
@@ -46,19 +44,19 @@
             <div class="lightScreenContent">
                 <strong>Technology:</strong>
                 <hr>
-                <hr>
-                <div class="gallant_portfolio" ng-controller="SlickCtrl">
-                    <div ng-hide="loading" ng-repeat="portfolio in portfolios" >
+                <div class="gallant_portfolio">
+                    <div> 
                         <h6 style="color:#393939;"><small>#{{ portfolio.id }}</small> <a href="{{ portfolio.url }}">{{ portfolio.client_name }}</a></h6>
                         <img src="images/clients/{{ portfolio.image }}" /> 
+                    </div>
+                    <div>
+                        <a href="#" ng-click="getPrev()">Prev</a> | <a href="#" ng-click="getNext()">Next</a> 
                     </div>
                 </div>
             </div>
         </div>
         <footer id="footer"></footer>
     </div>
-
-    <script type="text/javascript" src="js/slick-master/slick/slick.min.js"></script>
 </body>
 
 </html>

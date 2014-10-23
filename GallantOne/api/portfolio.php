@@ -19,7 +19,7 @@ class PortfolioAPI
     public function getAllPortfolio() 
     {
     
-       $url = "http://devapi.gallantone.com/portfolio";
+       $url = "http://api.gallantone.com/portfolio";
        return $this->goCurl($url);
 
     }
@@ -30,7 +30,7 @@ class PortfolioAPI
      */
     public function getPortfolio($id) 
     {
-       $url = "http://devapi.gallantone.com/portfolio/"+$id;
+       $url = "http://api.gallantone.com/portfolio/"+$id;
        return $this->goCurl($url);
     }
 

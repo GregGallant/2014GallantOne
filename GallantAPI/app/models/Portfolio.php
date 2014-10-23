@@ -222,7 +222,4 @@ class Portfolio extends \Eloquent
         $this->$url = $url;
     }
     
-    
-
-
 }

@@ -1,12 +1,9 @@
 var linkApp = angular.module('linkApp', ['ngRoute','mainCtrl', 'portCtrl', 'linkService']);
 
 /* Slick */
-linkApp.controller('SlickCtrl', function($scope) {
+//linkApp.controller('SlickCtrl', function($scope) {
     // ctrl...
-    angular.element(document).ready(function () {
-        $('.gallant_portfolio').slick();
-    });
-});
+//});
 
 /* Route Provider */
 linkApp.config([
@@ -28,7 +25,6 @@ linkApp.config([
             otherwise({redirectTo:("/")})
     }
 ]);
-
 
 
 /* Directives */
@@ -81,6 +77,7 @@ linkApp.directive('content_home', function()
 });
 
 
+    /* An example of a TweenMax animation */
     linkApp.animation('.slide-animation', function () {
         return {
             beforeAddClass: function (element, className, done) {
@@ -116,6 +113,7 @@ linkApp.directive('content_home', function()
             }
         };
     });
+
 //  element.bind('click', function () {
               //  element.html('You clicked me!');
             //});
