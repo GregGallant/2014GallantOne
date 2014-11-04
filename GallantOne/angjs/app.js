@@ -1,10 +1,5 @@
 var linkApp = angular.module('linkApp', ['ngRoute','mainCtrl', 'portCtrl', 'linkService']);
 
-/* Slick */
-//linkApp.controller('SlickCtrl', function($scope) {
-    // ctrl...
-//});
-
 /* Route Provider */
 linkApp.config([
    '$routeProvider', function($routeProvider)
@@ -28,7 +23,6 @@ linkApp.config([
 
 
 /* Directives */
-
 linkApp.directive('footer', function() {
     return {
         restrict: 'A',
@@ -77,7 +71,10 @@ linkApp.directive('content_home', function()
 });
 
 
-    /* An example of a TweenMax animation */
+/* An example of a TweenMax animation 
+     // http://greensock.com/tweenmax
+        */
+/*
     linkApp.animation('.slide-animation', function () {
         return {
             beforeAddClass: function (element, className, done) {
@@ -113,30 +110,7 @@ linkApp.directive('content_home', function()
             }
         };
     });
-
+*/
 //  element.bind('click', function () {
               //  element.html('You clicked me!');
             //});
-/** WORKING PORTFOLIO DIRECTIVE **/
-/*
-linkApp.directive('portfolio', function()
-{
-    return {
-        restrict: 'A',
-        replace: true,
-        templateUrl: "/views/templates/content_portfolio.html",
-        link: function(scope,element,attrs) {
-            element.bind('load', function() {
-                //$('.portfolio').slick({ infinite:true });
-                //$('.gallant_portfolio').slick({ infinite:true });
-                element.slick({ infinite:true });
-            });
-       },
-        controller: ['$scope', '$filter', function($scope, $filter) {
-            // Behavior goes here
-            $('.gallant_portfolio').slick({ infinite:true });
-
-        }]
-    }
-});
-*/

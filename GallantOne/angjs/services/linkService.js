@@ -2,7 +2,6 @@
 
 angular.module('linkService', [])
 
-
     .factory('Portfolio', function($http) {
         
         return {
@@ -15,7 +14,6 @@ angular.module('linkService', [])
             },
             getOne : function(id) 
             {
-                console.log("The GetOne");
                 if (id == null) 
                 {
                     id = 0; // This is not id but position

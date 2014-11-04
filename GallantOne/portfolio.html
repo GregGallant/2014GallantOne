@@ -33,8 +33,6 @@
     <script src="/angjs/services/linkService.js"></script> <!-- load our service -->
     <script src="/angjs/app.js"></script> <!-- load our application -->
 
-
-
 </head>
 <body class="container" ng-app="linkApp" ng-controller="portController">
     <img alt="full screen background image" src="/images/one/gg_sunset.png" id="full-screen-background-image" />
@@ -48,7 +46,7 @@
                 <hr>
                 <hr>
                 <div class="gallant_portfolio" ng-controller="SlickCtrl">
-                    <div ng-hide="loading" ng-repeat="portfolio in portfolios" >
+                    <div ng-repeat="portfolio in portfolios" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
                         <h6 style="color:#393939;"><small>#{{ portfolio.id }}</small> <a href="{{ portfolio.url }}">{{ portfolio.client_name }}</a></h6>
                         <img src="images/clients/{{ portfolio.image }}" /> 
                     </div>
