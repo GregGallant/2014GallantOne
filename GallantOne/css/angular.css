@@ -1,0 +1,62 @@
+.animHide1 {
+  padding:10px;
+  border:1px solid black;
+  background:white;
+}
+
+.animHide1 {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.animHide1.ng-hide {
+  opacity:0;
+}
+
+
+.animContainer {
+    position:relative;
+    width:640px;
+    height:380px;
+    overflow:hidden;
+}
+
+.animImage1.ng-enter {
+    -webkit-animation: enter_animation 2s;
+    animation:enter_animation 2s;
+    left:100%;
+}
+
+.animImage1.ng-leave {
+    -webkit-animation: leave_animation 2s;
+    animation:leave_animation 2s;
+    left:0%;
+}
+
+.animImage1.ng-leave, .animImage1.ng-enter {
+    position:absolute;
+    top:0;
+    /* width:100%; */
+    width:640px;
+    height:380px;
+}
+
+@keyframes enter_animation {
+  from { left:100%; }
+  to { left:0; }
+}
+
+@-webkit-keyframes enter_animation {
+  from { left:100%; }
+  to { left:0; }
+}
+
+@keyframes leave_animation {
+  from { left:0; }
+  to { left:-100%; }
+}
+
+@-webkit-keyframes leave_animation {
+  from { left:0; }
+  to { left:-100%; }
+}

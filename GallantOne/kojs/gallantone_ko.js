@@ -1,3 +1,5 @@
+// KnockoutAnim -http://johngafford.com/knockoutAnimate/
+
 Portfolio = function(data) 
 {   
         this.id = ko.observable(data.id);
@@ -25,7 +27,6 @@ var PortfolioController = function() {
 
     this.slickify = function() {
         console.log("I AM TETSUO");
-        
         $('.gallant_portfolio').slick({
             infinite: true 
         });

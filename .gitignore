@@ -10,3 +10,4 @@ composer.json
 .env.local.php
 .env.development.php
 .env.php
+.module-cache
