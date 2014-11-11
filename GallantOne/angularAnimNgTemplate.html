@@ -25,17 +25,19 @@
 
     <title>AngularMedia, by Greg</title>
 
+<!-- This type of anim: -->
+<!-- http://plnkr.co/edit/uDYYAJZ1mQukVRzfzR9v?p=preview -->
+
     <!-- ANGULAR -->
     <!-- all angular resources will be loaded from the /public folder -->
-    <script src="/angjs/controllers/mainCtrl.js"></script> <!-- load our controller -->
-    <script src="/angjs/controllers/portCtrl.js"></script> <!-- load our controller -->
-    <script src="/angjs/services/linkService.js"></script> <!-- load our service -->
-    <script src="/angjs/app.js"></script> <!-- load our application -->
+    <script src="/angjs/controllers/animCtrl.js"></script> <!-- load our controller -->
+    <script src="/angjs/services/animService.js"></script> <!-- load our service -->
+    <script src="/angjs/animApp.js"></script> <!-- load our application -->
     
     <link href="/css/angular.css" rel="stylesheet" type="text/css" />
 
 </head>
-<body class="container" ng-app="linkApp" >
+<body class="container" ng-app="animApp" ng-controller="animController">
     <img alt="full screen background image" src="/images/one/gg_sunset.png" id="full-screen-background-image" />
     <div id="pagewrap">
         <!-- Header... -->
@@ -43,21 +45,37 @@
         <!-- Content here... -->
         <div>
             <div class="lightScreenContent">
-                <strong>Technology:</strong>
-                <hr>
-                <div ng-controller="portController" class="gallant_portfolio"> 
-                    <div ng-view class="animImage1" id='portScreen'></div>
+                <strong>Angular Directive Testing</strong>
+                <div class="gallant_portfolio"> 
 
-                    <script ng-repeat="portfolio in portfolios" type="text/ng-template" id="portScreen.html">
-                        <div>
-                            <h6 style="color:#393939;"><small>#{{ portfolio.id }}</small> <a href="{{ portfolio.url }}">{{ portfolio.client_name }}</a></h6>
-                            <img src="images/clients/{{ portfolio.image }}" /> 
+                    <div class="animContainer">
+                        <div ng-view class="animImage1" ></div>
+                    </div>
+                    <div> 
+                        <button ng-click="goto('/imageOne')">Anim1</button>
+                        <button ng-click="goto('/imageTwo')">Anim2</button>
+                        <a href="#" ng-click="goto('/imageOne')">Anim1</a> | <a href="#" ng-click="goto('/imageTwo')">Anim2</a> 
+                    </div>
+                    <script type="text/ng-template" id="image1.html">
+                        <div id='animScreen1'>
+                            <img src="images/clients/print_gibson.jpg" /> 
                         </div>
                     </script>
-                    
-
+                    <script type="text/ng-template" id="image2.html">
+                        <div id='animScreen1a'> 
+                            <img src="images/clients/print_rapost.jpg" /> 
+                        </div>
+                    </script>
+                    <hr/>
+                    <div id='animScreen2'>
+                        <img src="images/clients/print_tourism.jpg" /> 
+                    </div>
                     <div>
-                        <button ng-click="goto('/portScreen.html')">Anim1</button>
+                        <a href="#" ng-click="doAnim3()">Anim3</a> | <a href="#" ng-click="doAnim4()">Anim4</a> 
+                    </div>
+                    <hr/>
+                    <div id='animScreen3'>
+                        <img src="images/clients/print_rapost.jpg" /> 
                     </div>
                     <div>
                         <a href="#" ng-click="getPrev()">Prev</a> | <a href="#" ng-click="getNext()">Next</a> 

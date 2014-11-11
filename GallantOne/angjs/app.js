@@ -17,9 +17,30 @@ linkApp.config([
                     controller: 'portController'
                 }
             ).
+            when( '/portScreen',
+                {
+                    templateUrl: '/portScreen.html',
+                    controller: 'portController'
+                }
+            ).
+            when( '/portScreen/:id',
+                {
+                    templateUrl: '/portScreen.html',
+                    controller: 'portController'
+                }
+            ).
             otherwise({redirectTo:("/")})
     }
 ]);
+
+/* This might be overkill -- find out */
+linkApp.run(['$rootScope', '$location', function($rootScope, $location) {
+    $rootScope.goto = function(path) {
+      $location.path(path);
+    }           
+}]);    
+
+
 
 
 /* Directives */

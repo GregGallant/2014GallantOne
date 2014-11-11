@@ -1,12 +1,12 @@
 // Port Controller
 
-angular.module('portCtrl', ['ngAnimate'])
+angular.module('portCtrl', ['ngRoute','ngAnimate'])
 
     .run(function($rootScope) {  
         $rootScope.portPos = 0;
     })
 
-    .controller('portController', function($scope, $http, Portfolio, $rootScope, $timeout, $animate)  {
+    .controller('portController', function($scope, $http, Portfolio, $rootScope, $timeout, $animate, $routeParams)  {
 
         $scope.portfolioData = {};
            
@@ -14,24 +14,40 @@ angular.module('portCtrl', ['ngAnimate'])
 
         $scope.default_id = 1;
 
+        $scope.portScreenId = $routeParams.id;
+        
+        console.log("RouteID: "+$routeParams.id);
+        
+        /**
+         * get Total amount of Json rows
+         */
         Portfolio.getTotal() 
             .success(function(data) {
                 $scope.portTotal = data;
             });
 
+
+        /**
+         * getOnePortfolio  
+         * @param id
+         * get one row of json data via id
+         */
         getOnePortfolio = function(id)
         {
 
             Portfolio.getOne(id)
                 .success(function(data) {
                     $rootScope.portPos = id;
+                    $rootScope.portPos = $routeParams.id;  // new
                     $scope.portfolio = data;
                 });
         };
        
-        /* Call default function (main method)  */
-        getOnePortfolio(0);
 
+        /** 
+         * getCompletePortfolio()
+         * Get all portfolio json data 
+         */
         $scope.getCompletePortfolio = function()  
         {
             Portfolio.get()
@@ -41,6 +57,51 @@ angular.module('portCtrl', ['ngAnimate'])
                 });
         };
 
+        /**
+         * getPrevImg()
+         * Get Previous Screen 
+         */
+        $scope.getPrevImg = function() 
+        {
+            if ( isNaN($routeParams.id) || $routeParams.id == 0) 
+            {
+                $routeParams.id = 0;
+                $scope.ourID = $scope.portTotal;
+            } else {
+                $scope.ourID = parseInt($routeParams.id) - 1;
+            }
+
+            $scope.ourLoc = "/portScreen/"+$scope.ourID;
+            $rootScope.goto($scope.ourLoc);
+        };
+        
+        /**
+         * getNextImg()
+         * Get Next Screen 
+         */
+        $scope.getNextImg = function()
+        {
+            if ( isNaN($routeParams.id) || $routeParams.id == $scope.portTotal)  
+            {
+                $routeParams.id = 0;
+                $scope.ourID = 0;
+            } else {
+                $scope.ourID = parseInt($routeParams.id) + 1; 
+            }
+            console.log("Hey There: "+$routeParams.id);
+            $scope.ourLoc = "/portScreen/"+$scope.ourID;
+            $rootScope.goto($scope.ourLoc);
+        };
+
+
+        /**
+         * MAIN -- run getOnePortfolio with route param to start
+         * Call default function (main method)  
+         */
+        getOnePortfolio($routeParams.id);
+
+
+        /* Testing Archives */
         $scope.getPrev = function() 
         {
 
@@ -59,8 +120,6 @@ angular.module('portCtrl', ['ngAnimate'])
 
             console.log("portPos: " + $rootScope.portPos);
             $timeout(fadeIn, 200);
-            //$timeout(fadeIn, 1000);
-            //$scope.on = !$scope.on;
         };
 
         var gogo = function() {
@@ -81,69 +140,24 @@ angular.module('portCtrl', ['ngAnimate'])
 
             $rootScope.portPos = parseInt($scope.id);
             
-            //$timeout(fadeIn, 200);
-
-/*
-            Portfolio.getOne($scope.id)
-                .success(function(data) {
-                    $scope.portfolio = data;
-                });
- */
             fadeIn();
-            //$interval(fadeIn, 1000); // pretty neat interval
             $timeout(gogo, 2000);      
-/*   
-            Portfolio.getOne($scope.id)
-                .success(function(data) {
-                    $scope.portfolio = data;
-                });
- */           
             console.log("portPos: " + $rootScope.portPos);
-            //$timeout(fadeIn, 1000);
-            //$scope.on = !$scope.on;
         };
         
         var fadeIn = function() 
         {
 
-  //          var fuckyou = by.id('portScreen');
-   //         console.log(fuckyou); 
-
-           // $scope.toggle = !$scope.toggle;
-            //$scope.toggle = true; 
-            //$scope.letsgo = false; 
             $scope.toggle = false; 
             $scope.letsgo = true; 
-            //var portScreen = angular.element( $('#portScreen')  );  
-            //var portScreen = angular.element( by.id('portScreen') );
+
             var portScreen = angular.element( 'portScreen' );
-            //var portScreen2 = $('#portScreen');
             var finishPoint = portScreen.parent().width();
     
-            console.log("Everyone in the bay area can suck my dick.");    
-            console.log(portScreen);
-            //console.log(portScreen2);
-/* 
-            $('#portScreen').animate({
-                left:"+=50"
-            });
- */           
             portScreen.animate({
                 left:"+=50"
             });
 
-            /* 
-            portScreen.animate({
-                left:"+=50"
-            });
-            */
-            
-            //TweenMax.to(element, 0.5, {left: -element.parent().width(), onComplete: done });
-            //TweenMax.to(portScreen, 0.5, {left: finishPoint, onComplete: done }); 
-            //TweenMax.to(portScreen, 0.5, {left: -portScreen.parent().width() });
-//animate();
-            //TweenMax.set(portScreen, { left: portScreen.parent().width() });
-            //TweenMax.to(portScreen, 0.5, {left: 1000 }); 
         };
 
     });
