@@ -41,6 +41,28 @@
     height:380px;
 }
 
+
+.animImage2.ng-enter {
+    -webkit-animation: enter2_animation 1.2s;
+    animation:enter2_animation 1.2s;
+    left:100%;
+}
+
+.animImage2.ng-leave {
+    -webkit-animation: leave_animation 1.2s;
+    animation:leave_animation 1.2s;
+    left:0%;
+}
+
+.animImage2.ng-leave, .animImage2.ng-enter {
+    position:absolute;
+    top:0;
+    /* width:100%; */
+    width:640px;
+    height:380px;
+}
+
+
 @keyframes enter_animation {
   from { left:100%; }
   to { left:0; }
@@ -60,3 +82,69 @@
   from { left:0; }
   to { left:-100%; }
 }
+
+@keyframes enter2_animation {
+   0%   {left:100%; opacity:.01; }
+   100% {left:0%; opacity:1;}
+}
+
+@-webkit-keyframes enter2_animation {
+   0%   {left:100%; opacity:.01; }
+   100% {left:0%; opacity:1; }
+}
+
+/* MENU */
+#gallantAngMenu {
+    width:640px;
+    height:20px;
+    position:relative;
+}
+
+#gallantAngMenu > div {
+    position:relative;
+    display:inline-block;
+    margin:0 5px 0 5px;
+    font-family:Arial,sans-serif;
+    font-size:10pt;
+}
+
+div.gitem.ng-enter {
+    -webkit-animation: menu_on 1.2s;
+    animation:menu_on 1.2s;
+    left:100%;
+}
+
+div.gitem.ng-leave {
+    -webkit-animation: menu_off 1.2s;
+    animation:menu_off 1.2s;
+    left:0%;
+}
+
+div.gitem.ng-enter, div.gitem.ng-leave {
+    position:absolute;
+    top:0;
+    width:640px;
+    height:380px;
+}
+
+
+@keyframes menu_on {
+  from { left:100%; }
+  to { left:0; background-color:#003300; }
+}
+
+@-webkit-keyframes menu_on {
+  from { left:100%; }
+  to { left:0; background-color:#003300; }
+}
+
+@keyframes menu_off {
+  from { left:0; }
+  to { left:-100%; background-color:none; }
+}
+
+@-webkit-keyframes menu_off {
+  from { left:0; }
+  to { left:-100%; background-color:none; }
+}
+

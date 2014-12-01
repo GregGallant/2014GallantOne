@@ -101,6 +101,19 @@ angular.module('portCtrl', ['ngRoute','ngAnimate'])
         getOnePortfolio($routeParams.id);
 
 
+        /* Menu Directives */
+        $scope.menuOn = function() {
+            console.log('time to toggle the class: '); 
+            $scope.menuQuery = true;
+        
+        }
+        
+        $scope.menuOff = function() {   
+            console.log('one day all seven will die');
+            $scope.menuQuery = false;
+        }
+
+
         /* Testing Archives */
         $scope.getPrev = function() 
         {

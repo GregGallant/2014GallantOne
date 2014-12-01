@@ -21,58 +21,47 @@
     <script src="//code.angularjs.org/1.2.9/angular-resource.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script> 
     -->
-    <script src="/js/mm-foundation-0.3.1.min.js"></script>
 
     <title>AngularMedia, by Greg</title>
 
     <!-- ANGULAR -->
     <!-- all angular resources will be loaded from the /public folder -->
-    <script src="/angjs/controllers/mainCtrl.js"></script> <!-- load our controller -->
-    <script src="/angjs/controllers/portCtrl.js"></script> <!-- load our controller -->
-    <script src="/angjs/services/linkService.js"></script> <!-- load our service -->
-    <script src="/angjs/app.js"></script> <!-- load our application -->
+    <script src="/angjs/controllers/animCtrl.js"></script> <!-- load our controller -->
+    <script src="/angjs/services/animService.js"></script> <!-- load our service -->
+    <script src="/angjs/animApp.js"></script> <!-- load our application -->
     
     <link href="/css/angular.css" rel="stylesheet" type="text/css" />
 
 </head>
-<body class="container" ng-app="linkApp" >
+<body class="container" ng-app="animApp" ng-controller="animController">
     <img alt="full screen background image" src="/images/one/gg_sunset.png" id="full-screen-background-image" />
-    <div id="pagewrap" ng-controller="portController">
+    <div id="pagewrap">
         <!-- Header... -->
         <div header></div>
-
-        <div id="gallantAngMenu">
-            <div id="item1" ng-mouseover="menuOn()" ng-mouseout="menuOff()" ng-class="{true: 'gitem'}[menuQuery == 'true']">Item 1</div>
-            <div id="item2" ng-focus="menuOn()" ng-class="gitem">Item 2</div>
-            <div id="item3" ng-focus="menuOn()" ng-class="gitem">Item 3</div>
-            <div id="item4" ng-focus="menuOn()" ng-class="gitem">Item 4</div>
-        </div>
-
         <!-- Content here... -->
         <div>
             <div class="lightScreenContent">
-                <strong>Technology:</strong>
-                <hr>
+
+                <strong>Angular Directive Testing</strong>
+                <div class="gallantAngMenu">
+                    <div>Item 1</div>
+                    <div>Item 2</div>
+                    <div>Item 3</div>
+                    <div>Item 4</div>
+                </div>
 
                 <div class="gallant_portfolio"> 
-                    <div class="animContainer"><div ng-view class="animImage1"></div></div>
-                    <div>
-                        <button ng-click="getPrevImg()">PrevAnim1</button>
-                        <button ng-click="getNextImg()">NextAnim1</button>
+
+                    <div class="animContainer">
+                        <div ng-view class="animImage1" ></div>
                     </div>
-                </div>
-
-
-                <div class="gallant_portfolio" style="border:2px inset green;">
-                    <div class="animContainer"><div ng-view class="animImage2"></div></div>
-                    <div>
-                        <button ng-click="getPrevImg()">PrevAnim2</button>
-                        <button ng-click="getNextImg()">NextAnim2</button>
+                    <div> 
+                        <button ng-click="goto('/imageOne')">Anim1</button>
+                        <button ng-click="goto('/imageTwo')">Anim2</button>
+                        <a href="#" ng-click="goto('/imageOne')">Anim1</a> | <a href="#" ng-click="goto('/imageTwo')">Anim2</a> 
                     </div>
+
                 </div>
-
-
-
             </div>
         </div>
         <footer id="footer"></footer>
