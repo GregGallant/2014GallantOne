@@ -1,0 +1,189 @@
+/* Tiny Screen  */
+@media (min-width: 320px) {
+
+    h6 {
+        width:310px;
+        font-size:.2em;
+    }
+
+    #textHeader {
+        margin-top:20px;
+    }
+
+    #textHeader h1 {
+        font-weight:normal;
+        letter-spacing:.08em;
+        color:#ffffff;
+        font-size:2.3em; 
+    }
+    
+    #textHeader h3 {
+        font-size:0.9em;
+        margin-top:0px;
+    }
+
+    .goLine {
+        margin-top:5px;
+        margin-bottom:5px;
+        height:6px;
+        width:100%;
+        background-image:url('/images/one/gg_line.png');
+        clear:both;
+    }
+} 
+
+
+/* Larger than mobile */
+@media (min-width: 420px) {
+
+    h6 {
+        width:310px;
+        font-size:.2em;
+    }
+    
+    #textHeader {
+        margin-top:20px;
+    }
+
+    #textHeader h1 {
+        font-weight:normal;
+        letter-spacing:.08em;
+        color:#ffffff;
+        font-size:3.1em; 
+        margin:0 0 0 0;
+        padding:0 0 0 0;
+    }
+    
+    #textHeader h3 {
+        font-size:1.3em;
+        margin-top:0px;
+    }
+
+    .goLine {
+        margin-top:5px;
+        margin-bottom:5px;
+        height:6px;
+        width:100%;
+        background-image:url('/images/one/gg_line.png');
+        clear:both;
+    }
+} 
+
+/* Better than Ezra */
+@media (min-width: 550px) {
+    
+    #textHeader {
+        margin-top:20px;
+    }
+
+    h6 {
+        width:310px;
+        font-size:.2em;
+    }
+
+    #textHeader h1 {
+        font-weight:normal;
+        letter-spacing:.08em;
+        color:#ffffff;
+        font-size:3.75em;
+    }
+    
+    #textHeader h3 {
+        font-size:1.5em;
+    }
+    
+    .goLine {
+        margin-top:5px;
+        margin-bottom:5px;
+        height:6px;
+        width:100%;
+        background-image:url('/images/one/gg_line.png');
+        clear:both;
+    }
+
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+    
+    #textHeader {
+        margin-top:20px;
+    }
+    
+    h6 {
+        font-size:.2em;
+    }
+
+    #textHeader h1 {
+        font-weight:normal;
+        letter-spacing:.08em;
+        color:#ffffff;
+        font-size:3.9em;
+        margin-left:0px;
+        font-size:3.75em;
+    }
+    
+    #textHeader h3 {
+        font-size:1.5em;
+    }
+
+
+    #gcontent #goBoxes .descBox #viewButton {
+        display:block;
+    }
+
+
+    #gcontent #goBoxes .line_540 {
+        display:block;
+        width:310px;
+    }
+
+    img {
+        border:0;
+        max-width:100%;
+        height:auto;
+        width: auto\9; /* ie 8 */
+    }
+
+    .goLine {
+        margin-top:5px;
+        margin-bottom:5px;
+        height:6px;
+        width:100%;
+        background-image:url('/images/one/gg_line.png');
+        clear:both;
+    }
+
+}
+
+/* Larger than desktop */
+
+/* @media (min-width: 1000px) {} */
+
+/* Larger than Desktop HD */
+ @media (min-width: 1200px) {
+ 
+    
+    #textHeader {
+        margin-top:20px;
+    }
+    
+    h6 {
+        font-size:.2em;
+    }
+
+    #textHeader h1 {
+        font-weight:normal;
+        letter-spacing:.08em;
+        color:#ffffff;
+        margin-left:0px;
+        font-size:5.5em;
+    }
+    
+    #textHeader h3 {
+        font-size:2.5em;
+    }
+ 
+ } 
+
+

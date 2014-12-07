@@ -11,3 +11,4 @@ composer.json
 .env.development.php
 .env.php
 .module-cache
+GallantAPI/config/*.php
