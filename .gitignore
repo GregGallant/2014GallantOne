@@ -4,7 +4,7 @@ README.txt
 demos/
 extras/documentation
 thumbsdb
-vendor/
+vendor/*
 artisan
 composer.json
 .env.local.php
