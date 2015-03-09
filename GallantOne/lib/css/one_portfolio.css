@@ -10,7 +10,7 @@ a:active {color:#00f00F;}
 
 body {
     background-color: #0c0b0c;
-    background-image:url('../images/background.jpg');
+    background-image:url('/images/background.jpg');
     margin: 0px 0px 0px 0px;
     color:#f0f0f0;
 
@@ -173,13 +173,13 @@ h5 {
     height:100%;
     float:right;
     display:inline-block;
-    background-image:url('../images/rightArticleBarBackground.jpg');
+    background-image:url('/images/rightArticleBarBackground.jpg');
     z-index:4;
 }
 
 .rightArticleBarBackground {
     height:964px;
-    background-image:url('../images/rightArticleBar.jpg');
+    background-image:url('/images/rightArticleBar.jpg');
     z-index:5;
 }
 
@@ -206,7 +206,7 @@ h5 {
 
 .photoHead {
     margin:0px 0px 0px 0px;
-    background-image:url('../images/photoHead.jpg');
+    background-image:url('/images/photoHead.jpg');
     width:733px;
     height:197px;
 }
@@ -239,7 +239,7 @@ h5 {
 .mainPlateHead {
     top:0px;
     z-index:2;
-    background-image:url('../images/plateBackground.jpg');
+    background-image:url('/images/plateBackground.jpg');
     margin-bottom:auto;
     height:100%;
 }
@@ -248,7 +248,7 @@ h5 {
     top:0px;
     height:117px;
     z-index:3;
-    background-image:url('../images/mainPlate.jpg');
+    background-image:url('/images/mainPlate.jpg');
 }
 
 .fatherBoard > h3 {
@@ -261,7 +261,7 @@ h5 {
     margin-right:auto;
     width:733px;
     height:600px;
-    background-image:url('../images/portScreen.png');
+    background-image:url('/images/portScreen.png');
 }
 
 .portMenu {

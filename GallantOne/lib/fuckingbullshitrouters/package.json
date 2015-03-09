@@ -1,0 +1,63 @@
+{
+  "name": "react-router-component",
+  "version": "0.23.3",
+  "description": "Declarative router component for React",
+  "main": "index.js",
+  "dependencies": {
+    "envify": "^1.2.1",
+    "object.assign": "^1.0.1",
+    "url-pattern": "~0.6.0",
+    "urllite": "~0.4.0"
+  },
+  "devDependencies": {
+    "browserify": "^3.32.1",
+    "browserify-shim": "^3.3.1",
+    "jsxhint": "~0.5.0",
+    "mocha": "~1.17.1",
+    "react-tools": "^0.12.0",
+    "reactify": "^0.15.1",
+    "semver": "~2.2.1",
+    "uglify-js": "^2.4.13",
+    "zuul": "~1.5.2",
+    "object-assign": "~2.0.0"
+  },
+  "peerDependencies": {
+    "react-async": "~2.0.0",
+    "react": "^0.12.0"
+  },
+  "browserify": {
+    "transform": [
+      "envify"
+    ]
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/strml/react-router-component"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "router",
+    "history",
+    "pushState"
+  ],
+  "author": "Andrey Popp <8mayday@gmail.com> (https://github.com/andreypopp)",
+  "contributors": [
+    "Dave Mac (https://github.com/DveMac)",
+    "Matthew Dapena-Tretter (https://github.com/matthewwithanm)",
+    "Mitchel Kuijpers (https://github.com/mitchelkuijpers)",
+    "Simen Brekken <simen.brekken@gmail.com> (https://github.com/sbrekken)",
+    "Samuel Reed <samuel.trace.reed@gmail.com> (https://github.com/strml)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strml/react-router-component/issues"
+  },
+  "homepage": "http://strml.viewdocs.io/react-router-component",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
+}

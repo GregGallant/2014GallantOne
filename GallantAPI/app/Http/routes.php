@@ -28,7 +28,7 @@ Route::controllers([
 /* GallantAPI Time */
 Route::get('/', array('uses' => 'GallantController@index'));
 
-Route::get('/portfolio', array('uses' => 'PortfolioController@getAllPortfolio'));
+Route::get('/portfolio', array('middleware'=> 'studios', 'uses' => 'PortfolioController@getAllPortfolio'));
 
 Route::get('/portfolio/{id}', array('uses' => 'PortfolioController@getPortfolio'));
 
@@ -37,8 +37,10 @@ Route::get('/portfolioTotal', array('uses' => 'PortfolioController@getPortfolioT
 // Mail Testing
 Route::get('/anewmail', array('uses' => 'MailController@index'));
 
+// Middleware Studio Routing
+//Route::get('/studios/admin', array('uses' => 'StudiosController@'));
 
-// Confide routes
+// Confide routes ( no more using code libs written by douchebags )
 Route::get('/users/create', 'UsersController@create');
 Route::post('/users', 'UsersController@store');
 

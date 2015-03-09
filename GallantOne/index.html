@@ -13,25 +13,21 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
-    <script src="//code.angularjs.org/1.2.9/angular-resource.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.js"></script>
-
     <title>Angular-Skeleton-Laravel-Media, by Greg</title>
 
-    <script src="/lib/angjs/controllers/mainCtrl.js"></script> <!-- load our controller -->
-    <script src="/lib/angjs/services/linkService.js"></script> <!-- load our service -->
-    <script src="/lib/angjs/app.js"></script> <!-- load our application -->
-
+    <script data-main="lib/react/init" src="lib/react/react-0.12.2/build/react-with-addons.js"></script>
 </head>
-<body ng-app="linkApp" ng-controller="mainController">
+<body> 
     <img alt="full screen background image" src="/images/one/gg_sunset.png" id="full-screen-background-image" />
-    <div class="container">
+    <div class="container" id="container">
         <!-- Header... -->
-        <div header></div>
-        <!-- Content here... -->
-        <div contenthome id="gcontent"></div>
-        <footer id="footer"></footer>
+        <div id="gApp">
+            <GallantApp />
+        </div>
     </div>
+    <script type="text/javascript" src="/lib/react/GallantHeader.js"></script>
+    <script type="text/javascript" src="/lib/react/GallantContent.js"></script>
+    <script type="text/javascript" src="/lib/react/GallantFooter.js"></script>
+    <script type="text/javascript" src="/lib/react/GallantApp.js"></script>
 </body>
 </html>
