@@ -1,0 +1,4 @@
+-- Best practices:
+    -- SPA Everything (You had this paradigm decades ago and abandoned it)
+    -- Front end routing?  Use .htaccess. 
+

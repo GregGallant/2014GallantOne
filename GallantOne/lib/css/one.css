@@ -59,6 +59,7 @@ p {
 
 #footer {
     clear:both;
+    font-size:.8em;
 }
 
 #bg, #bg table, #bg td {
@@ -528,6 +529,15 @@ img {
     width: auto\9; /* ie 8 */
 
 }
+
+.GLifeCycle {
+    position:relative;
+    border:2px outset #fcfcfc;
+    margin:5px 5px 5px 5px;
+    display:block;
+}
+
+
 /************************************************************************************
 CLEARFIX
 *************************************************************************************/
