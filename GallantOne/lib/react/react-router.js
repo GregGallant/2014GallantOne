@@ -1,1 +1,0 @@
-../react-router/build/global/ReactRouter.js

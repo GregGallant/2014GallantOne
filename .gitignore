@@ -12,3 +12,4 @@ composer.json
 .env.php
 .module-cache
 GallantAPI/config/*.php
+GallantAPI/storage

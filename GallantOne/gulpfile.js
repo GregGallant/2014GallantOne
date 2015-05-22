@@ -18,7 +18,6 @@ gulp.task('default', ['boot', 'watch']);
 
 
 gulp.task('boot', function() {
-    console.log("Gulp swallows, obviously.");
     gulp.src(['lib/bootstrap/assets/stylesheets/_bootstrap.scss']) 
         .pipe(compass({
             bootstrap: paths.src_bootstrap 
