@@ -9,7 +9,7 @@ var paths = {
     lib_bootstrap: ['lib/bootstrap/'],
     src_bootstrap: ['lib/bootstrap/assets/stylesheets/*.scss'],
     glib_react: ['lib/react/js/*.js'],
-    glib_css: ['/var/www/Dev/GallantOne/lib/css/'],
+    glib_css: 'lib/css/',
     glib_js: ['lib/react/js']
 };
 

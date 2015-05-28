@@ -18,29 +18,3 @@ require.config({
   },
 
 });
-/*
-require(['react'], function(util) {
-    // am i doing this right?
-});
-require(['JSXTransformer'], function(util) {
-    // am i doing this right?
-});
-require(['jquery'], function(util) {
-    // am i doing this right?
-});
-
-require(['react-router'], function(util) {
-    // am i doing this right?
-});
-require(['react-router-shim'], function(util) {
-    // am i doing this right?
-});
-*/
-/*
-require(['jsx!gallantApp'], function(GallantApp){
-
-      var gallantApp = new GallantApp();
-        gallantApp.init();
-
-});
-*/

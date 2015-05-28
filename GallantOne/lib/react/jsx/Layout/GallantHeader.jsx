@@ -7,7 +7,7 @@ GallantHeader = React.createClass({
         return(
                 <div>
                     <div className="goHeader">
-                        <a href="/"><img id="goLogo" alt="GallantOne.com" border="0" src="/images/one/one_logo.png" /></a>
+                        <a href="/"><img id="goLogo" alt="GallantOne.com" border="0" src="/assets/images/one_logo.png" /></a>
                     </div>
                     <div className="goLine"></div>
                     <div className="authMenu">

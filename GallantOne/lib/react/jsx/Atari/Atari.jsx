@@ -11,7 +11,7 @@
 
 /* ReactRenderVisualizer (Debugger) */
 var React = require('react');
-var ReactRenderVisualizer = require("react-render-visualizgoter");
+var ReactRenderVisualizer = require("react-render-visualizer");
 
 /* Routing Now */
 var Router = require('react-router');
@@ -79,7 +79,6 @@ var routes = (
            <DefaultRoute path="/" handler={Atari} />
            <Route name="atari" path="/atari" handler={Atari}/>
        </Route>
-       <NotFoundRoute handler={NotFound} />
 );
 
 

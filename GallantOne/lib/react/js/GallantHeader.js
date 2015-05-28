@@ -7,7 +7,7 @@ GallantHeader = React.createClass({displayName: "GallantHeader",
         return(
                 React.createElement("div", null, 
                     React.createElement("div", {className: "goHeader"}, 
-                        React.createElement("a", {href: "/"}, React.createElement("img", {id: "goLogo", alt: "GallantOne.com", border: "0", src: "/images/one/one_logo.png"}))
+                        React.createElement("a", {href: "/"}, React.createElement("img", {id: "goLogo", alt: "GallantOne.com", border: "0", src: "/assets/images/one_logo.png"}))
                     ), 
                     React.createElement("div", {className: "goLine"}), 
                     React.createElement("div", {className: "authMenu"}, 
