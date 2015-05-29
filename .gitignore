@@ -13,3 +13,4 @@ composer.json
 .module-cache
 GallantAPI/config/*.php
 GallantAPI/storage
+GallantOne/ideology
