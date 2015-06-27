@@ -1,5 +1,5 @@
 /** @jsx React.DOM */
-
+/* http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/ */
 var React = require('react');
 
 GLifeCycle = React.createClass({
