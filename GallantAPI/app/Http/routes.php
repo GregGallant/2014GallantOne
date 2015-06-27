@@ -1,11 +1,5 @@
 <?php
 
-//header('Access-Control-Allow-Origin: http://dev.gallantone.com');
-header('Access-Control-Allow-Origin: http://qa.gallantone.com');
-//header('Access-Control-Allow-Origin: http://www.gallantone.com');
-header('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS'); 
-
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -17,38 +11,71 @@ header('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS');
 |
 */
 
-//Route::get('/', 'WelcomeController@index');
-Route::get('home', 'HomeController@index');
+header('Access-Control-Allow-Origin: http://qa.gallantone.com');
+//header('Access-Control-Allow-Origin: http://www.gallantone.com');
+header('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+
+/*
+	* |--------------------------------------------------------------------------
+	* | Application Routes
+	* |--------------------------------------------------------------------------
+	* |
+	* | Here is where you can register all of the routes for an application.
+	* | It's a breeze. Simply tell Laravel the URIs it should respond to
+	* | and give it the controller to call when that URI is requested.
+	* |
+	* */
+
+//$app->get('/', 'WelcomeController@index');
+$app->get('home', 'HomeController@index');
+
+/*
+$app->controllers([
+        'auth' => 'Auth\AuthController',
+        'password' => 'Auth\PasswordController',
 ]);
-
+*/
 /* GallantAPI Time */
-Route::get('/', array('uses' => 'GallantController@index'));
+$app->get('/', function () use ($app) {
+	    return $app->welcome();
+});
 
-Route::get('/portfolio', array('middleware'=> 'studios', 'uses' => 'PortfolioController@getAllPortfolio'));
 
-Route::get('/portfolio/{id}', array('uses' => 'PortfolioController@getPortfolio'));
+/* 
+ *
+ *
+ * $app->get('user/{id}/profile', ['as' => 'profile', function ($id) {
+ *     //
+	 *     }]);
+ *
+	 *     $url = route('profile', ['id' => 1]);
+ */
 
-Route::get('/portfolioTotal', array('uses' => 'PortfolioController@getPortfolioTotal'));
+//$app->get('/', array('uses' => 'GallantController@index'));
+
+//$app->get('/portfolio', array('middleware'=> 'studios', 'uses' => 'PortfolioController@getAllPortfolio'));
+
+$app->get('/portfolio/{id}', ['as' => 'portfolio', 'uses' => 'PortfolioController@getPortfolio' ]);
+//	array('uses' => 'PortfolioController@getPortfolio'));
+
+$app->get('/portfolioTotal', array('uses' => 'PortfolioController@getPortfolioTotal'));
 
 // Mail Testing
-Route::get('/anewmail', array('uses' => 'MailController@index'));
+$app->get('/anewmail', array('uses' => 'MailController@index'));
 
 // Middleware Studio Routing
-//Route::get('/studios/admin', array('uses' => 'StudiosController@'));
+//$app->get('/studios/admin', array('uses' => 'StudiosController@'));
 
 // Confide routes ( no more using code libs written by douchebags )
-Route::get('/users/create', 'UsersController@create');
-Route::post('/users', 'UsersController@store');
+$app->get('/users/create', 'UsersController@create');
+$app->post('/users', 'UsersController@store');
 
-Route::get('/users/login', 'UsersController@login');
-Route::post('/users/login', 'UsersController@doLogin');
+$app->get('/users/login', 'UsersController@login');
+$app->post('/users/login', 'UsersController@doLogin');
 
-Route::get('/users/confirm/{code}', 'UsersController@confirm');
+$app->get('/users/confirm/{code}', 'UsersController@confirm');
 
-Route::get('/users/forgot_password', 'UsersController@forgotPassword');
-Route::post('/users/forgot_password', 'UsersController@doForgotPassword');
+$app->get('/users/forgot_password', 'UsersController@forgotPassword');
+$app->post('/users/forgot_password', 'UsersController@doForgotPassword');
 

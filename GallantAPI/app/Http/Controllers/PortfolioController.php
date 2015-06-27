@@ -16,7 +16,8 @@ class PortfolioController extends BaseController {
      */
     public function index()
     {
-        return View::make('portfolio');
+        //return View::make('portfolio');
+        return view('portfolio', []);
     }
 
     /**
@@ -37,7 +38,8 @@ class PortfolioController extends BaseController {
         $portfolio = json_decode(Portfolio::all(), true);
         error_log('Getting Portfolio: '.print_r($portfolio, true));
         foreach ($portfolio as $port) {
-            return Response::json($portfolio[$pos]);
+            //return Response::json($portfolio[$pos]);
+            return response()->json($portfolio[$pos]);
         }
     }
 
@@ -47,7 +49,8 @@ class PortfolioController extends BaseController {
     public function getPortfolioById($id)
     {
         $portfolio = Portfolio::find($id);
-        return Response::json($portfolio);
+        return response()->json($portfolio);
+       // return Response::json($portfolio);
     }
 
     /** 
@@ -57,7 +60,8 @@ class PortfolioController extends BaseController {
     public function getPortfolioTotal() 
     {
         $portfolio = Portfolio::all();
-        return Response::json(count($portfolio)); 
+        return response()->json(count($portfolio));
+        //return Response::json(count($portfolio));
     }
 
 

@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use \Eloquent;
+use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Database\Eloquent\Model;
 
-class Portfolio extends Eloquent
+class Portfolio extends Model
 {
 
     protected $table = 'portfolio';
