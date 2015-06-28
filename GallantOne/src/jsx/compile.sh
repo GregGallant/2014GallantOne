@@ -1,22 +1,41 @@
 #!/bin/bash
 
-# Page compiling 
+# GallantOne React Strategic Compiling
 
-jsx ./Layout/GallantHeader.jsx > ../../assets/js/GallantHeader.js;
-jsx ./Layout/GallantFooter.jsx > ../../assets/js/GallantFooter.js;
- 
-jsx ./GallantPortfolio/GallantContent.jsx > ../../assets/js/GallantContent.js;
-jsx ./GallantPortfolio/GallantRoute.jsx > ../../assets/js/GallantRoute.js;
-jsx ./GallantPortfolio/GallantApp.jsx > ../../assets/js/GallantApp.js;
-jsx ./GallantPortfolio/GallantHome.jsx > ../../assets/js/GallantHome.js;
-jsx ./GallantPortfolio/GallantFrontpage.jsx > ../../assets/js/GallantFrontpage.js;
+###################################################
+# LAYOUTS
+###################################################
+for fullfilename in ./Layout/*.jsx
+do
+    filename='basename ${fullfilename} .jsx'
+    jsx "${fullfilename}" > ../../assets/js/"${filename}".js;
+done
 
-# Atari Compiling 
-jsx ./Atari/GLifeCycle.jsx > ../../assets/js/GLifeCycle.js;  
-jsx ./Atari/Atari.jsx > ../../assets/js/Atari.js;  
+###################################################
+# GALLANTPORTFOLIO
+###################################################
+for fullfilename in ./GallantPortfolio/*.jsx
+do
+    filename='basename ${fullfilename} .jsx'
+    jsx "${fullfilename}" > ../../assets/js/"${filename}".js;
+done
 
-# Webpack bundling 
+###################################################
+# ATARI TESTING
+###################################################
+for fullfilename in ./Atari/*.jsx
+do
+    filename='basename ${fullfilename} .jsx'
+    jsx "${fullfilename}" > ../../assets/js/"${filename}".js;
+done
+
+###################################################
+# Webpack bundling
+#  --> bundle one universal js to include in <head>
+###################################################
+
 webpack main.js ../../assets/js/bundle.js
 
+###################################################
 
 

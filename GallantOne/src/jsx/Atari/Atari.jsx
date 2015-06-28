@@ -1,4 +1,6 @@
 /**
+ * @jsx React.DOM
+ *
  *  ==== React Life Cycle ====
  *  http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/
  *
@@ -43,21 +45,22 @@ var Atari = React.createClass({
     // An array of objects that can augment the lifecycle methods
     mixins: [ReactRenderVisualizer],
 
-    // Guess...  rather, look deeper into HOW it's doing things
+    /**
+     * The heart and soul, well, so dramatic... the components... of our app
+     *
+     **/
     render: function() {
         return(
             <div>
                 <GallantHeader />
-                <GLifeCycle />
+                <GIndex />
                 <GallantFooter />
                 <RouteHandler />
             </div>
         ); 
-    }
+    },
 
-    // Functions that can be invoked on the component without creating instances
-    statics: {
-        aStaticFunction: function() {};
+    statics: function() {
     },
 
     // Lifecycle Methods
