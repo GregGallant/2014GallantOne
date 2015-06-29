@@ -2,32 +2,49 @@
 
 # GallantOne React Strategic Compiling
 
+#files=( /very/long/path/to/various/files/*.file )
+layoutDir="./Layout/"
+gallantDir="./GallantPortfolio/"
+atariDir="./Atari/"
+
+buildDir="../../assets/js/"
+
 ###################################################
 # LAYOUTS
 ###################################################
-for fullfilename in ./Layout/*.jsx
+files=(./Layout/*.jsx)
+for file in "${files[@]}"
 do
-    filename='basename ${fullfilename} .jsx'
-    jsx "${fullfilename}" > ../../assets/js/"${filename}".js;
-done
-
-###################################################
-# GALLANTPORTFOLIO
-###################################################
-for fullfilename in ./GallantPortfolio/*.jsx
-do
-    filename='basename ${fullfilename} .jsx'
-    jsx "${fullfilename}" > ../../assets/js/"${filename}".js;
+    fullfilename="${file##*/}"
+    filename="${fullfilename%.*}"
+    #echo "${layoutDir}${fullfilename}"
+    jsx "${layoutDir}${fullfilename}" > "${buildDir}${filename}".js;
 done
 
 ###################################################
 # ATARI TESTING
 ###################################################
-for fullfilename in ./Atari/*.jsx
+files=(./Atari/*.jsx)
+for file in "${files[@]}"
 do
-    filename='basename ${fullfilename} .jsx'
-    jsx "${fullfilename}" > ../../assets/js/"${filename}".js;
+    fullfilename="${file##*/}"
+    filename="${fullfilename%.*}"
+    #echo "${atariDir}${fullfilename}"
+    jsx "${atariDir}${fullfilename}" > "${buildDir}${filename}".js;
 done
+
+###################################################
+# GALLANTPORTFOLIO
+###################################################
+files=(./GallantPortfolio/*.jsx)
+for file in "${files[@]}"
+do
+    fullfilename="${file##*/}"
+    filename="${fullfilename%.*}"
+    #echo "${gallantDir}${fullfilename}"
+    jsx "${gallantDir}${fullfilename}" > "${buildDir}${filename}".js;
+done
+
 
 ###################################################
 # Webpack bundling
@@ -35,7 +52,3 @@ done
 ###################################################
 
 webpack main.js ../../assets/js/bundle.js
-
-###################################################
-
-

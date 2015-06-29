@@ -53,7 +53,7 @@ var Atari = React.createClass({
         return(
             <div>
                 <GallantHeader />
-                <GIndex />
+                <GoIndex />
                 <GallantFooter />
                 <RouteHandler />
             </div>

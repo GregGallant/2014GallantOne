@@ -53,7 +53,7 @@ var Atari = React.createClass({displayName: "Atari",
         return(
             React.createElement("div", null, 
                 React.createElement(GallantHeader, null), 
-                React.createElement(GIndex, null), 
+                React.createElement(GoIndex, null), 
                 React.createElement(GallantFooter, null), 
                 React.createElement(RouteHandler, null)
             )

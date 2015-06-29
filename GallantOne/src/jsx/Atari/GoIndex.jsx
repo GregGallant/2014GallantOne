@@ -46,4 +46,4 @@ GoIndex = React.createClass({
 
 });
 
-module.exports = GLifeCycle;
+module.exports = GoIndex;
