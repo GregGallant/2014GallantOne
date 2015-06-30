@@ -208,14 +208,14 @@ a.menuPlacement:visited {
     font-style:normal;
     font-weight:normal;
     font-family: Arvil;
-    src: url('Arvil/Arvil_Sans.eot');
+    src: url('fonts/Arvil/Arvil_Sans.eot');
 }
 
 @font-face {
     font-style:normal;
     font-weight:normal;
     font-family: Arvil;
-    src: url('Arvil/Arvil_Sans.ttf') format("opentype");
+    src: url('fonts/Arvil/Arvil_Sans.ttf') format("opentype");
 }
 
 h1 {
