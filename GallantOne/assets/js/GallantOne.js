@@ -29,7 +29,7 @@ var DefaultRoute = Router.DefaultRoute;
  * Need to know wtf I'm doing and what I'm able to utilize, so, 
  * putting in all methods related to the lifecycle here whether used or not...
  **/
-var Atari = React.createClass({
+var Atari = React.createClass({displayName: "Atari",
 
     // The object returned by this method sets the initial value of this.state
     getInititalState: function() {
@@ -51,9 +51,11 @@ var Atari = React.createClass({
      **/
     render: function() {
         return(
-            <div>
-                <GoIndex />
-            </div>
+            React.createElement("div", null, 
+                React.createElement(GallantHeader, null), 
+                React.createElement(GoIndex, null), 
+                React.createElement(GallantFooter, null)
+            )
         ); 
     },
 
@@ -105,24 +107,24 @@ var Atari = React.createClass({
 
 
 /* Home */
-var Home = React.createClass({
+var Home = React.createClass({displayName: "Home",
     render: function() {
         return(
-            <div>
-                Default Pathing
-            </div>     
+            React.createElement("div", null, 
+                "Default Pathing"
+            )     
         );
     } 
 });
 
 
 /* NotFound */
-var NotFound = React.createClass({
+var NotFound = React.createClass({displayName: "NotFound",
     render: function() {
         return (
-            <div>
-               404 Not Found. 
-            </div>
+            React.createElement("div", null, 
+               "404 Not Found." 
+            )
         );
     }
 });
@@ -141,12 +143,12 @@ var routes = (
 
 /* Single Route */
 var routes = (
-       <Route handler={Atari} path="/">
-           <DefaultRoute path="/" handler={Atari} />
-           <Route name="atari" path="/atari" handler={Atari}/>
-       </Route>
+       React.createElement(Route, {handler: Atari, path: "/"}, 
+           React.createElement(DefaultRoute, {path: "/", handler: Atari}), 
+           React.createElement(Route, {name: "atari", path: "/atari", handler: Atari})
+       )
 );
 //var location = new TestLocation(['/atari']);
 Router.run(routes,  function (Atari)  {
-    React.render(<Atari/>, document.body);
+    React.render(React.createElement(Atari, null), document.body);
 });

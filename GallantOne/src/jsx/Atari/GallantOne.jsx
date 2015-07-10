@@ -52,7 +52,9 @@ var Atari = React.createClass({
     render: function() {
         return(
             <div>
+                <GallantHeader />
                 <GoIndex />
+                <GallantFooter />
             </div>
         ); 
     },

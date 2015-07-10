@@ -52,10 +52,7 @@ var Atari = React.createClass({displayName: "Atari",
     render: function() {
         return(
             React.createElement("div", null, 
-                React.createElement(GallantHeader, null), 
-                React.createElement(GoIndex, null), 
-                React.createElement(GallantFooter, null), 
-                React.createElement(RouteHandler, null)
+                React.createElement(GoIndex, null)
             )
         ); 
     },
@@ -149,8 +146,6 @@ var routes = (
            React.createElement(Route, {name: "atari", path: "/atari", handler: Atari})
        )
 );
-
-
 //var location = new TestLocation(['/atari']);
 Router.run(routes,  function (Atari)  {
     React.render(React.createElement(Atari, null), document.body);
