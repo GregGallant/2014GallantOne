@@ -3,33 +3,27 @@
  *
  *  ==== React Life Cycle ====
  *  http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/
- *
- * getInitialState:  
- * componentWillMount:
- * componentDidMount:
- * componentWillReceiveProps:
- * componentWillUnmount:
- * render:
  */
 
 /* ReactRenderVisualizer (Debugger) */
-var React = require('react');
+var React = require('react/addons');
 var ReactRenderVisualizer = require("react-render-visualizer");
 
 /* Routing Now */
 var Router = require('react-router');
-var Link = Router.Link;
-var Route = Router.Route;
-var RouteHandler = Router.RouteHandler;
-var DefaultRoute = Router.DefaultRoute;
+//var Link = Router.Link;
+//var Route = Router.Route;
+//var RouteHandler = Router.RouteHandler;
+//var DefaultRoute = Router.DefaultRoute;
 
+/* Transitions */
+//var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup; // Commenting out for now, may have to declare in class dec.
 
 /** 
- * Atari means To Hit the Target  - I'm so original... 
  * Need to know wtf I'm doing and what I'm able to utilize, so, 
  * putting in all methods related to the lifecycle here whether used or not...
  **/
-var Atari = React.createClass({
+var GallantOne = React.createClass({
 
     // The object returned by this method sets the initial value of this.state
     getInititalState: function() {
@@ -47,7 +41,6 @@ var Atari = React.createClass({
 
     /**
      * The heart and soul, well, so dramatic... the components... of our app
-     *
      **/
     render: function() {
         return(
@@ -57,6 +50,7 @@ var Atari = React.createClass({
                 <GallantFooter />
             </div>
         ); 
+
     },
 
     statics: function() {
@@ -105,50 +99,39 @@ var Atari = React.createClass({
 
 });
 
-
-/* Home */
-var Home = React.createClass({
-    render: function() {
-        return(
-            <div>
-                Default Pathing
-            </div>     
-        );
-    } 
-});
-
-
-/* NotFound */
-var NotFound = React.createClass({
-    render: function() {
-        return (
-            <div>
-               404 Not Found. 
-            </div>
-        );
-    }
-});
-
-
-/* Duo Route */
-/*
-var routes = (
-       <Route handler={Atari}>
-           <DefaultRoute path="/" handler={Atari} />
-           <Route name="atari" path="/atari" handler={Atari}/>
-       </Route>
-);
-*/
-
+React.render(<GallantOne/>, document.body);
 
 /* Single Route */
+/*
 var routes = (
        <Route handler={Atari} path="/">
            <DefaultRoute path="/" handler={Atari} />
            <Route name="atari" path="/atari" handler={Atari}/>
        </Route>
 );
+
 //var location = new TestLocation(['/atari']);
 Router.run(routes,  function (Atari)  {
     React.render(<Atari/>, document.body);
 });
+*/
+
+/*
+render: function() {
+   var items = this.state.items.map(function(item, i) {
+         return (
+            <div key={item} onClick={this.handleRemove.bind(this, i)}>
+             {item}
+            </div>
+         );
+   }.bind(this));
+   return (
+   <div>
+       <button onClick={this.handleAdd}>Add Item</button>
+               <ReactCSSTransitionGroup transitionName="example">
+                         {items}
+               </ReactCSSTransitionGroup>
+   </div>
+   );
+
+*/

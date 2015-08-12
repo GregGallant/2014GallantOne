@@ -3,20 +3,15 @@
  *
  *  ==== React Life Cycle ====
  *  http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/
- *
- * getInitialState:  
- * componentWillMount:
- * componentDidMount:
- * componentWillReceiveProps:
- * componentWillUnmount:
- * render:
+ *  not mentioned:
+ *  handleAdd | handleRemove - used in anim - custom 
  */
 
 /* ReactRenderVisualizer (Debugger) */
 var React = require('react');
 var ReactRenderVisualizer = require("react-render-visualizer");
 
-/* Routing Now */
+/* Routing I suppose */
 var Router = require('react-router');
 var Link = Router.Link;
 var Route = Router.Route;
@@ -46,7 +41,7 @@ var Atari = React.createClass({displayName: "Atari",
     mixins: [ReactRenderVisualizer],
 
     /**
-     * The heart and soul, well, so dramatic... the components... of our app
+     * The heart and soul... too dramatic... the components... of our app
      *
      **/
     render: function() {
