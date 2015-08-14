@@ -1,0 +1,10 @@
+{
+    "name" : "gallantone",
+    "version" : "0.0.1",
+    "description" : "lumen/react port site",
+    "main" : "assets/js/bundle.js",
+    "dependencies" : {
+        "react" : "0.13.3" 
+    }
+
+}
