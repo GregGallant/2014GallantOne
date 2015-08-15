@@ -534,7 +534,7 @@ img {
 
 .authStateAnim-enter.authStateAnim-enter-active {
     opacity: 1;
-    transition: opacity .5s ease-in;
+    transition: opacity .4s ease-in;
 }
 
 .authStateAnim-leave {
@@ -543,7 +543,7 @@ img {
 
 .authStateAnim-leave.authStateAnim-leave-active {
     opacity: 0.01;
-    transition: opacity .5s ease-in;
+    transition: opacity .4s ease-in;
 }
 
 
