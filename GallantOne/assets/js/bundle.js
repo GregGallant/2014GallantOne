@@ -22565,7 +22565,7 @@
 
 	    handleAdd: function() {
 	        var newAuthState;
-	        newAuthState = { authState: ["Ay, f-ck it.  I'll start at the top."] };
+	        newAuthState = { authState: ["Start from the top."] };
 	        this.setState({authState: newAuthState});
 	    },
 
@@ -22598,7 +22598,13 @@
 	        this.el = this.getDOMNode();
 	        this.$el = $(this.el);
 	        this.$el.addClass("authStateAnim-enter-active");
-	    
+	   
+
+	        /*
+	         * var array = $.map(myObj, function(value, index) { return [value]; });
+	         */
+
+
 	        requestAnimationFrame(
 	            function() { 
 	                this.$el
@@ -22609,12 +22615,14 @@
 	                        this.$el.addClass("authStateAnim-enter-active");
 	                        // Arrival.complete(this.$el, done); 
 	                        // Not sure about using yet another library ~ Arrival.js
+	                        // Debug this portion
 	                    }.bind(this)); 
 	            }.bind(this));
 	    },
 
 	    render: function() {
-	   
+
+	       //var stateArr = $.map( this.state.authState, function(value, index) { return [value]; });
 	       var authState = this.state.authState.map(function(authState, ias) {
 
 	            return(
