@@ -16,8 +16,37 @@ var Router = require('react-router');
 //var RouteHandler = Router.RouteHandler;
 //var DefaultRoute = Router.DefaultRoute;
 
+
+/* Cart CRUD API Loading */
+var ProductData = require('./ProductData');
+var CartAPI = require('./CartAPI');
+
+
+var CartStore = require('./CartStore');
+var ProductStore = require('./ProductStore');
+
+var FluxProduct = require('./FluxProduct');
+var FluxCart = require('./FluxCart');
+
+
+/* Crud API Stuff - To Be Lumen-ated */
+ProductData.init();
+CartAPI.getProductData();
+
+function getCartState() {
+    return {
+        product: ProductStore.getProduct(),
+        selectedProduct: ProductStore.getSelected(),
+        cartItems: CartStore.getCartItems(),
+        cartCount: CartStore.getCartCount(),
+        cartTotal: CartStore.getCartTotal(),
+        cartVisible: CartStore.getCartVisible()
+    };
+}
 /* Transitions */
 //var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup; // Commenting out for now, may have to declare in class dec.
+
+
 
 /** 
  * Need to know wtf I'm doing and what I'm able to utilize, so, 
@@ -26,18 +55,12 @@ var Router = require('react-router');
 var GallantOne = React.createClass({displayName: "GallantOne",
 
     // The object returned by this method sets the initial value of this.state
-    getInititalState: function() {
-        return {};
-    },
-
-    // The object returned by this method sets the initial value of this.props
-    // If a "complex object"(?) is returned, it is shared among all component instances
-    getDefaultProps: function() {
-        return {};
+    getInitialState: function() {
+        return getCartState();
     },
 
     // An array of objects that can augment the lifecycle methods
-    mixins: [ReactRenderVisualizer],
+    //mixins: [ReactRenderVisualizer],
 
     /**
      * The heart and soul, well, so dramatic... the components... of our app
@@ -46,6 +69,8 @@ var GallantOne = React.createClass({displayName: "GallantOne",
         return(
             React.createElement("div", null, 
                 React.createElement(GallantHeader, null), 
+                React.createElement(FluxCart, {products: this.state.cartItems, count: this.state.cartCount, total: this.state.cartTotal, visible: this.state.cartVisible}), 
+                React.createElement(FluxProduct, {product: this.state.product, cartitems: this.state.cartItems, selected: this.state.selectedProduct}), 
                 React.createElement(GoIndex, null), 
                 React.createElement(GallantFooter, null)
             )
@@ -53,53 +78,28 @@ var GallantOne = React.createClass({displayName: "GallantOne",
 
     },
 
-    statics: function() {
-    },
-
-    // Lifecycle Methods
-
-    // Invoked once before render
-    componentWillMount: function() {
-        // Calling setState here does not call a re-render,
-    },
-
     // Invoked once after first render
     componentDidMount: function() {
         // You now have access to this.getDOMNode()
-    },
-
-    // Invoked whenever there is a prop change
-    // Called BEFORE render
-    componentWillReceiveProps: function(nextProps) {
-        // Not called for the initial render
-        // Previous Props can be accessed by this.props
-        // Calling setState here does not trigger an additional re-render,
-    },
-
-    // Determines if the render method should run in the subsequent steap
-    // Called BEFORE a render
-    // Not called for the initial render
-    shouldComponentUpdate: function(nextProps, nextState) {
-        // If you want the render method to execute in the next step return true, otherwise return false
-    },
-
-    // Called IMMEDIATELY BEFORE a render
-    componentWillUpdate: function(nextProps, nextState) {
-        // You cannot use this.setState() in this method
-    },
-
-    // called IMMEDIATELY AFTER a render
-    componentDidUpdate: function(prevProps, prevState) {
+        ProductStore.addChangeListener(this._onChange);
+        CartStore.addChangeListener(this._onChange);
     },
 
     // called IMMEDIATELY before a component is unmounted
     componentWillUnmount: function() {
+        ProductStore.removeChangeListener(this._onChange);
+        CartStore.removeChangeListener(this._onChange);
+    },
+
+    _onChange: function() {
+        this.setState(getCartState());
     }
 
 
 });
 
 React.render(React.createElement(GallantOne, null), document.body);
+
 
 /* Single Route */
 /*

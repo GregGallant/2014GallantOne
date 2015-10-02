@@ -44,13 +44,9 @@ GallantHeader = React.createClass({displayName: "GallantHeader",
         this.el = this.getDOMNode();
         this.$el = $(this.el);
         this.$el.addClass("authStateAnim-enter-active");
-   
-
         /*
          * var array = $.map(myObj, function(value, index) { return [value]; });
          */
-
-
         requestAnimationFrame(
             function() { 
                 this.$el

@@ -4,7 +4,11 @@
     "description" : "lumen/react port site",
     "main" : "assets/js/bundle.js",
     "dependencies" : {
-        "react" : "0.13.3" 
-    }
+        "flux" : "^2.0.0",
+	"reflux" : "^0.2.7",
+        "react" : "0.13.3",
+        "underscore" : "^1.7.0"
+    },
+    "author" : "Greg Gallant"
 
 }

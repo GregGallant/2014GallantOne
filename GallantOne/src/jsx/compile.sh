@@ -5,7 +5,7 @@
 #files=( /very/long/path/to/various/files/*.file )
 layoutDir="./Layout/"
 gallantDir="./GallantPortfolio/"
-atariDir="./Atari/"
+atariDir="./Application/"
 
 buildDir="../../assets/js/"
 
@@ -24,7 +24,7 @@ done
 ###################################################
 # ATARI TESTING
 ###################################################
-files=(./Atari/*.jsx)
+files=(./Application/*.jsx)
 for file in "${files[@]}"
 do
     fullfilename="${file##*/}"
@@ -52,3 +52,6 @@ done
 ###################################################
 
 webpack main.js ../../assets/js/bundle.js
+
+rm ../../assets/js/\*.js; # Stuff like this is why we need to move this to gulp
+chmod 555 ../../assets/js/*.js;
