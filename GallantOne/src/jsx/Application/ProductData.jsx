@@ -1,8 +1,6 @@
 
-module.exports = {
-
     // This loads mock data into localStorage
-    init: function() {
+    function init() {
 
         localStorage.clear();
 
@@ -30,8 +28,6 @@ module.exports = {
             ])
         )
 
-
     }
 
-
-};
+    export default { init };

@@ -1,10 +1,18 @@
+import React from 'react/addons';
+import FluxCartActions from './FluxCartActions.jsx';
 
-var React = require('react');
-var FluxCartActions = require('./FluxCartActions');
+import CartStore from './CartStore.jsx';
+import ProductStore from './ProductStore.jsx';
 
-var FluxProduct = React.createClass({
 
-    addToCart: function(event) {
+class FluxProduct extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.addToCart = this.addToCart.bind(this);
+    }
+
+    addToCart(event) {
         var sku = this.props.selected.sku;
         var update = {
             name: this.props.product.name,
@@ -13,13 +21,14 @@ var FluxProduct = React.createClass({
         };
         FluxCartActions.addToCart(sku, update);
         FluxCartActions.updateCartVisible(true);
-    },
-
-    selectVariant: function(event) {
+    }
+    //selectVariant: function(event) {
+    selectVariant(event) {
         FluxCartActions.selectProduct(event.target.value);
-    },
+    }
 
-    render: function() {
+    //render: function() {
+    render() {
         var ats = (this.props.selected.sku in this.props.cartitems) ?
             this.props.selected.inventory - this.props.cartitems[this.props.selected.sku].quantity :
             this.props.selected.inventory;
@@ -29,9 +38,9 @@ var FluxProduct = React.createClass({
             <div className="flux-product">
                 <img src={'assets/images/' + this.props.product.image} />
                 <div className="flux-product-detail">
-                    <h3>{this.props.product.name}</h3>
-                    <h4>{this.props.product.description}</h4>
-                    <h5>{this.props.selected.price}</h5>
+                    <h4>{this.props.product.name}</h4>
+                    <h5>{this.props.product.description}</h5>
+                    <h6>{this.props.selected.price}</h6>
                     <select onChange={this.selectVariant}>
                         {this.props.product.variants.map(function(variant, index) {
                             return (
@@ -48,6 +57,6 @@ var FluxProduct = React.createClass({
         );
     }
 
-});
+}
 
-module.exports = FluxProduct;
+export default FluxProduct;

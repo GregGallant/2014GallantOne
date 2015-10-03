@@ -1,8 +1,9 @@
 
-var AppDispatcher = require('./AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
-var FluxCartConstants = require('./FluxCartConstants');
-var _ = require('underscore');
+import AppDispatcher from './AppDispatcher.jsx';
+import EventEmitter from 'events';
+import FluxCartConstants from './FluxCartConstants.jsx';
+
+import _ from 'underscore';
 
 var _product = {}, _selected = null;
 
@@ -17,8 +18,9 @@ function setSelected(index) {
 
 // Extend ProductStore with EventEmitter to add eventing capabilities
 
-var ProductStore = _.extend({}, EventEmitter.prototype, {
+//var ProductStore = _.extend({}, EventEmitter.prototype, {
 
+var ProductStore = _.extend({}, EventEmitter.prototype, {
 
     getProduct: function () {
         return _product;
@@ -68,4 +70,5 @@ AppDispatcher.register(function(payload) {
 
 });
 
-module.exports = ProductStore;
+export default ProductStore;
+//module.exports = ProductStore;

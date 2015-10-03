@@ -1,14 +1,20 @@
-//var React = require('react');
-var React = require('react/addons');
+import React from 'react/addons';
+
+
+/* Flux Components */
+//import AppDispatcher from '../../assets/js/AppDispatcher.js';
+//import CartAPI from '../../assets/js/CartAPI.js';
+//import CartStore from '../../assets/js/CartStore.js';
+//import ProductStore from '../../assets/js/ProductStore.js';
+//import ProductData from '../../assets/js/ProductData.js';
 
 /* Layout */
-var GallantHeader = require('../../assets/js/GallantHeader.js');
-var GallantFooter = require('../../assets/js/GallantFooter.js');
+import GallantHeader from '../../assets/js/GallantHeader.js';
+import GallantFooter from '../../assets/js/GallantFooter.js';
 
 /* Frontpage Content */
-var GIndex = require('../../assets/js/GoIndex.js');
-
+import GoIndex from '../../assets/js/GoIndex.js';
 
 /* Application */
-var GAtari = require('../../assets/js/GallantOne.js');
+import GallantOne from '../../assets/js/GallantOne.js';
 

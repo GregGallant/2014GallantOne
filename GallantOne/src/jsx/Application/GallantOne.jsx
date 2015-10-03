@@ -1,63 +1,59 @@
-/**
- * @jsx React.DOM
- *
- *  ==== React Life Cycle ====
- *  http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/
- */
-
 /* ReactRenderVisualizer (Debugger) */
-var React = require('react/addons');
-var ReactRenderVisualizer = require("react-render-visualizer");
+//var React = require('react/addons');
 
-/* Routing Now */
-var Router = require('react-router');
-//var Link = Router.Link;
-//var Route = Router.Route;
-//var RouteHandler = Router.RouteHandler;
-//var DefaultRoute = Router.DefaultRoute;
+import React from 'react/addons'
+
+/* Header Footer */
+import GallantHeader from '../Layout/GallantHeader.jsx';
+import GallantFooter from '../Layout/GallantFooter.jsx';
+import GoIndex from './GoIndex.jsx';
 
 
 /* Cart CRUD API Loading */
-var ProductData = require('./ProductData');
-var CartAPI = require('./CartAPI');
+import ProductData from './ProductData.jsx';
+import CartAPI from './CartAPI.jsx';
 
+import CartStore from './CartStore.jsx';
+import ProductStore from './ProductStore.jsx';
 
-var CartStore = require('./CartStore');
-var ProductStore = require('./ProductStore');
+import FluxCart from './FluxCart.jsx';
+import FluxProduct from './FluxProduct.jsx';
 
-var FluxProduct = require('./FluxProduct');
-var FluxCart = require('./FluxCart');
-
+const propTypes = {
+    product: ProductStore.getProduct(),
+    selectedProduct: ProductStore.getSelected(),
+    cartItems: CartStore.getCartItems(),
+    cartCount: CartStore.getCartCount(),
+    cartTotal: CartStore.getCartTotal(),
+    cartVisible: CartStore.getCartVisible()
+};
 
 /* Crud API Stuff - To Be Lumen-ated */
 ProductData.init();
 CartAPI.getProductData();
 
-function getCartState() {
-    return {
-        product: ProductStore.getProduct(),
-        selectedProduct: ProductStore.getSelected(),
-        cartItems: CartStore.getCartItems(),
-        cartCount: CartStore.getCartCount(),
-        cartTotal: CartStore.getCartTotal(),
-        cartVisible: CartStore.getCartVisible()
-    };
-}
-/* Transitions */
-//var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup; // Commenting out for now, may have to declare in class dec.
+class GallantOne extends React.Component {
 
-
-
-/** 
- * Need to know wtf I'm doing and what I'm able to utilize, so, 
- * putting in all methods related to the lifecycle here whether used or not...
- **/
-var GallantOne = React.createClass({
 
     // The object returned by this method sets the initial value of this.state
-    getInitialState: function() {
-        return getCartState();
-    },
+    // Constructor
+    constructor(props) {
+        super(props);
+        this._onChange = this._onChange.bind(this);
+        this.getCartState = this.getCartState.bind(this);
+        this.state = this.getCartState();
+    }
+
+    getCartState() {
+        return {
+            product: ProductStore.getProduct(),
+            selectedProduct: ProductStore.getSelected(),
+            cartItems: CartStore.getCartItems(),
+            cartCount: CartStore.getCartCount(),
+            cartTotal: CartStore.getCartTotal(),
+            cartVisible: CartStore.getCartVisible()
+        };
+    }
 
     // An array of objects that can augment the lifecycle methods
     //mixins: [ReactRenderVisualizer],
@@ -65,7 +61,7 @@ var GallantOne = React.createClass({
     /**
      * The heart and soul, well, so dramatic... the components... of our app
      **/
-    render: function() {
+    render() {
         return(
             <div>
                 <GallantHeader />
@@ -76,62 +72,29 @@ var GallantOne = React.createClass({
             </div>
         ); 
 
-    },
+    }
 
     // Invoked once after first render
-    componentDidMount: function() {
+    componentDidMount() {
         // You now have access to this.getDOMNode()
         ProductStore.addChangeListener(this._onChange);
         CartStore.addChangeListener(this._onChange);
-    },
+    }
 
     // called IMMEDIATELY before a component is unmounted
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         ProductStore.removeChangeListener(this._onChange);
         CartStore.removeChangeListener(this._onChange);
-    },
+    }
 
-    _onChange: function() {
-        this.setState(getCartState());
+    _onChange() {
+        this.setState(this.getCartState());
     }
 
 
-});
+}
+
+export default GallantOne;
 
 React.render(<GallantOne/>, document.body);
 
-
-/* Single Route */
-/*
-var routes = (
-       <Route handler={Atari} path="/">
-           <DefaultRoute path="/" handler={Atari} />
-           <Route name="atari" path="/atari" handler={Atari}/>
-       </Route>
-);
-
-//var location = new TestLocation(['/atari']);
-Router.run(routes,  function (Atari)  {
-    React.render(<Atari/>, document.body);
-});
-*/
-
-/*
-render: function() {
-   var items = this.state.items.map(function(item, i) {
-         return (
-            <div key={item} onClick={this.handleRemove.bind(this, i)}>
-             {item}
-            </div>
-         );
-   }.bind(this));
-   return (
-   <div>
-       <button onClick={this.handleAdd}>Add Item</button>
-               <ReactCSSTransitionGroup transitionName="example">
-                         {items}
-               </ReactCSSTransitionGroup>
-   </div>
-   );
-
-*/

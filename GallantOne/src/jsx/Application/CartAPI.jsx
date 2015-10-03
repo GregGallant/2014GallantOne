@@ -1,7 +1,9 @@
 
-var FluxCartActions = require('./FluxCartActions');
+//var FluxCartActions = require('./FluxCartActions');
 
-module.exports = {
+import FluxCartActions from './FluxCartActions.jsx';
+
+var fluxProductData = {
 
    getProductData: function() {
 
@@ -11,3 +13,5 @@ module.exports = {
    }
 
 };
+
+export default fluxProductData;

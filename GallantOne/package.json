@@ -1,14 +1,24 @@
 {
-    "name" : "gallantone",
-    "version" : "0.0.1",
-    "description" : "lumen/react port site",
-    "main" : "assets/js/bundle.js",
-    "dependencies" : {
-        "flux" : "^2.0.0",
-	"reflux" : "^0.2.7",
-        "react" : "0.13.3",
-        "underscore" : "^1.7.0"
-    },
-    "author" : "Greg Gallant"
-
+  "name": "gallantone",
+  "version": "0.0.1",
+  "description": "lumen/react port site",
+  "main": "assets/js/bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/GregGallant/GallantOne.git"
+  },
+  "dependencies": {
+    "flux": "^2.0.0",
+    "reflux": "^0.2.7",
+    "react": "0.13.3",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "babel": "5.8.19",
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "webpack": "^1.12.2"
+  },
+  "author": "Greg Gallant",
+  "license": "MIT"
 }

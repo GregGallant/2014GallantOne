@@ -1,18 +1,17 @@
-/** @jsx React.DOM */
-/* http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/ */
-var React = require('react/addons');
+import React from 'react/addons';
 
-GoIndex = React.createClass({
-        
-    getInitialState: function() {
-        return{ value: 'Initial State set. Init or prefilter stuff here.' };
-    },
-    handleChange: function() {
-        //this.setState({ userInput:e.target.value });
-        //this.setState({ userInput:e.target.value });
+export default class GoIndex extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { value: 'Initial state set via ES6 and Flux' };
+    }
+
+    handleChange() {
         console.log('Handle change event here...');
-    },
-    render: function() {
+    }
+
+    render() {
         return(
             <div>
                 <div id="textHeader">
@@ -44,6 +43,5 @@ GoIndex = React.createClass({
         );
     }
 
-});
+}
 
-module.exports = GoIndex;

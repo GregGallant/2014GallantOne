@@ -1,14 +1,12 @@
-/** @jsx React.DOM */
-var React = require('react');
+import React from 'react/addons';
 
-GallantFooter = React.createClass({
+export default class GallantFooter extends React.Component {
 
-    render: function() {
+    render() {
         return(
             <div><h6>Copyright 2015</h6></div>
         ); 
     }
 
-});
+}
 
-module.exports = GallantFooter;

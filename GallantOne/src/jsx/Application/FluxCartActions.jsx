@@ -1,6 +1,6 @@
 
-var AppDispatcher = require('./AppDispatcher');
-var FluxCartConstants = require('./FluxCartConstants');
+import AppDispatcher from './AppDispatcher.jsx';
+import FluxCartConstants from './FluxCartConstants.jsx';
 
 var FluxCartActions = {
 
@@ -42,4 +42,4 @@ var FluxCartActions = {
 
 };
 
-module.exports = FluxCartActions;
+export default FluxCartActions;

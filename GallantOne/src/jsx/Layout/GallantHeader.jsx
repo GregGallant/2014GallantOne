@@ -1,27 +1,30 @@
-/** @jsx React.DOM */
-var React = require('react');
-var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup; 
+import React from 'react/addons';
+
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup; // Deprecated now.
+
 var ias;
 
-GallantHeader = React.createClass({
+class GallantHeader extends React.Component {
 
-    getInitialState: function() {
-        return { authState: ["React/JSX testing - So you wanna be a contender?"] };
-    },
 
-    handleAdd: function() {
+    constructor(props) {
+        super(props);
+        this.state = { authState: [" React Flux testing.  You'll be a contender soon. "]}
+    }
+
+    handleAdd() {
         var newAuthState;
         newAuthState = { authState: ["Start from the top."] };
         this.setState({authState: newAuthState});
-    },
+    }
 
-    handleRemove: function(ias) {
+    handleRemove(ias) {
         var newAuthState = this.state.authState;
         newAuthState.splice(ias, 1);
         this.setState({ authState: newAuthState });
-    },
+    }
 
-    componentDidMount: function() {
+    componentDidMount() {
 
         // this.getDOMNode() is deprecated - use React.findDomNode is happenning at this point
         //    More Details: http://www.omerwazir.com/posts/react-getdomnode-replaced-with-findDOMNode/
@@ -41,7 +44,7 @@ GallantHeader = React.createClass({
         //console.log(reactType);
         
         /* bt2u */
-        this.el = this.getDOMNode();
+        this.el = React.findDOMNode();
         this.$el = $(this.el);
         this.$el.addClass("authStateAnim-enter-active");
         /*
@@ -60,9 +63,9 @@ GallantHeader = React.createClass({
                         // Debug this portion
                     }.bind(this)); 
             }.bind(this));
-    },
+    }
 
-    render: function() {
+    render() {
 
        //var stateArr = $.map( this.state.authState, function(value, index) { return [value]; });
        var authState = this.state.authState.map(function(authState, ias) {
@@ -93,9 +96,8 @@ GallantHeader = React.createClass({
         ); 
     }
 
-});
+}
 
-module.exports = GallantHeader;
 
 
 // Browser parsing function to handle animation frames in a manner optimized for the
@@ -133,6 +135,5 @@ module.exports = GallantHeader;
 
  }());
 
-
-
+export default GallantHeader;
 

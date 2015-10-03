@@ -12,4 +12,5 @@ AppDispatcher.handleAction = function(action) {
 
 };
 
-module.exports = AppDispatcher;
+export default AppDispatcher;
+//module.exports = AppDispatcher;

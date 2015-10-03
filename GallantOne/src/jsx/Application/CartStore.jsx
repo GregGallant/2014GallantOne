@@ -1,8 +1,10 @@
 
-var AppDispatcher = require('./AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
-var FluxCartConstants = require('./FluxCartConstants');
-var _ = require('underscore');
+import AppDispatcher from './AppDispatcher.jsx';
+import EventEmitter from 'events';
+import FluxCartConstants from './FluxCartConstants.jsx';
+
+//var _ = require('underscore');
+import _ from 'underscore';
 
 var _products = {}, _cartVisible = false;
 
@@ -31,7 +33,7 @@ var CartStore = _.extend({}, EventEmitter.prototype, {
 
     getCartTotal: function() {
         var total = 0;
-        for(product in _products) {
+        for(var product in _products) {
             if(_products.hasOwnProperty(product)) {
                 total += _products[product].price * _products[product].quantity;
             }
@@ -85,4 +87,4 @@ AppDispatcher.register(function(payload) {
 
 });
 
-module.exports = CartStore;
+export default CartStore;
