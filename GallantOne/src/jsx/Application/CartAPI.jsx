@@ -1,7 +1,5 @@
 
-//var FluxCartActions = require('./FluxCartActions');
-
-import FluxCartActions from './FluxCartActions.jsx';
+import FluxCartActions from './GallantActions.jsx';
 
 var fluxProductData = {
 

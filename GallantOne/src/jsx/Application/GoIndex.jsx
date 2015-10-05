@@ -1,19 +1,16 @@
 import React from 'react/addons';
+import {PropTypes} from 'react';
 
 export default class GoIndex extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = { value: 'Initial state set via ES6 and Flux' };
-    }
-
-    handleChange() {
-        console.log('Handle change event here...');
-    }
 
     render() {
         return(
             <div>
+                <div>
+                    <h1>
+                    {this.props.indexData}
+                    </h1>
+                </div>
                 <div id="textHeader">
                     <h1>RELIABLE ENGINEERING &amp; DESIGN</h1>
                     <h3>KEEPING THE DIGITAL WORLD INNOVATIVE AND VISUALLY REMARKABLE</h3>
@@ -44,4 +41,13 @@ export default class GoIndex extends React.Component {
     }
 
 }
-
+/*
+GoIndex.propTypes = {
+    indexData: PropTypes.arrayOf(PropTypes.shape({
+        text: PropTypes.string.isRequired
+    }))
+}
+*/
+GoIndex.propTypes = {
+    indexData: PropTypes.string.isRequired
+}

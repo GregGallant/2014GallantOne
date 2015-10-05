@@ -1,0 +1,56 @@
+/* Data store via redux-reducer */
+import 'babel-core/polyfill'; // Object.assign
+import { combineReducers } from 'redux';
+import { RECEIVE_DATA, DISPLAY_INPUT, SELECT_PRODUCT, CART_ADD, CART_REMOVE, SET_VISIBLE  } from './GallantActions.jsx';
+
+
+/*
+const initialState = {
+    text: "For fucks sakes"
+};
+*/
+
+
+/**
+ * Use state=initialState if exists...
+ * @param state
+ * @param action
+ * @returns {Array}
+ */
+function handleActionOnState( state=[], action ) {
+    switch(action.type) {
+        case DISPLAY_INPUT:
+            /*
+            console.log('from the fucking goddamn reducer');
+            console.log( [...state, { text: action.text }] );
+            */
+            return [state, {text: action.text}];
+            /* for concurrency...
+            return [...state, {
+                text: action.text
+            }];
+            */
+        case RECEIVE_DATA: // Completed task in example
+            return [...state.slice(0, action.input),
+                Object.assign({}, state[action.input], {
+                    completed: true
+                }),
+                ...state.slice(action.input + 1)
+                ];
+        default:
+            return state;
+    }
+}
+
+function fuckyou(state=[], action) {
+   return state;
+}
+
+/* Set the Reducer functions you're using and export */
+const GallantReducers = combineReducers({
+    handleActionOnState,
+    fuckyou
+});
+
+export default GallantReducers;
+

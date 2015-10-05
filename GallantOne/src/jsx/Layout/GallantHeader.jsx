@@ -1,92 +1,19 @@
 import React from 'react/addons';
+//import { findDOMNode, Component, PropTypes } from 'react';
 
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup; // Deprecated now.
 
-var ias;
-
-class GallantHeader extends React.Component {
-
-
-    constructor(props) {
-        super(props);
-        this.state = { authState: [" React Flux testing.  You'll be a contender soon. "]}
-    }
-
-    handleAdd() {
-        var newAuthState;
-        newAuthState = { authState: ["Start from the top."] };
-        this.setState({authState: newAuthState});
-    }
-
-    handleRemove(ias) {
-        var newAuthState = this.state.authState;
-        newAuthState.splice(ias, 1);
-        this.setState({ authState: newAuthState });
-    }
-
-    componentDidMount() {
-
-        // this.getDOMNode() is deprecated - use React.findDomNode is happenning at this point
-        //    More Details: http://www.omerwazir.com/posts/react-getdomnode-replaced-with-findDOMNode/
-        //    React.findDomNode().textContent; // ex.  
-        
-        // Going to run a jquery test on  div class='atariIntro'
-        // css-transition-group is for very basic div anim 
-        // jQuery(this.getDOMNode()).sortable({stop: this.handleDrop});
-   
-        /**
-         * A jQuery Test for later to see how far the react virtual dom will let us 
-         * do different, specific tasks - important for enterprise and legacy apps and
-         * handling other third party js libraries.
-         **/ 
-        //var reactType = jQuery(React.findDomNode().atariIntro.type());
-        //console.log('Testing reactType: ');
-        //console.log(reactType);
-        
-        /* bt2u */
-        this.el = React.findDOMNode();
-        this.$el = $(this.el);
-        this.$el.addClass("authStateAnim-enter-active");
-        /*
-         * var array = $.map(myObj, function(value, index) { return [value]; });
-         */
-        requestAnimationFrame(
-            function() { 
-                this.$el
-                    .removeClass("authStateAnim-enter-active")
-                    .addClass("authStateAnim-enter");
-                requestAnimationFrame( 
-                    function() {
-                        this.$el.addClass("authStateAnim-enter-active");
-                        // Arrival.complete(this.$el, done); 
-                        // Not sure about using yet another library ~ Arrival.js
-                        // Debug this portion
-                    }.bind(this)); 
-            }.bind(this));
-    }
+export default class GallantHeader extends React.Component {
 
     render() {
-
-       //var stateArr = $.map( this.state.authState, function(value, index) { return [value]; });
-       var authState = this.state.authState.map(function(authState, ias) {
-
-            return(
-                <div key={authState} onClick={this.handleRemove.bind(this,ias)}>
-                    {authState}
-                </div>
-            );
-
-        }.bind(this));
-
         return(
                 <div>
-                    <button onClick={this.handleAdd}>{authState}</button>
-                    <div onClick={this.handleRemove.bind(this, ias)}>Well... {authState}</div>
-                    <ReactCSSTransitionGroup transitionName="authStateAnim" transitionAppear={true}>
-                        {authState}
-                    </ReactCSSTransitionGroup>
                     <div className="goHeader">
                         <a href="/"><img id="goLogo" alt="GallantOne.com" border="0" src="/assets/images/one_logo.png" /></a>
+                <input type='text' ref='input' />
+                <button onClick={ (e) => this.handleClick(e) } >
+                    Add Something
+                </button>
                     </div>
                     <div className="goLine"></div>
                     <div className="authMenu">
@@ -96,44 +23,20 @@ class GallantHeader extends React.Component {
         ); 
     }
 
+    /**
+     *  Handle event click
+     **/
+    handleClick(e) {
+        const node = React.findDOMNode(this.refs.input);
+        const text = node.value.trim();
+        this.props.onAddInput(text);
+        this.props.indexData = text;
+        node.value = '';
+    }
 }
 
+GallantHeader.propTypes = {
+    onAddInput: React.PropTypes.func.isRequired
+};
 
-
-// Browser parsing function to handle animation frames in a manner optimized for the
-// respective browser it's using...
-
- (function() {
-
-     var lastTime = 0;
-     var vendors = ['ms', 'moz', 'webkit', 'o'];
-
-     for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-         window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-         window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-                              || window[vendors[x]+'CancelRequestAnimationFrame'];
-     }
-
-    if (!window.requestAnimationFrame) {
-        window.requestAnimationFrame = function(callback, element) {
-            var currTime = new Date().getTime();
-            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            var id = window.setTimeout( function() {
-                                            callback(currTime + timeToCall);
-                                        }, timeToCall
-                                       );
-            lastTime = currTime + timeToCall;
-            return id;
-        };
-    }
-
-    if (!window.cancelAnimationFrame) {
-        window.cancelAnimationFrame = function(id) {
-            clearTimeout(id);
-        };
-    }
-
- }());
-
-export default GallantHeader;
 

@@ -5,7 +5,7 @@ import CartStore from './CartStore.jsx';
 import ProductStore from './ProductStore.jsx';
 
 
-class FluxProduct extends React.Component {
+export default class GallantProduct extends React.Component {
 
     constructor(props) {
         super(props);
@@ -59,4 +59,3 @@ class FluxProduct extends React.Component {
 
 }
 
-export default FluxProduct;

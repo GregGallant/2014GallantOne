@@ -1,7 +1,7 @@
 import React from 'react/addons';
 import FluxCartActions from './FluxCartActions.jsx';
 
-class FluxCart extends React.Component {
+export default class GallantCart extends React.Component {
 
     constructor(props) {
         super(props);
@@ -52,4 +52,3 @@ class FluxCart extends React.Component {
 
 }
 
-export default FluxCart;
