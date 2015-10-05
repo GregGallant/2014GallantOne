@@ -20,16 +20,9 @@ const initialState = {
 function handleActionOnState( state=[], action ) {
     switch(action.type) {
         case DISPLAY_INPUT:
-            /*
-            console.log('from the fucking goddamn reducer');
-            console.log( [...state, { text: action.text }] );
-            */
-            return [state, {text: action.text}];
-            /* for concurrency...
-            return [...state, {
-                text: action.text
-            }];
-            */
+            console.log('State returned from reducer');
+            console.log(Object.assign({}, state, {text: action.text}));
+            return Object.assign({}, state, {text: action.text});
         case RECEIVE_DATA: // Completed task in example
             return [...state.slice(0, action.input),
                 Object.assign({}, state[action.input], {
@@ -42,14 +35,9 @@ function handleActionOnState( state=[], action ) {
     }
 }
 
-function fuckyou(state=[], action) {
-   return state;
-}
-
 /* Set the Reducer functions you're using and export */
 const GallantReducers = combineReducers({
-    handleActionOnState,
-    fuckyou
+    handleActionOnState
 });
 
 export default GallantReducers;

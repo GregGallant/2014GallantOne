@@ -6,9 +6,9 @@ import { Provider } from 'react-redux';
 import GallantReducers from './GallantReducers.jsx';
 import GallantApp from './GallantApp.jsx';
 
-import GallantActions, {displayInput} from './GallantActions.jsx';
+//import GallantActions, {displayInput} from './GallantActions.jsx';
 
-let store = createStore(GallantReducers); // points to our store (reducer)
+let store = createStore(GallantReducers, {text: ""}); // points to our store (reducer)
 
 React.render(
     <Provider store={store}>

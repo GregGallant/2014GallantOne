@@ -70,7 +70,7 @@
 
 	var _GallantActionsJsx2 = _interopRequireDefault(_GallantActionsJsx);
 
-	var store = (0, _redux.createStore)(_GallantReducersJsx2['default']); // points to our store (reducer)
+	var store = (0, _redux.createStore)(_GallantReducersJsx2['default'], { text: "" }); // points to our store (reducer)
 
 	_reactAddons2['default'].render(_reactAddons2['default'].createElement(
 	    _reactRedux.Provider,
@@ -23825,16 +23825,9 @@
 
 	    switch (action.type) {
 	        case _GallantActionsJsx.DISPLAY_INPUT:
-	            /*
-	            console.log('from the fucking goddamn reducer');
-	            console.log( [...state, { text: action.text }] );
-	            */
-	            return [state, { text: action.text }];
-	        /* for concurrency...
-	        return [...state, {
-	            text: action.text
-	        }];
-	        */
+	            console.log('State returned from reducer');
+	            console.log(Object.assign({}, state, { text: action.text }));
+	            return Object.assign({}, state, { text: action.text });
 	        case _GallantActionsJsx.RECEIVE_DATA:
 	            // Completed task in example
 	            return [].concat(_toConsumableArray(state.slice(0, action.input)), [Object.assign({}, state[action.input], {
@@ -23845,16 +23838,9 @@
 	    }
 	}
 
-	function fuckyou(state, action) {
-	    if (state === undefined) state = [];
-
-	    return state;
-	}
-
 	/* Set the Reducer functions you're using and export */
 	var GallantReducers = (0, _redux.combineReducers)({
-	    handleActionOnState: handleActionOnState,
-	    fuckyou: fuckyou
+	    handleActionOnState: handleActionOnState
 	});
 
 	exports['default'] = GallantReducers;
@@ -29037,30 +29023,21 @@
 	    text: _reactAddons2['default'].PropTypes.string.isRequired
 	};
 
-	var alteredstate;
 	/**
 	 * Originally select() - global state stuff
+	 * This is a problematic area that needs fixing.
+	 * TODO: Remove handleActionOnState from state.
 	 * @param state
 	 * @returns {{goIndexText: *}}
 	 */
 	function mapStateToProps(state) {
-
-	    state = state.handleActionOnState;
+	    console.log("State param from our 'select()' method: ");
 	    console.log(state);
-
-	    if (state.length > 0) {
-	        for (var ii = 0; ii < state.length; ii = ii + 1) {
-	            if (typeof state[ii].text != "undefined") {
-	                alteredstate += "," + state[ii].text;
-	            }
-	        }
-	    }
-
-	    //console.log(alteredstate);
-	    return { goIndexText: alteredstate };
+	    state = state.handleActionOnState; // this needs fixin
+	    return { goIndexText: state.text };
 	}
 
-	// no idea...
+	// Maybe use a decorator instead, but for now...
 	exports['default'] = (0, _reactRedux.connect)(mapStateToProps)(GallantApp);
 	module.exports = exports['default'];
 

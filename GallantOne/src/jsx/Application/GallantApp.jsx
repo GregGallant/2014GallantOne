@@ -49,33 +49,22 @@ GallantApp.propTypes = {
     text: React.PropTypes.string.isRequired
 };
 
-
-var alteredstate;
 /**
  * Originally select() - global state stuff
+ * This is a problematic area that needs fixing.
+ * TODO: Remove handleActionOnState from state.
  * @param state
  * @returns {{goIndexText: *}}
  */
-function mapStateToProps(state) {
-
+function mapStateToProps(state)
+{
+    // Sort of want a way to not have the reducer method name as a key, although this might make sense as this is a way to know which state belongs to which method combined by the combinereducer() method.
     state = state.handleActionOnState;
 
-    if (state.length > 0) {
-        for (var ii=0; ii < state.length; ii=ii+1 )
-        {
-            if (typeof state[ii].text != "undefined")
-            {
-                alteredstate += "," + state[ii].text;
-            }
-        }
-    }
-
-    //console.log(alteredstate);
-    return { goIndexText: alteredstate };
-
+    return { goIndexText: state.text };
 }
 
-// no idea...
+// Maybe use a decorator instead, but for now...
 export default connect(mapStateToProps)(GallantApp);
 
 
