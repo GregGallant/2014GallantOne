@@ -5,6 +5,7 @@ demos/
 extras/documentation
 thumbsdb
 vendor/*
+node_modules/*
 artisan
 composer.json
 .env.local.php

@@ -29,8 +29,10 @@ export default class GallantHeader extends React.Component {
     handleClick(e) {
         const node = React.findDOMNode(this.refs.input);
         const text = node.value.trim();
+
+        // This is what's setting the property value of the GoIndex (foreign) component.
         this.props.onAddInput(text);
-        this.props.indexData = text;
+
         node.value = '';
     }
 }
@@ -38,5 +40,3 @@ export default class GallantHeader extends React.Component {
 GallantHeader.propTypes = {
     onAddInput: React.PropTypes.func.isRequired
 };
-
-

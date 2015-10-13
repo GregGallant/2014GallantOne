@@ -1,7 +1,7 @@
 import React from 'react/addons';
 import { createStore } from 'redux';
 import { connect } from 'react-redux';
-import { receiveAPIData, updateVisibility, displayInput } from './GallantActions.jsx';
+import { receiveAPIData, displayInput } from './GallantActions.jsx';
 
 /* Header Footer */
 import GallantHeader from '../Layout/GallantHeader.jsx';
@@ -9,14 +9,6 @@ import GallantFooter from '../Layout/GallantFooter.jsx';
 import GoIndex from './GoIndex.jsx';
 
 import GallantReducers from './GallantReducers.jsx';
-
-/* Cart CRUD API Loading */
-import ProductData from './ProductData.jsx';
-import CartAPI from './CartAPI.jsx';
-
-/* Crud API Stuff - To Be Lumen-ated */
-//ProductData.init();
-//CartAPI.getProductData();
 
 /* GallantApp Smart Component */
 export default class GallantApp extends React.Component {
@@ -59,9 +51,9 @@ GallantApp.propTypes = {
 function mapStateToProps(state)
 {
     // Sort of want a way to not have the reducer method name as a key, although this might make sense as this is a way to know which state belongs to which method combined by the combinereducer() method.
-    state = state.handleActionOnState;
+    //state = state.handleActionOnState;
 
-    return { goIndexText: state.text };
+    return { goIndexText: state.handleActionOnState.text };
 }
 
 // Maybe use a decorator instead, but for now...

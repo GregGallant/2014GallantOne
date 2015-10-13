@@ -66,11 +66,9 @@
 
 	var _GallantAppJsx2 = _interopRequireDefault(_GallantAppJsx);
 
-	var _GallantActionsJsx = __webpack_require__(381);
+	//import GallantActions, {displayInput} from './GallantActions.jsx';
 
-	var _GallantActionsJsx2 = _interopRequireDefault(_GallantActionsJsx);
-
-	var store = (0, _redux.createStore)(_GallantReducersJsx2['default'], { text: "" }); // points to our store (reducer)
+	var store = (0, _redux.createStore)(_GallantReducersJsx2['default'], { handleActionOnState: "" }); // points to our store (reducer)
 
 	_reactAddons2['default'].render(_reactAddons2['default'].createElement(
 	    _reactRedux.Provider,
@@ -28866,52 +28864,20 @@
 	    value: true
 	});
 	exports.receiveAPIData = receiveAPIData;
-	exports.updateVisibility = updateVisibility;
 	exports.displayInput = displayInput;
-	exports.selectProduct = selectProduct;
-	exports.addToCart = addToCart;
-	exports.removeFromCart = removeFromCart;
 	var RECEIVE_DATA = 'RECEIVE_DATA';exports.RECEIVE_DATA = RECEIVE_DATA;
 	// Get data from our mock api
-	var SET_VISIBLE = 'SET_VISIBLE';exports.SET_VISIBLE = SET_VISIBLE;
-	// Visibility of the app
 	var DISPLAY_INPUT = 'DISPLAY_INPUT';exports.DISPLAY_INPUT = DISPLAY_INPUT;
 	// Simply show the input of the field
 
-	/* testing */
-	var SELECT_PRODUCT = 'SELECT_PRODUCT';
-	exports.SELECT_PRODUCT = SELECT_PRODUCT;
-	var CART_ADD = 'CART_ADD';
-	exports.CART_ADD = CART_ADD;
-	var CART_REMOVE = 'CART_REMOVE';
-
-	exports.CART_REMOVE = CART_REMOVE;
 	/* in-use action creators */
 
 	function receiveAPIData(text) {
 	    return { type: RECEIVE_DATA, text: text };
 	}
 
-	function updateVisibility(visible) {
-	    return { type: SET_VISIBLE, visible: visible };
-	}
-
 	function displayInput(text) {
 	    return { type: DISPLAY_INPUT, text: text };
-	}
-
-	/* Testing functions */
-
-	function selectProduct(index) {
-	    return { type: SELECT_PRODUCT, index: index };
-	}
-
-	function addToCart(sku) {
-	    return { type: CART_ADD, sku: sku };
-	}
-
-	function removeFromCart(sku) {
-	    return { type: CART_REMOVE, sku: sku };
 	}
 
 /***/ },
@@ -28961,20 +28927,6 @@
 	var _GallantReducersJsx = __webpack_require__(193);
 
 	var _GallantReducersJsx2 = _interopRequireDefault(_GallantReducersJsx);
-
-	/* Cart CRUD API Loading */
-
-	var _ProductDataJsx = __webpack_require__(386);
-
-	var _ProductDataJsx2 = _interopRequireDefault(_ProductDataJsx);
-
-	var _CartAPIJsx = __webpack_require__(387);
-
-	var _CartAPIJsx2 = _interopRequireDefault(_CartAPIJsx);
-
-	/* Crud API Stuff - To Be Lumen-ated */
-	//ProductData.init();
-	//CartAPI.getProductData();
 
 	/* GallantApp Smart Component */
 
@@ -29031,10 +28983,10 @@
 	 * @returns {{goIndexText: *}}
 	 */
 	function mapStateToProps(state) {
-	    console.log("State param from our 'select()' method: ");
-	    console.log(state);
-	    state = state.handleActionOnState; // this needs fixin
-	    return { goIndexText: state.text };
+	    // Sort of want a way to not have the reducer method name as a key, although this might make sense as this is a way to know which state belongs to which method combined by the combinereducer() method.
+	    //state = state.handleActionOnState;
+
+	    return { goIndexText: state.handleActionOnState.text };
 	}
 
 	// Maybe use a decorator instead, but for now...
@@ -29134,8 +29086,10 @@
 	        value: function handleClick(e) {
 	            var node = _reactAddons2["default"].findDOMNode(this.refs.input);
 	            var text = node.value.trim();
+
+	            // This is what's setting the property value of the GoIndex (foreign) component.
 	            this.props.onAddInput(text);
-	            this.props.indexData = text;
+
 	            node.value = '';
 	        }
 	    }]);
@@ -29230,6 +29184,10 @@
 
 	var _react = __webpack_require__(184);
 
+	var _reactParallax = __webpack_require__(386);
+
+	var _reactParallax2 = _interopRequireDefault(_reactParallax);
+
 	var GoIndex = (function (_React$Component) {
 	    _inherits(GoIndex, _React$Component);
 
@@ -29254,159 +29212,181 @@
 	                'div',
 	                null,
 	                _reactAddons2['default'].createElement(
-	                    'div',
-	                    null,
-	                    _reactAddons2['default'].createElement(
-	                        'h1',
-	                        null,
-	                        this.props.indexData
-	                    )
-	                ),
-	                _reactAddons2['default'].createElement(
-	                    'div',
-	                    { id: 'textHeader' },
-	                    _reactAddons2['default'].createElement(
-	                        'h1',
-	                        null,
-	                        'RELIABLE ENGINEERING & DESIGN'
-	                    ),
-	                    _reactAddons2['default'].createElement(
-	                        'h3',
-	                        null,
-	                        'KEEPING THE DIGITAL WORLD INNOVATIVE AND VISUALLY REMARKABLE'
-	                    )
-	                ),
-	                _reactAddons2['default'].createElement(
-	                    'div',
-	                    { id: 'goBoxes' },
+	                    _reactParallax2['default'],
+	                    { bgImage: '/assets/images/gg_sunset.png', strength: 400 },
 	                    _reactAddons2['default'].createElement(
 	                        'div',
-	                        { 'class': 'descBox' },
+	                        null,
 	                        _reactAddons2['default'].createElement(
-	                            'div',
-	                            { 'class': 'gSubHeader' },
-	                            _reactAddons2['default'].createElement('img', { src: '/images/one/flange.png' }),
-	                            'Digital Artistry'
-	                        ),
-	                        _reactAddons2['default'].createElement('div', { 'class': 'line_540' }),
-	                        _reactAddons2['default'].createElement(
-	                            'a',
-	                            { href: 'http://www.linkedin.com/in/greggallant' },
-	                            'Linked In'
-	                        ),
-	                        _reactAddons2['default'].createElement(
-	                            'a',
-	                            { href: 'greggallant2005@gmail.com' },
-	                            'E-mail: greggallant2005@gmail.com'
-	                        ),
-	                        _reactAddons2['default'].createElement(
-	                            'div',
-	                            { id: 'viewButton' },
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { href: '#' },
-	                                _reactAddons2['default'].createElement('img', { border: '0', src: '/images/one/button_view.png' })
-	                            )
+	                            'h1',
+	                            null,
+	                            this.props.indexData
 	                        )
 	                    ),
 	                    _reactAddons2['default'].createElement(
 	                        'div',
-	                        { 'class': 'aboutBox' },
+	                        { id: 'textHeader' },
+	                        _reactAddons2['default'].createElement(
+	                            'h1',
+	                            null,
+	                            'RELIABLE ENGINEERING & DESIGN'
+	                        ),
+	                        _reactAddons2['default'].createElement(
+	                            'h3',
+	                            null,
+	                            'KEEPING THE DIGITAL WORLD INNOVATIVE AND VISUALLY REMARKABLE'
+	                        )
+	                    ),
+	                    _reactAddons2['default'].createElement(
+	                        'h6',
+	                        null,
+	                        '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"'
+	                    ),
+	                    _reactAddons2['default'].createElement(
+	                        'div',
+	                        { id: 'goBoxes' },
 	                        _reactAddons2['default'].createElement(
 	                            'div',
-	                            { 'class': 'gSubHeader' },
-	                            _reactAddons2['default'].createElement('img', { src: '/images/one/flange.png' }),
-	                            'The Architect'
+	                            { 'class': 'descBox' },
+	                            _reactAddons2['default'].createElement(
+	                                'div',
+	                                { 'class': 'gSubHeader' },
+	                                _reactAddons2['default'].createElement('img', { src: '/assets/images/flange.png' }),
+	                                'Digital Artistry'
+	                            ),
+	                            _reactAddons2['default'].createElement('div', { 'class': 'line_540' }),
+	                            _reactAddons2['default'].createElement(
+	                                'a',
+	                                { href: 'http://www.linkedin.com/in/greggallant' },
+	                                'Linked In'
+	                            ),
+	                            _reactAddons2['default'].createElement(
+	                                'a',
+	                                { href: 'greggallant2005@gmail.com' },
+	                                'E-mail: greggallant2005@gmail.com'
+	                            ),
+	                            _reactAddons2['default'].createElement(
+	                                'div',
+	                                { id: 'viewButton' },
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    _reactAddons2['default'].createElement('img', { border: '0', src: '/assets/images/button_view.png' })
+	                                )
+	                            )
 	                        ),
-	                        _reactAddons2['default'].createElement('div', { 'class': 'line_240' }),
+	                        _reactAddons2['default'].createElement(
+	                            'div',
+	                            { 'class': 'aboutBox' },
+	                            _reactAddons2['default'].createElement(
+	                                'div',
+	                                { 'class': 'gSubHeader' },
+	                                _reactAddons2['default'].createElement('img', { src: '/assets/images/flange.png' }),
+	                                'The Architect'
+	                            ),
+	                            _reactAddons2['default'].createElement('div', { 'class': 'line_240' }),
+	                            _reactAddons2['default'].createElement(
+	                                'p',
+	                                null,
+	                                '            ',
+	                                _reactAddons2['default'].createElement(
+	                                    'strong',
+	                                    null,
+	                                    'Greg A. Gallant'
+	                                ),
+	                                ' is a professional technologist and software engineer and web designer with over 14 years of experience working in New York City.',
+	                                _reactAddons2['default'].createElement('br', null),
+	                                _reactAddons2['default'].createElement('br', null),
+	                                'Specializations and experience include the building of several small technology companies using a multitude of programming languages including ',
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { target: 'springsource', href: 'http://springsource.org' },
+	                                    'Java Spring MVC 3'
+	                                ),
+	                                ', ',
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { target: 'php', href: 'http://www.php.net' },
+	                                    'PHP'
+	                                ),
+	                                ' ',
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { href: 'http://www.laravel.com' },
+	                                    'Laravel'
+	                                ),
+	                                ', ',
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { href: 'www.angularjs.org' },
+	                                    'Angular JS'
+	                                ),
+	                                ', ',
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { href: 'http://framework.zend.com' },
+	                                    'Zend 2 Framework'
+	                                ),
+	                                ' and ',
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { href: 'http://ellislab.com/codeigniter' },
+	                                    'CodeIgniter'
+	                                ),
+	                                ', ',
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { href: 'http://www.python.org' },
+	                                    'Python'
+	                                ),
+	                                ', Javascript, and ',
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { href: 'http://jquery.com' },
+	                                    'JQuery'
+	                                ),
+	                                '. This includes database programming using ',
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { href: 'http://www.mysql.com' },
+	                                    'MySQL'
+	                                ),
+	                                ', ',
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { href: 'http://www.oracle.com' },
+	                                    'Oracle'
+	                                ),
+	                                ', and ',
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { href: 'http://www.postgresql.org' },
+	                                    'PostGreSQL'
+	                                ),
+	                                '.'
+	                            ),
+	                            _reactAddons2['default'].createElement(
+	                                'div',
+	                                { id: 'contactButton' },
+	                                _reactAddons2['default'].createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    _reactAddons2['default'].createElement('img', { border: '0', src: '/assets/images/button_contact.png' })
+	                                )
+	                            )
+	                        )
+	                    )
+	                ),
+	                _reactAddons2['default'].createElement(
+	                    _reactParallax2['default'],
+	                    null,
+	                    _reactAddons2['default'].createElement(
+	                        'div',
+	                        null,
 	                        _reactAddons2['default'].createElement(
 	                            'p',
 	                            null,
-	                            '            ',
-	                            _reactAddons2['default'].createElement(
-	                                'strong',
-	                                null,
-	                                'Greg A. Gallant'
-	                            ),
-	                            ' is a professional technologist and software engineer and web designer with over 14 years of experience working in New York City.',
-	                            _reactAddons2['default'].createElement('br', null),
-	                            _reactAddons2['default'].createElement('br', null),
-	                            'Specializations and experience include the building of several small technology companies using a multitude of programming languages including ',
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { target: 'springsource', href: 'http://springsource.org' },
-	                                'Java Spring MVC 3'
-	                            ),
-	                            ', ',
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { target: 'php', href: 'http://www.php.net' },
-	                                'PHP'
-	                            ),
-	                            ' ',
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { href: 'http://www.laravel.com' },
-	                                'Laravel'
-	                            ),
-	                            ', ',
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { href: 'www.angularjs.org' },
-	                                'Angular JS'
-	                            ),
-	                            ', ',
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { href: 'http://framework.zend.com' },
-	                                'Zend 2 Framework'
-	                            ),
-	                            ' and ',
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { href: 'http://ellislab.com/codeigniter' },
-	                                'CodeIgniter'
-	                            ),
-	                            ', ',
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { href: 'http://www.python.org' },
-	                                'Python'
-	                            ),
-	                            ', Javascript, and ',
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { href: 'http://jquery.com' },
-	                                'JQuery'
-	                            ),
-	                            '. This includes database programming using ',
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { href: 'http://www.mysql.com' },
-	                                'MySQL'
-	                            ),
-	                            ', ',
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { href: 'http://www.oracle.com' },
-	                                'Oracle'
-	                            ),
-	                            ', and ',
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { href: 'http://www.postgresql.org' },
-	                                'PostGreSQL'
-	                            ),
-	                            '.'
-	                        ),
-	                        _reactAddons2['default'].createElement(
-	                            'div',
-	                            { id: 'contactButton' },
-	                            _reactAddons2['default'].createElement(
-	                                'a',
-	                                { href: '#' },
-	                                _reactAddons2['default'].createElement('img', { border: '0', src: '/images/one/button_contact.png' })
-	                            )
+	                            'Props bgImage: path to the background image that makes parallax effect visible - (type: String) bgColor: css value for a background color (visible only if bgImage is NOT set), eg.: ddd, yellow, rgb(34,21,125) - (type: String) strength: parallax effect strength (in pixel), default 100. this will define the amount of pixels the background image is translated - (type: Number) blur: pixel value for background image blur, default: 0 - (type: Number) disabled: turns off parallax effect if set to true, default: false - (type: Boolean) Children The children are used to display any content inside the react-parallax component'
 	                        )
 	                    )
 	                )
@@ -29421,73 +29401,285 @@
 	GoIndex.propTypes = {
 	    indexData: _react.PropTypes.string.isRequired
 	};
+
+	GoIndex.defaultProps = {
+	    indexData: 'Hello World'
+	};
 	module.exports = exports['default'];
 
 /***/ },
 /* 386 */
-/***/ function(module, exports) {
-
-	
-	// This loads mock data into localStorage
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
-	});
-	function init() {
-
-	    localStorage.clear();
-
-	    localStorage.setItem('product', JSON.stringify([{
-	        id: '00001',
-	        name: 'First Crud Product',
-	        image: 'crud.png',
-	        description: 'This is what Lumen will provide',
-	        variants: [{
-	            sku: '123123',
-	            type: 'product',
-	            price: 3.00,
-	            inventory: 1
-	        }, {
-	            sku: '224222',
-	            type: 'multiproduct',
-	            price: 5.00,
-	            inventory: 3
-	        }]
-	    }]));
-	}
-
-	exports['default'] = { init: init };
-	module.exports = exports['default'];
-
-/***/ },
-/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
+	Object.defineProperty(exports, "__esModule", {
+		value: true
 	});
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	var _GallantActionsJsx = __webpack_require__(381);
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-	var _GallantActionsJsx2 = _interopRequireDefault(_GallantActionsJsx);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-	var fluxProductData = {
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	    getProductData: function getProductData() {
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	        var data = JSON.parse(localStorage.getItem('product'));
-	        _GallantActionsJsx2['default'].receiveProduct(data);
-	    }
+	var _react = __webpack_require__(184);
 
+	var _react2 = _interopRequireDefault(_react);
+
+	var Parallax = (function (_React$Component) {
+		_inherits(Parallax, _React$Component);
+
+		function Parallax(props) {
+			_classCallCheck(this, Parallax);
+
+			_get(Object.getPrototypeOf(Parallax.prototype), "constructor", this).call(this, props);
+
+			this.node = null;
+			this.windowHeight = this.getWindowHeight();
+			this.childStyle = this.getChildStyle();
+			this.timestamp = Date.now();
+			this.state = {
+				top: 0,
+				autoHeight: false
+			};
+			this.autobind();
+		}
+
+		/**
+	  * @param {String} bgImage - path to the background image that makes parallax effect visible
+	  * @param {String} bgColor - css value for a background color (visible only if bgImage is NOT set), eg.: #ddd, yellow, rgb(34,21,125)
+	  * @param {Number} strength - parallax effect strength (in pixel), default 100
+	  * @param {Number} blur - pixel value for background image blur, default: 0
+	  */
+
+		/**
+	  * bind scope to all functions that will be called via eventlistener
+	  */
+
+		_createClass(Parallax, [{
+			key: "autobind",
+			value: function autobind() {
+				this.onScroll = this.onScroll.bind(this);
+				this.onWindowResize = this.onWindowResize.bind(this);
+				this.updatePosition = this.updatePosition.bind(this);
+				this.onWindowLoad = this.onWindowLoad.bind(this);
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				return _react2["default"].createElement(
+					"div",
+					{ className: "react-parallax" },
+					this.props.bgImage ? _react2["default"].createElement("img", { className: "react-parallax-bgimage", src: this.props.bgImage, style: this.getImagePosition(), ref: "bgImage", alt: "" }) : '',
+					_react2["default"].createElement(
+						"div",
+						{ className: "react-parallax-content", style: this.childStyle, ref: "content" },
+						this.props.children
+					)
+				);
+			}
+
+			/**
+	   * bind some eventlisteners for page load, scroll and resize
+	   */
+		}, {
+			key: "componentWillMount",
+			value: function componentWillMount() {
+				document.addEventListener('scroll', this.onScroll, false);
+				window.addEventListener("resize", this.onWindowResize, false);
+				window.addEventListener("load", this.onWindowLoad, false);
+			}
+
+			/**
+	   * remove all eventlisteners before component is destroyed
+	   */
+		}, {
+			key: "componentWillUnmount",
+			value: function componentWillUnmount() {
+				document.removeEventListener('scroll', this.onScroll, false);
+				window.removeEventListener("resize", this.onWindowResize, false);
+				window.removeEventListener("load", this.onWindowLoad, false);
+			}
+
+			/**
+	   * save component ref after rendering, update all values and set static style values
+	   */
+		}, {
+			key: "componentDidMount",
+			value: function componentDidMount() {
+				this.node = _react2["default"].findDOMNode(this);
+				this.img = this.refs.bgImage ? _react2["default"].findDOMNode(this.refs.bgImage) : null;
+				this.updatePosition();
+				this.setParallaxStyle();
+				this.setInitialBackgroundStyles();
+			}
+		}, {
+			key: "onScroll",
+			value: function onScroll(event) {
+				var stamp = Date.now();
+				if (stamp - this.timestamp >= 10 && this.isScrolledIntoView(this.node)) {
+					window.requestAnimationFrame(this.updatePosition);
+					this.timestamp = stamp;
+				}
+			}
+		}, {
+			key: "onWindowLoad",
+			value: function onWindowLoad() {
+				this.updatePosition();
+			}
+
+			/**
+	   * updates scroll position of this component and also its width and height.
+	   * defines, if the background image should have autoHeight or autoWidth to
+	   * fit the component space optimally
+	   */
+		}, {
+			key: "updatePosition",
+			value: function updatePosition() {
+				var autoHeight = false;
+				var content = _react2["default"].findDOMNode(this.refs.content);
+				this.contentHeight = content.getBoundingClientRect().height;
+				this.contentWidth = this.node.getBoundingClientRect().width;
+
+				// set autoHeight or autoWidth
+				if (this.img && this.img.naturalWidth / (this.img.naturalHeight - this.props.strength) * this.contentHeight < this.contentWidth) {
+					autoHeight = true;
+				}
+
+				// save scroll position
+				var rect = this.node.getBoundingClientRect();
+				if (rect) {
+					this.setState({
+						top: this.node.getBoundingClientRect().top,
+						autoHeight: autoHeight
+					});
+				}
+			}
+
+			/**
+	   * defines all static values for the background image
+	   */
+		}, {
+			key: "setInitialBackgroundStyles",
+			value: function setInitialBackgroundStyles() {
+				if (this.img) {
+					this.img.style.position = 'absolute';
+					this.img.style.left = '50%';
+					this.img.style.WebkitTransformStyle = 'preserve-3d';
+					this.img.style.WebkitBackfaceVisibility = 'hidden';
+					this.img.style.MozBackfaceVisibility = 'hidden';
+					this.img.style.MsBackfaceVisibility = 'hidden';
+				}
+			}
+
+			/**
+	   * update window height and positions on window resize
+	   */
+		}, {
+			key: "onWindowResize",
+			value: function onWindowResize() {
+				this.windowHeight = this.getWindowHeight();
+				this.updatePosition();
+			}
+
+			/**
+	   * returns position for the background image
+	   */
+		}, {
+			key: "getImagePosition",
+			value: function getImagePosition() {
+				var backPos = 0;
+				if (this.props.disabled !== true) {
+					backPos = Math.floor((this.state.top + this.contentHeight) / this.windowHeight * this.props.strength);
+				}
+				var height = this.state.autoHeight ? 'auto' : Math.floor(this.contentHeight + this.props.strength);
+				var width = !this.state.autoHeight ? 'auto' : this.contentWidth;
+				var style = {
+					WebkitTransform: 'translate3d(-50%, -' + backPos + 'px, 0)',
+					transform: 'translate3d(-50%, -' + backPos + 'px, 0)',
+					height: height,
+					width: width
+				};
+				if (this.props.blur) {
+					style.WebkitFilter = 'blur(' + this.props.blur + 'px)';
+					style.filter = 'blur(' + this.props.blur + 'px)';
+				}
+				return style;
+			}
+
+			/**
+	   * defines styles for the parallax node that do not change during use
+	   */
+		}, {
+			key: "setParallaxStyle",
+			value: function setParallaxStyle() {
+				if (this.node) {
+					this.node.style.position = 'relative';
+					this.node.style.overflow = 'hidden';
+					this.node.style.background = this.props.bgColor;
+				}
+			}
+
+			/**
+	   * returns styles for the component content.
+	   */
+		}, {
+			key: "getChildStyle",
+			value: function getChildStyle() {
+				return {
+					position: 'relative'
+				};
+			}
+		}, {
+			key: "getWindowHeight",
+			value: function getWindowHeight() {
+				var w = window,
+				    d = document,
+				    e = d.documentElement,
+				    g = d.getElementsByTagName('body')[0];
+
+				return w.innerHeight || e.clientHeight || g.clientHeight;
+			}
+		}, {
+			key: "isScrolledIntoView",
+			value: function isScrolledIntoView(element) {
+				var elementTop = element.getBoundingClientRect().top,
+				    elementBottom = element.getBoundingClientRect().bottom;
+				return elementTop <= 0 && elementBottom >= 0 || elementTop >= 0 && elementBottom <= window.innerHeight || elementTop <= window.innerHeight && elementBottom >= window.innerHeight;
+			}
+		}, {
+			key: "log",
+			value: function log() {
+				if (this.props.log) {
+					console.log(arguments);
+				}
+			}
+		}]);
+
+		return Parallax;
+	})(_react2["default"].Component);
+
+	exports["default"] = Parallax;
+	Parallax.propTypes = {
+		bgImage: _react2["default"].PropTypes.string,
+		bgColor: _react2["default"].PropTypes.string,
+		strength: _react2["default"].PropTypes.number,
+		blur: _react2["default"].PropTypes.number
 	};
+	Parallax.defaultProps = {
+		bgColor: '#fff',
+		strength: 100,
+		blur: 0,
+		log: false,
+		disabled: false
+	};
+	module.exports = exports["default"];
 
-	exports['default'] = fluxProductData;
-	module.exports = exports['default'];
 
 /***/ }
 /******/ ]);
