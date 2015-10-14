@@ -1,3 +1,0 @@
-<div>
-    <span>Footer</span>
-</div>

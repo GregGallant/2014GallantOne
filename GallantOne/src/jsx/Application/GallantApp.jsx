@@ -23,10 +23,12 @@ export default class GallantApp extends React.Component {
 
         return(
             <div>
-                <GallantHeader
+                <div className="goHeader">
+                 <GallantHeader
                     onAddInput={ text =>
                         dispatch(displayInput( text ))
                     } />
+                </div>
                 <GoIndex indexData={ goIndexText } />
                 <GallantFooter />
             </div>

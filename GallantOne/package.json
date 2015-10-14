@@ -10,6 +10,8 @@
   "dependencies": {
     "flux": "^2.0.0",
     "react": "0.13.3",
+    "react-bootstrap": "^0.27.1",
+    "redux-router": "^1.0.0-beta3",
     "underscore": "^1.7.0"
   },
   "devDependencies": {
