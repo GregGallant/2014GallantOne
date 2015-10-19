@@ -67,6 +67,7 @@ $app->singleton(
 
 // ]);
 
+
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
@@ -80,6 +81,10 @@ $app->singleton(
 
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+
+$app->register(Barryvdh\Cors\LumenServiceProvider::class);
+
+$app->configure('cors');
 
 /*
 |--------------------------------------------------------------------------
@@ -95,5 +100,7 @@ $app->singleton(
 $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
 	require __DIR__.'/../app/Http/routes.php';
 });
+
+Dotenv::load(__DIR__.'/../');
 
 return $app;

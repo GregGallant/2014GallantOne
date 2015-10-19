@@ -410,6 +410,10 @@ h5 {
 
 }
 
+.clientImage {
+    float:left;
+}
+
 .mButton {
     display: inline-block;
     outline: none;

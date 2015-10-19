@@ -16,7 +16,7 @@ ReactDOM.render(
     <Provider store={store}>
         <GoIndex/>
     </Provider>
-    , document.getElementById('kidsLoveReact')
+    , document.getElementById('gallantoneReact')
 );
 
 

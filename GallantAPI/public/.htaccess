@@ -13,3 +13,5 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+#Header set Access-Control-Allow-Origin "http://www.gallantone.local"

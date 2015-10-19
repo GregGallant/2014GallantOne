@@ -7,7 +7,6 @@ import Container from './container.jsx';
 import Row from './row.jsx';
 import Column from './column.jsx';
 
-
 import { createStore } from 'redux';
 import { connect } from 'react-redux';
 import { receiveAPIData, displayInput } from './GallantActions.jsx';
@@ -19,43 +18,45 @@ import GallantFooter from '../Layout/GallantFooter.jsx';
 import GallantReducers from './GallantReducers.jsx';
 import { handleActionOnState, incrementClientId, getClientId, getPortState, setPortState } from './GallantReducers.jsx';
 
-//import {snabbt} from '/assets/js/snabbt.min.js';
-
-//import {ListGroup, Grid, Row, Col} from 'react-bootstrap';
-
 export default class GoIndex extends React.Component {
-
-
 
     constructor(props) {
         super(props);
 
-        //this.props = props;
         this.props = JSON.stringify(getPortState());
-
-        //this.PortObject = receiveAPIData('', 1);
-        //this.setState = this.setState.bind(this);
     }
 
     render() {
 
-        //loadPortfolioAPI();
-
-        console.log("RENDERING props: ");
-        console.log(this.props);
-        console.log("Find the state now.");
-        //console.log(getPortState());
-
         var pstateString = JSON.stringify(getPortState());
         var ps = JSON.parse(pstateString);
+        var imagepath = '/assets/images/clients/'+ps.image;
+        var imagesrc = {uri: imagepath};
 
         return(
+            <div>
             <div className="newscreen">
-                <div id="portfolioScreen" className=""><h3>{ps.id} {ps.name} Love Goes Here... comes out here, rather...</h3></div>
+                <div id="portfolioScreen" className="">
 
-                <button onClick={ (e) => this.handleClick(e) } >
-                   Next Client
-                </button>
+                <div className="clientImage"><img src={imagepath} /></div>
+
+                <div id="portscreen_{ps.id}">
+                 <h3>{ps.name}</h3>
+                </div>
+
+
+                 <h5>{ps.url}</h5>
+                    <h6>{ps.details}</h6>
+                 <h6>{ps.tech}</h6>
+                    <h6><div dangerouslySetInnerHTML={{__html: ps.thejob}} /></h6>
+
+               </div>
+
+            </div>
+
+            <button onClick={ (e) => this.handleClick(e) } >
+                 Next
+            </button>
             </div>
         );
     }
@@ -84,17 +85,18 @@ export default class GoIndex extends React.Component {
         loadPortfolioAPI();
         var newscreen = document.getElementById('portfolioScreen');
 
-
         snabbt(newscreen, {
-            position: [400, 0, 0],
+            position: [1600, 0, 0],
             easing: 'spring',
-            springConstant: 0.3,
-            springDeceleration: 0.8
+            springMass:5,
+            springConstant: 1.3,
+            springDeceleration: 0.3
         }).snabbt({
             position: [0, 0, 0],
             easing: 'spring',
-            springConstant: 0.3,
-            springDeceleration: 0.8
+            springMass:7,
+            springConstant: 1.3,
+            springDeceleration: 0.3
         });
 
         this.forceUpdate();
@@ -139,10 +141,6 @@ function loadPortfolioAPI() {
             mapStateToProps(data);
             setPortState(data);
 
-
-
-            //console.log("WTF");
-            //console.log(wtf);
         },
         error: function(data){
             console.log("ERROR RESPONSE FROM api.gallantone.local SERVER : "+JSON.stringify(data));
@@ -173,10 +171,7 @@ GoIndex.propTypes = {
 function mapStateToProps(state)
 {
     // Sort of want a way to not have the reducer method name as a key, although this might make sense as this is a way to know which state belongs to which method combined by the combinereducer() method.
-    //state = state.handleActionOnState;
-    console.log('state from mstp');
-    console.log(state);
-   // console.log(state.handleActionOnState);
+
     return {
         portData: state
     };
