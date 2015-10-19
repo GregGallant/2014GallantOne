@@ -8,12 +8,12 @@ import { receiveAPIData, displayInput } from './GallantActions.jsx';
 /* Header Footer */
 import GallantHeaderBasic from '../Layout/GallantHeaderBasic.jsx';
 import GallantFooter from '../Layout/GallantFooter.jsx';
-import GoIndex from './GoIndex.jsx';
+import GoScreen from './GoScreen.jsx';
 
 import GallantReducers from './GallantReducers.jsx';
 
-/* GallantApp Smart Component */
-export default class GallantApp extends React.Component {
+/* GallantScreen Smart Component */
+export default class GallantScreen extends React.Component {
 
     /**
      * The heart and soul, well, so dramatic... the components... of our redux app
@@ -25,9 +25,14 @@ export default class GallantApp extends React.Component {
 
         return(
             <div>
-                <GoIndex
-                    onAddInput={ text=> dispatch(displayInput(text))}
-                    indexData={ goIndexText } />
+                <div className="goHeader">
+                 <GallantHeaderBasic
+                    onAddInput={ text =>
+                        dispatch(displayInput( text ))
+                    } />
+                </div>
+                <GoScreen indexData={ goIndexText } />
+                <GallantFooter />
             </div>
         );
 
@@ -35,7 +40,7 @@ export default class GallantApp extends React.Component {
 
 }
 
-GallantApp.propTypes = {
+GallantScreen.propTypes = {
     goIndexText: React.PropTypes.string.isRequired,
     text: React.PropTypes.string.isRequired
 };
@@ -56,7 +61,7 @@ function mapStateToProps(state)
 }
 
 // Maybe use a decorator instead, but for now...
-export default connect(mapStateToProps)(GallantApp);
+export default connect(mapStateToProps)(GallantScreen);
 
 
 

@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import GallantReducers from './GallantReducers.jsx';
-import GallantApp from './GallantApp.jsx';
+import GallantScreen from './GallantScreen.jsx';
 
 //import GallantActions, {displayInput} from './GallantActions.jsx';
 
@@ -14,9 +14,9 @@ let store = createStore(GallantReducers, {handleActionOnState: ""}); // points t
 
 ReactDOM.render(
     <Provider store={store}>
-        <GallantApp/>
+        <GallantScreen/>
     </Provider>
-    , document.getElementById('kidsLoveReact')
+    , document.body
 );
 
 

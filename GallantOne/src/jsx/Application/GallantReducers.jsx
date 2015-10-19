@@ -6,7 +6,7 @@ import { RECEIVE_DATA, DISPLAY_INPUT, SELECT_PRODUCT, CART_ADD, CART_REMOVE, SET
 
 /*
 const initialState = {
-    text: "For fucks sakes"
+    text: "Ffs"
 };
 */
 
