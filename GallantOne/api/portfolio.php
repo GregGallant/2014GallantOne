@@ -1,9 +1,9 @@
 <?php
 
-    $url = "http://api.gallantone.com/portfolio";
+   $url = "http://api.gallantone.local/portfolio/1";
 
      // create curl resource 
-    $ch = curl_init(); 
+   $ch = curl_init(); 
 
 
    // set url 

@@ -10,7 +10,7 @@ import GallantScreen from './GallantScreen.jsx';
 
 //import GallantActions, {displayInput} from './GallantActions.jsx';
 
-let store = createStore(GallantReducers, {handleActionOnState: ""}); // points to our store (reducer)
+let store = createStore(GallantReducers, {portData: ""}); // points to our store (reducer)
 
 ReactDOM.render(
     <Provider store={store}>

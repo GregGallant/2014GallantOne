@@ -1,4 +1,4 @@
-import React from 'react/addons';
+import React from 'react';
 
 
 /* Flux Components */
@@ -14,7 +14,10 @@ import GallantFooter from '../../assets/js/GallantFooter.js';
 
 /* Frontpage Content */
 import GoIndex from '../../assets/js/GoIndex.js';
+import GoScreen from '../../assets/js/GoScreen.js';
 
 /* Application */
 import GallantOne from '../../assets/js/GallantOne.js';
+import GallantPort from '../../assets/js/GallantPort.js';
+import GallantScreen from '../../assets/js/GallantScreen.js';
 

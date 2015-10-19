@@ -4,18 +4,78 @@
     <!-- Dev -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="/assets/css/one_portfolio.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link href="/lib/bootstrap/css/bootstrap.min.css" />
-    <link href="/lib/bootstrap/js/bootstrap.min.js" />
 
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/one_portfolio.css" rel="stylesheet" type="text/css" />
     <title>Component Development</title>
 
 </head>
 <body>
-    <GallantOne />
-    <img alt="full screen background image" src="/assets/images/gg_sunset.png" id="full-screen-background-image" />
-    <script type="text/javascript" src="/assets/js/bundle.js"></script>
+<img alt="full screen background image" src="/assets/images/gg_sunset.png" id="full-screen-background-image" />
+
+    <ul class="nav nav-pills navbar-fixed-top goHeader">
+        <li role="presentation">
+            <div className="leftAlign">
+                <a href="/"><img id="goLogo" alt="GallantOne.com" border="0" width="290px" height="53px" src="/assets/images/one_logo.png" /></a>
+            </div>
+        </li>
+        <li role="presentation">
+            <div className="rightAlign">
+                <a href="./portfolio.html">Work</a> | Linked-In | Resume
+            </div>
+        </li>
+    </ul>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-lg-12">
+
+                <div id="textHeader">
+                    <h1>RELIABLE ENGINEERING &amp; DESIGN</h1>
+                    <h3>KEEPING THE DIGITAL WORLD INNOVATIVE AND VISUALLY REMARKABLE</h3>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3">&nbsp;</div>
+            <div class="col-xs-3 col-lg-3">
+                <ul>
+                    <h4>Current Development: </h4>
+                    <li>Laravel / Lumen PHP API Development</li>
+                    <li>ReactJS / ES6 Redux</li>
+                    <li>Bootstrap / react-bootstrap</li>
+                    <li>MySQL / PostGreSQL</li>
+                </ul>
+                <ul>
+                    <h4>Past Development:</h4>
+                    <li>Zend Framework 1 / 2</li>
+                    <li>Java Spring 3 MVC</li>
+                    <li>JQuery</li>
+                    <li>Zurb Foundation CSS Framework</li>
+                </ul>
+            </div>
+
+            <div class="col-xs-3 col-lg-3">
+                <div>
+                    <ul className="outlinks">
+                        <li>Linked In: http://www.linkedin.com</li>
+                        <li>GitHub: http://www.github.com</li>
+                        <li>Google+: http://www.google.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-3">&nbsp;</div>
+
+        </div>
+    </div>
+
+
+
+
 </body>
 </html>

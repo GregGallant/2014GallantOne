@@ -27,7 +27,10 @@ export default class GallantApp extends React.Component {
             <div>
                 <GoIndex
                     onAddInput={ text=> dispatch(displayInput(text))}
-                    indexData={ goIndexText } />
+                    indexData={ goIndexText }
+                    portData={ portdata=> dispatch(receiveAPIData(portdata)) }
+
+                     />
             </div>
         );
 
@@ -51,12 +54,15 @@ function mapStateToProps(state)
 {
     // Sort of want a way to not have the reducer method name as a key, although this might make sense as this is a way to know which state belongs to which method combined by the combinereducer() method.
     //state = state.handleActionOnState;
-
-    return { goIndexText: state.handleActionOnState.text };
+    console.log("MSTP: ");
+    console.log(state);
+    return {
+              portdata: state
+     };
 }
 
 // Maybe use a decorator instead, but for now...
-export default connect(mapStateToProps)(GallantApp);
+export default GallantApp;
 
 
 
