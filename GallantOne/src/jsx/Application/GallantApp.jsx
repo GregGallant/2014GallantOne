@@ -54,8 +54,6 @@ function mapStateToProps(state)
 {
     // Sort of want a way to not have the reducer method name as a key, although this might make sense as this is a way to know which state belongs to which method combined by the combinereducer() method.
     //state = state.handleActionOnState;
-    console.log("MSTP: ");
-    console.log(state);
     return {
               portdata: state
      };

@@ -10,11 +10,11 @@ import React from 'react';
 
 /* Layout */
 import GallantHeader from '../../assets/js/GallantHeader.js';
-import GallantFooter from '../../assets/js/GallantFooter.js';
+//import GallantFooter from '../../assets/js/GallantFooter.js';
 
 /* Frontpage Content */
 import GoIndex from '../../assets/js/GoIndex.js';
-import GoScreen from '../../assets/js/GoScreen.js';
+//import GoScreen from '../../assets/js/GoScreen.js';
 
 /* Application */
 import GallantOne from '../../assets/js/GallantOne.js';

@@ -8,9 +8,7 @@ import { Provider } from 'react-redux';
 import GallantReducers from './GallantReducers.jsx';
 import GoIndex from './GoIndex.jsx';
 
-//import GallantActions, {displayInput} from './GallantActions.jsx';
-
-let store = createStore(GallantReducers, {portData: ""}); // points to our store (reducer)
+let store = createStore(GallantReducers, {portData: ""}); // immutable store and reducers 'borrowed' from redux
 
 ReactDOM.render(
     <Provider store={store}>
@@ -18,7 +16,3 @@ ReactDOM.render(
     </Provider>
     , document.getElementById('gallantoneReact')
 );
-
-
-/* Testing a manual dispatch... */
-//store.dispatch(displayInput("wtf mate!?!?!?"));
