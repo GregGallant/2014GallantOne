@@ -21,6 +21,16 @@ html, body {
     margin: 0;
 }
 
+/* set a max-width for horizontal fluid layout and make it centered */
+/*
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 2400px;
+}
+*/
+
+
 #full-screen-background-image {
     z-index: -999;
     min-height: 100%;
@@ -751,8 +761,9 @@ ul > li {
     margin-left:30px;
 }
 
-ul.outlinks > li {
-    font-size:1.1em;
+ul.linklinks > li {
+    font-size:1.3em;
+    font-face:Arvil,Arial,sans-serif;
 }
 
 h6 {
@@ -767,6 +778,21 @@ h6 {
 .backdrop {
     overflow:auto;
     height:100%;
+}
+
+.lastmargin {
+
+    margin-left:25px;
+    padding-right:25px;
+}
+
+.lastmargin p {
+
+    padding-right:25px;
+}
+
+hr {
+    margin-right:25px;
 }
 
 .ggContainer {
@@ -861,6 +887,10 @@ span.list-group-item {
     line-height:1.6em;
 }
 
+.maxwidth {
+    width:100%;
+}
+
 .descBox {
     display:inline-block;
     float:left;
@@ -904,4 +934,52 @@ span.list-group-item {
 
 .gmargins {
     width:1090px;
+}
+
+
+#intro{
+    background:url(/assets/images/gg_sunset.jpg) 50% 0 no-repeat fixed;
+    color: white;
+    height: 1115px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#second{
+    background: url(/assets/images/gallant_photo_1.jpg) 50% 0 no-repeat fixed;
+    color: white;
+    height: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+}
+/*
+#second .bg{
+    background: url(images/trainers.png) 50% 0 no-repeat fixed;
+    height: 1300px;
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    width: 900px;
+    z-index: 200;
+}
+*/
+
+#third{
+    background: url(/assets/images/gallant_photo_2.jpg) 50% 0 no-repeat fixed;
+    color: white;
+    height: 650px;
+    padding: 100px 0 0 0;
+}
+
+.toplid {
+    margin-top:25px;
+}
+
+.toplid p {
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:1.1em;
+    line-height:1.7em;
+    text-align:justify;
+
 }
