@@ -26080,7 +26080,7 @@
 	            cache: false,
 	            type: 'GET',
 	            crossDomain: true,
-	            url: 'http://api.gallantone.local/portfolio/0',
+	            url: 'http://api.gallantone.com/portfolio/0',
 	            contentType: "application/jsonp",
 	            success: function success(data) {
 	                mapStateToProps(data);
@@ -26090,7 +26090,7 @@
 	                _get(Object.getPrototypeOf(GoIndex.prototype), 'forceUpdate', _this).call(_this);
 	            },
 	            error: function error(data) {
-	                console.log("ERROR RESPONSE FROM api.gallantone.local SERVER : " + JSON.stringify(data));
+	                console.log("ERROR RESPONSE FROM api.gallantone.com SERVER : " + JSON.stringify(data));
 	            },
 	            complete: function complete(data) {
 	                // console.log("api port call completed");
@@ -26343,7 +26343,7 @@
 	        cache: false,
 	        type: 'GET',
 	        crossDomain: true,
-	        url: 'http://api.gallantone.local/portfolio/' + client_id,
+	        url: 'http://api.gallantone.com/portfolio/' + client_id,
 	        contentType: "application/jsonp",
 	        success: function success(data) {
 	            mapStateToProps(data);
@@ -26351,7 +26351,7 @@
 	            this.init_data = data;
 	        },
 	        error: function error(data) {
-	            console.log("ERROR RESPONSE FROM api.gallantone.local SERVER : " + JSON.stringify(data));
+	            console.log("ERROR RESPONSE FROM api.gallantone.com SERVER : " + JSON.stringify(data));
 	        },
 	        complete: function complete(data) {
 	            //console.log("api port call completed");
