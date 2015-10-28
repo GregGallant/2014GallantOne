@@ -29,7 +29,7 @@ export default class GoIndex extends React.Component {
             cache : false,
             type: 'GET',
             crossDomain:true,
-            url: 'http://api.gallantone.local/portfolio/0',
+            url: 'http://api.gallantone.com/portfolio/0',
             contentType:"application/jsonp",
             success: function(data){
                 mapStateToProps(data);
@@ -40,7 +40,7 @@ export default class GoIndex extends React.Component {
 
             },
             error: function(data){
-                console.log("ERROR RESPONSE FROM api.gallantone.local SERVER : "+JSON.stringify(data));
+                console.log("ERROR RESPONSE FROM api.gallantone.com SERVER : "+JSON.stringify(data));
             },
             complete: function(data){
                // console.log("api port call completed");
@@ -241,7 +241,7 @@ function getPortfolioData(client_id) {
         cache : false,
         type: 'GET',
         crossDomain:true,
-        url: 'http://api.gallantone.local/portfolio/'+client_id,
+        url: 'http://api.gallantone.com/portfolio/'+client_id,
         contentType:"application/jsonp",
         success: function(data){
             mapStateToProps(data);
@@ -250,7 +250,7 @@ function getPortfolioData(client_id) {
 
         },
         error: function(data){
-            console.log("ERROR RESPONSE FROM api.gallantone.local SERVER : "+JSON.stringify(data));
+            console.log("ERROR RESPONSE FROM api.gallantone.com SERVER : "+JSON.stringify(data));
         },
         complete: function(data){
             //console.log("api port call completed");

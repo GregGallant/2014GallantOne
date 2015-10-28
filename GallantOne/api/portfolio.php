@@ -1,6 +1,6 @@
 <?php
 
-   $url = "http://api.gallantone.local/portfolio/1";
+   $url = "http://api.gallantone.com/portfolio/1";
 
      // create curl resource 
    $ch = curl_init(); 
