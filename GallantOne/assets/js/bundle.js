@@ -26113,9 +26113,14 @@
 	            var pstateString = JSON.stringify((0, _GallantReducersJsx.getPortState)());
 
 	            var ps = JSON.parse(pstateString);
-	            var imagepath = '/assets/images/clients/' + ps.image;
-	            var imagesrc = { uri: imagepath };
 
+	            if (typeof ps.image == "undefined") {
+	                var imagepath = '/assets/images/clients/npd.gif';
+	                var imagesrc = { uri: imagepath };
+	            } else {
+	                var imagepath = '/assets/images/clients/' + ps.image;
+	                var imagesrc = { uri: imagepath };
+	            }
 	            return _react2['default'].createElement(
 	                'div',
 	                { className: 'fromTheTop' },

@@ -56,9 +56,14 @@ export default class GoIndex extends React.Component {
         var pstateString = JSON.stringify(getPortState());
 
         var ps = JSON.parse(pstateString);
-        var imagepath = '/assets/images/clients/'+ps.image;
-        var imagesrc = {uri: imagepath};
 
+        if (typeof ps.image == "undefined") {
+            var imagepath = '/assets/images/clients/npd.gif';
+            var imagesrc = {uri:imagepath};
+        } else {
+            var imagepath = '/assets/images/clients/'+ps.image;
+            var imagesrc = {uri: imagepath};
+        }
         return(
             <div className="fromTheTop">
                 <div className="aboutit">Check out this experimental custom ReactJS (0.14) component using <a href="http://lumen.laravel.com">Lumen</a> as a portfolio API (api.gallantone.com)!</div>
