@@ -1,4 +1,3 @@
 # GallantOne
-Portfolio Site: currently using a Laravel 5 API, AngularJS frontend, Skeleton responsive, and a MySql database
+Portfolio Site: currently using a Lumen/MySQL as an API, React 0.14 with Redux, webpack, bootstrap and Snabbt animation library.
 
-Commits have been squashed using interactive rebase for my own rediculous purposes.
